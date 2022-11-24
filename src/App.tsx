@@ -5,6 +5,7 @@ import CafeListPage from './pages/CafeListPage';
 import DetailPage from './pages/DetailPage';
 import MyAccountPage from './pages/MyAccountPage';
 import NotFoundPage from './pages/NotFoundPage';
+import GlobalStyle from './styles/Global';
 
 const queryClient = new QueryClient();
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <GlobalStyle />
         <Routes>
           {/* login page */}
           <Route path="login" element={<LoginPage />} />
