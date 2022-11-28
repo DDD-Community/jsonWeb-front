@@ -1,3 +1,3 @@
 export default function dummy() {
-  return <div>dummyTest</div>;
+  return <div>dummyTest1</div>;
 }
