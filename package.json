@@ -70,10 +70,5 @@
   "main": "index.js",
   "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
   "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
+  "license": "MIT"
 }
