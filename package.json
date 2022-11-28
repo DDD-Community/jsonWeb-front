@@ -1,7 +1,10 @@
 {
   "name": "ddd-jsonweb-front",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
+  "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
+  "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@tanstack/react-query": "^4.16.1",
@@ -66,9 +69,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3"
-  },
-  "main": "index.js",
-  "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
-  "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
-  "license": "MIT"
+  }
 }
