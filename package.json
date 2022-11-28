@@ -69,10 +69,9 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+    "*.{js,ts,tsx}": [
+      "yarn lint-fix:prettier",
+      "yarn lint-fix:eslint"
     ]
   }
 }
