@@ -26,7 +26,6 @@ See our [Convention](https://github.com/DDD-Community/jsonWeb-front/wiki/convent
 
 See our [CODEOWNERS](./.github/CODEOWNERS) file.
 
-<br/>
 
 ## 📝 License
 
