@@ -37,8 +37,7 @@
     "*.{js,ts,tsx}": [
       "yarn lint-fix:prettier",
       "yarn lint-fix:eslint"
-    ],
-    "*.js": "eslint --cache --fix"
+    ]
   },
   "eslintConfig": {
     "extends": [
