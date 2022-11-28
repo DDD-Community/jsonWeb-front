@@ -1,7 +1,10 @@
 {
   "name": "ddd-jsonweb-front",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
+  "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
+  "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@tanstack/react-query": "^4.16.1",
@@ -26,7 +29,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-fix:eslint": "eslint --fix \"./**/*.{js,ts,tsx}\" --ignore-path .gitignore",
+    "lint-fix:prettier": "prettier --write \"./**/*.{js,ts,tsx}\" --ignore-path .gitignore"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn lint-fix:prettier",
+      "yarn lint-fix:eslint"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -58,21 +69,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3"
-  },
-  "main": "index.js",
-  "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
-  "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
   }
 }
