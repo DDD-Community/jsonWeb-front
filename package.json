@@ -26,7 +26,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-fix:eslint": "eslint --fix \"./**/*.{js,ts,tsx}\" --ignore-path .gitignore",
+    "lint-fix:prettier": "prettier --write \"./**/*.{js,ts,tsx}\" --ignore-path .gitignore"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn lint-fix:prettier",
+      "yarn lint-fix:eslint"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -67,11 +75,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "yarn lint-fix:prettier",
-      "yarn lint-fix:eslint"
-    ]
   }
 }
