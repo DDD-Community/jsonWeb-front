@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import LoginPage from './pages/LoginPage';
-import CafeListPage from './pages/CafeListPage';
-import DetailPage from './pages/DetailPage';
-import MyAccountPage from './pages/MyAccountPage';
-import NotFoundPage from './pages/NotFoundPage';
+import LoginPage from './pages/login';
+import CafeListPage from './pages/cafeList';
+import DetailPage from './pages/detail';
+import MyAccountPage from './pages/myAccount';
+import NotFoundPage from './pages/NotFound';
 import GlobalStyle from './styles/Global';
 
 const queryClient = new QueryClient();
