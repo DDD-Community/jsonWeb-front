@@ -6,7 +6,8 @@ on:
       - setting/*
       - fix/*
       - doc
-    pull_request:
+  pull_request:
+    branches:
       - feat/*
       - setting/*
       - fix/*
