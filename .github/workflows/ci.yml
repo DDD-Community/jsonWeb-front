@@ -1,0 +1,29 @@
+name: CI action
+on:
+  push:
+    branches:
+      - feat/*
+      - setting/*
+      - fix/*
+      - doc
+  pull_request:
+    branches:
+      - feat/*
+      - setting/*
+      - fix/*
+      - doc
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@v2
+
+      - name: Check Node v
+        run: node -v
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
