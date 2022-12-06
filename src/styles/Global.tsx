@@ -128,6 +128,10 @@ export default function GlobalStyle() {
           border-collapse: collapse;
           border-spacing: 0;
         }
+        #modalRoot {
+          display: flex;
+          justify-content: center;
+        }
       `}
     />
   );

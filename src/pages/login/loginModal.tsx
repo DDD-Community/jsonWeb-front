@@ -1,43 +1,4 @@
-import styled from '@emotion/styled';
-
-const CloseButton = styled.button`
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const ModalContents = styled.div`
-  margin: 50px;
-  text-align: center;
-`;
-
-const LoginMessage = styled.h1`
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.3;
-`;
-
-const LoginButton = styled.button`
-  border: 0;
-  outline: 0;
-  width: 320px;
-  background-color: #ffda56;
-  padding: 20px;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 15px;
-`;
-
-const CancelButton = styled.button`
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-  font-size: 10px;
-  margin-top: 10px;
-  padding: 5px;
-`;
+import * as st from '../../components/blocks/modal/modalStyle';
 
 type LoginModalPropsType = {
   cancelHandler: () => void;
@@ -54,7 +15,7 @@ export default function LoginModal({
 
   return (
     <>
-      <CloseButton onClick={() => cancelHandler()}>
+      <st.CloseButton onClick={() => cancelHandler()}>
         <svg
           width="24"
           height="24"
@@ -67,13 +28,15 @@ export default function LoginModal({
             fill="#1C1B1F"
           />
         </svg>
-      </CloseButton>
-      <ModalContents>
-        <LoginMessage>{message}</LoginMessage>
-        <LoginMessage>로그인이 필요해요.</LoginMessage>
-      </ModalContents>
-      <LoginButton onClick={loginHandler}>카카오톡으로 시작하기</LoginButton>
-      <CancelButton onClick={() => cancelHandler()}>일단 둘러보기</CancelButton>
+      </st.CloseButton>
+      <st.ModalContents>
+        <st.LoginMessage>{message}</st.LoginMessage>
+        <st.LoginMessage>로그인이 필요해요.</st.LoginMessage>
+      </st.ModalContents>
+      <st.LoginButton onClick={loginHandler}>카카오로 시작하기</st.LoginButton>
+      <st.CancelButton onClick={() => cancelHandler()}>
+        일단 둘러보기
+      </st.CancelButton>
     </>
   );
 }
