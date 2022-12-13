@@ -85,6 +85,8 @@ export default function GlobalStyle() {
         mark,
         audio,
         video {
+          font-family: 'Pretendard' !important;
+          box-sizing: border-box;
           margin: 0;
           padding: 0;
           border: 0;
@@ -131,6 +133,15 @@ export default function GlobalStyle() {
         #modalRoot {
           display: flex;
           justify-content: center;
+        }
+        button {
+          margin: 0;
+          padding: 0;
+          background-color: inherit;
+          border: 0;
+        }
+        a {
+          text-decoration: none;
         }
       `}
     />
