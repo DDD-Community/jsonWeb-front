@@ -13,8 +13,7 @@
 
 </div>
 
-&nbsp;  
-&nbsp;
+
 
 > Front-end Project for jsonWeb `Exit`.
 > <br>
