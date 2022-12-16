@@ -92,7 +92,7 @@ export default function CafeList() {
       <SideWrapper>
         <S.RoomListHeaderContainer>
           <S.RoomListTitle>방 탈출 카페</S.RoomListTitle>
-          <Menu list={MenuList} onClickItem={() => console.log('a')} />
+          <Menu list={MenuList} />
         </S.RoomListHeaderContainer>
         <CardList list={cardList} />
       </SideWrapper>
