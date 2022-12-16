@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
 import { DownArrow, UpArrow } from '../../../assets/svg/icon';
+import { MenuListItemType } from '../../../pages/cafeList';
 
 type MenuPropsType = {
-  list: string[];
+  list: MenuListItemType[];
   onClickItem?: () => void;
 };
 
 export default function Menu({ list, onClickItem }: MenuPropsType) {
   const [isOpen, setIsOpen] = useState(false);
-  const [menuList, setMenuList] = useState<string[]>([]);
   const [selectedItem, setSelectedItem] = useState<string>();
+  const [selectedItemId, setSelectedItemId] = useState<number | null>(0);
 
   function menuBtnClick() {
-    setMenuList(list.filter((el) => el !== selectedItem));
     setIsOpen(!isOpen);
+  }
+
+  function getItemId(e: React.MouseEvent<HTMLLIElement, MouseEvent>) {
+    setSelectedItemId(+e.currentTarget.id);
   }
 
   function itemClick(e: React.MouseEvent<HTMLButtonElement>) {
     setSelectedItem(e.currentTarget.innerText);
+
     if (onClickItem) onClickItem();
     setIsOpen(false);
   }
 
   useEffect(() => {
-    setSelectedItem(list[0]);
+    setSelectedItem(list[0].name);
   }, []);
 
   return (
@@ -33,15 +38,23 @@ export default function Menu({ list, onClickItem }: MenuPropsType) {
         {selectedItem}
         {isOpen ? <UpArrow /> : <DownArrow />}
       </S.MenuBtn>
-      <S.MenuItemContainer isOpen={isOpen}>
-        {isOpen &&
-          menuList.map((el) => (
-            <li key={el}>
-              <S.MenuItem onClick={(e) => itemClick(e)} type="button">
-                {el}
-              </S.MenuItem>
-            </li>
-          ))}
+      <S.MenuItemContainer
+        className={isOpen ? 'open' : 'close'}
+        listLength={list.length}
+        selectedItemId={selectedItemId}
+      >
+        {list.map((el) => (
+          <li
+            key={el.id}
+            id={el.id.toString()}
+            onClick={(e) => getItemId(e)}
+            aria-hidden="true"
+          >
+            <S.MenuItem onClick={(e) => itemClick(e)} type="button">
+              {el.name}
+            </S.MenuItem>
+          </li>
+        ))}
       </S.MenuItemContainer>
     </S.MenuBtnWrapper>
   );
