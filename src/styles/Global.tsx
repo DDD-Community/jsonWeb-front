@@ -94,7 +94,10 @@ export default function GlobalStyle() {
           font: inherit;
           vertical-align: baseline;
         }
-
+        html {
+          max-width: 375px;
+          margin: 0 auto;
+        }
         article,
         aside,
         details,

@@ -1,32 +1,32 @@
 import { useState } from 'react';
-import Carousel from '../../components/blocks/Carousel';
+import Slider from 'react-slick';
+import styled from '@emotion/styled';
 import carouselImg from '../../assets/carouselImg.png';
 import * as S from './style';
 import { genreData } from '../../lib/data/genreData';
-import { CardListItemType, CarouselListItemType } from '../../types/types';
+import { CardListItemType } from '../../types/types';
 import { SideWrapper } from '../../components/template/layoutWrapper';
 import Menu from '../../components/blocks/Menu';
 import CardList from '../../components/blocks/Card/CardList';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { LeftArrow, RightArrow } from '../../assets/svg/icon';
 
-const carouselImageList: CarouselListItemType[] = [
-  { id: 0, src: carouselImg },
-  { id: 1, src: carouselImg },
-  { id: 2, src: carouselImg },
-];
+export type MenuListItemType = { id: number; name: string };
 
-const MenuList: string[] = [
-  '난이도 낮은순',
-  '난이도 높은순',
-  '리뷰 많은순',
-  '랭킹 순',
-  '최신순',
+const MenuList: MenuListItemType[] = [
+  { id: 0, name: '난이도 낮은순' },
+  { id: 1, name: '난이도 높은순' },
+  { id: 2, name: '리뷰 많은순' },
+  { id: 3, name: '랭킹 순' },
+  { id: 4, name: '최신순' },
 ];
 
 const dummyData: CardListItemType[] = [
   {
     src: 'https://i.pinimg.com/236x/53/5d/ed/535ded0607931f18bfc3d823739d4f84.jpg',
-    title: 'title',
-    description: 'description',
+    title: 'titletitletitletitletitletitle',
+    description: 'descriptiondescriptiondescriptiondescriptiondescription',
     averageRating: 4.5,
     reviewCount: 100,
   },
@@ -74,11 +74,69 @@ const dummyData: CardListItemType[] = [
   },
 ];
 
+const StyledContainer = styled.div`
+  .slick-prev {
+    left: 25px;
+    z-index: 2;
+  }
+  .slick-next {
+    right: 25px;
+    z-index: 2;
+  }
+  .slick-dots {
+    bottom: 20px;
+  }
+  .slick-dots li {
+    width: 6px;
+    height: 6px;
+  }
+  .slick-dots li button {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+  }
+  .slick-dots li button:before {
+    width: 6px;
+    height: 6px;
+  }
+  .slick-dots li button:before {
+    color: white;
+  }
+`;
+const StyledSlide = styled.div`
+  width: 100%;
+`;
+
+function CustomSlide() {
+  return (
+    <StyledSlide>
+      <img src={carouselImg} alt="캐러셀 이미지" />
+    </StyledSlide>
+  );
+}
+
 export default function CafeList() {
   const [cardList] = useState<CardListItemType[]>(dummyData);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow style={{ left: '25px !important' }} />,
+  };
+
   return (
-    <>
-      <Carousel list={carouselImageList} />
+    <StyledContainer>
+      <Slider {...settings}>
+        <CustomSlide />
+        <CustomSlide />
+        <CustomSlide />
+        <CustomSlide />
+        <CustomSlide />
+        <CustomSlide />
+      </Slider>
       <S.GenreContainer>
         {genreData.map((el) => (
           <li key={el.id}>
@@ -96,6 +154,6 @@ export default function CafeList() {
         </S.RoomListHeaderContainer>
         <CardList list={cardList} />
       </SideWrapper>
-    </>
+    </StyledContainer>
   );
 }
