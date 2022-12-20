@@ -18,17 +18,14 @@ export const DescriptionDiv = styled.div`
 `;
 
 export const LoginDescription = styled.p`
-  color: #707070;
+  color: ${themes.color.gray};
   font-weight: ${themes.font.weight.regular};
   padding: 5px;
 `;
 
-export const TextGreen = styled.span`
-  color: #b4e100;
-`;
-
-export const TextPurple = styled.span`
-  color: #6b53dd;
+export const TextHighlight = styled.span<{ color: string }>`
+  color: ${(props) =>
+    props.color === 'green' ? themes.color.green : themes.color.purple};
 `;
 
 export const LoginButton = styled.button`

@@ -1,24 +1,29 @@
-import * as S from './loginStyle';
-import { KAKAO_AUTH_URL } from './oAuth';
+import {
+  LoginPageDiv,
+  DescriptionDiv,
+  LoginDescription,
+  TextHighlight,
+  LoginButton,
+} from './loginStyle';
 import { LoginLogo } from '../../assets/svg/icon';
+import useLogin from '../../lib/hooks/useLogin';
 
 export default function Login() {
-  const goLogin = () => {
-    window.location.replace(KAKAO_AUTH_URL);
-  };
+  // const goLogin = useLogin();
 
   return (
-    <S.LoginPageDiv>
+    <LoginPageDiv>
       <LoginLogo />
-      <S.DescriptionDiv>
-        <S.LoginDescription>
-          엑시트의 <S.TextGreen>회원</S.TextGreen>이 되시면
-        </S.LoginDescription>
-        <S.LoginDescription>
-          더 많은 <S.TextPurple>혜택</S.TextPurple>을 얻을 수 있어요
-        </S.LoginDescription>
-      </S.DescriptionDiv>
-      <S.LoginButton onClick={goLogin}>카카오로 시작하기</S.LoginButton>
-    </S.LoginPageDiv>
+      <DescriptionDiv>
+        <LoginDescription>
+          엑시트의 <TextHighlight color="green">회원</TextHighlight>이 되시면
+        </LoginDescription>
+        <LoginDescription>
+          더 많은 <TextHighlight color="purple">혜택</TextHighlight>을 얻을 수
+          있어요
+        </LoginDescription>
+      </DescriptionDiv>
+      <LoginButton onClick={useLogin()}>카카오로 시작하기</LoginButton>
+    </LoginPageDiv>
   );
 }
