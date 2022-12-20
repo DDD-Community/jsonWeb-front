@@ -11,18 +11,16 @@
 </p>
 </div>
 
-
-
 > Front-end Project for jsonWeb `Exit`.
 > <br>
 
 ## Convention
+
 See our [Convention](https://github.com/DDD-Community/jsonWeb-front/wiki/convention)
 
 ## Author
 
 See our [CODEOWNERS](./.github/CODEOWNERS) file.
-
 
 ## 📝 License
 

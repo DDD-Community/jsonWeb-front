@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
+import { KakaoLogin, KakaoLogout } from '@pages/login/kakaoSign';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
@@ -31,6 +32,8 @@ function App() {
 
               {/* login page */}
               <Route path="login" element={<LoginPage />} />
+              <Route path="user/login" element={<KakaoLogin />} />
+              <Route path="user/logout" element={<KakaoLogout />} />
 
               {/* cafeList page */}
               <Route index element={<CafeListPage />} />
