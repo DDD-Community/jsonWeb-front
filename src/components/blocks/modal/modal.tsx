@@ -1,42 +1,58 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import * as st from './modalStyle';
 import ModalPortal from './portal';
-import LoginModal from '../../../pages/login/loginModal';
+import { ReactComponent as Close } from '../../../assets/svg/close.svg';
+import { KAKAO_AUTH_URL } from '../../../pages/login/oAuth';
 
-type ModalPropsType = {
+interface ModalPropsType {
   visible: boolean;
-  onClose: () => void;
+  modalToggle: () => void;
   message: string;
-};
+}
 
-export default function Modal({ visible, onClose, message }: ModalPropsType) {
+export default function Modal({
+  visible,
+  modalToggle,
+  message,
+}: ModalPropsType) {
   const [animate, setAnimate] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const loginModalHandler = (event?: Event) => {
+  const modalAnimation = (event?: Event) => {
     if (visible) {
       if ((event && modalRef.current === event.target) || !event) {
         setAnimate(true);
         setTimeout(() => {
           setAnimate(false);
-          onClose();
+          modalToggle();
         }, 400);
       }
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('click', loginModalHandler);
-    return () => {
-      window.removeEventListener('click', loginModalHandler);
-    };
-  }, []);
+  const goLogin = () => {
+    window.location.replace(KAKAO_AUTH_URL);
+  };
 
   return (
     <ModalPortal>
-      <st.ModalOverlay ref={modalRef} aniState={animate} />
+      <st.ModalOverlay
+        ref={modalRef}
+        aniState={animate}
+        onClick={() => modalAnimation}
+      />
       <st.ModalBox aniState={animate}>
-        <LoginModal cancelHandler={loginModalHandler} message={message} />
+        <st.CloseButton onClick={() => modalToggle}>
+          <Close width="24px" height="24px" />
+        </st.CloseButton>
+        <st.ModalContents>
+          <st.LoginMessage>{message}</st.LoginMessage>
+          <st.LoginMessage>로그인이 필요해요.</st.LoginMessage>
+        </st.ModalContents>
+        <st.LoginButton onClick={() => goLogin}>
+          카카오로 시작하기
+        </st.LoginButton>
+        <st.CancelButton onClick={modalToggle}>일단 둘러보기</st.CancelButton>
       </st.ModalBox>
     </ModalPortal>
   );

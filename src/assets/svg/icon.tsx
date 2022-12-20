@@ -11,3 +11,4 @@ export { ReactComponent as NavPurple } from './nav_purple.svg';
 export { ReactComponent as Star } from './star.svg';
 export { ReactComponent as HeartGray } from './heart_gray.svg';
 export { ReactComponent as HeartPurple } from './heart_purple.svg';
+export { ReactComponent as LoginLogo } from './loginLogo.svg';

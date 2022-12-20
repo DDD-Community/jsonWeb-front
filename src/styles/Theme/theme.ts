@@ -2,7 +2,8 @@ const themes = {
   color: {
     black: '#000',
     white: '#fff',
-    kakao: '#ffe812',
+    kakao: '#FEE500',
+    kakaoLabel: '#191919',
     dim01: 'rgba(0, 0, 0, 0.4)',
   },
   borderRadius: {
