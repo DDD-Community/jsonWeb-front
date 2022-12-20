@@ -97,6 +97,7 @@ export default function GlobalStyle() {
         html {
           max-width: 375px;
           margin: 0 auto;
+          background-color: #eee;
         }
         article,
         aside,

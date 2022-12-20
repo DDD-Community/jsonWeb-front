@@ -5,7 +5,7 @@ import carouselImg from '../../assets/carouselImg.png';
 import * as S from './style';
 import { genreData } from '../../lib/data/genreData';
 import { CardListItemType } from '../../types/types';
-import { SideWrapper } from '../../components/template/layoutWrapper';
+import { SideWrapper } from '../../components/template/PageLayoutWrapper';
 import Menu from '../../components/blocks/Menu';
 import CardList from '../../components/blocks/Card/CardList';
 import 'slick-carousel/slick/slick.css';

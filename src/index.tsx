@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import AppLayoutWrapper from './components/template/AppLayoutWrapper';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -8,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AppLayoutWrapper>
+      <App />
+    </AppLayoutWrapper>
   </React.StrictMode>
 );
 

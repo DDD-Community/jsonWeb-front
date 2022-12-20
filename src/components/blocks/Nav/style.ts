@@ -3,17 +3,17 @@ import { css } from '@emotion/react';
 import { PathMatch } from 'react-router-dom';
 
 export const NavContainer = styled.ul`
-  ${({ theme }) => css`
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: ${theme.color.white};
-    z-index: 9;
-  `}
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 375px;
+  background-color: #fff;
+  z-index: 9;
 `;
 
 export const NavItem = styled.li<{ match: PathMatch<string> | null }>`

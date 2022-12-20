@@ -15,7 +15,7 @@ import GlobalStyle from '@styles/Global';
 
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
-import { BottomNavWrapper } from '@components/template/layoutWrapper';
+import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
 
 function App() {
   return (

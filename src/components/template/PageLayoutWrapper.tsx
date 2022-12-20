@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-type LayoutWrapperPropsType = {
+export type LayoutWrapperPropsType = {
   children: React.ReactNode;
 };
 
