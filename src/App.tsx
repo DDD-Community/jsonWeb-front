@@ -9,6 +9,9 @@ import MyAccountPage from './pages/myAccount';
 import NotFoundPage from './pages/NotFound';
 import GlobalStyle from './styles/Global';
 import { CustomTheme } from './styles/Theme';
+import Header from './components/blocks/Header';
+import Nav from './components/blocks/Nav';
+import { BottomNavWrapper } from './components/template/layoutWrapper';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +21,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <GlobalStyle />
+          <Header />
           <Routes>
             {/* login page */}
             <Route path="login" element={<LoginPage />} />
@@ -37,6 +41,9 @@ function App() {
             {/* not found */}
             <Route path="not-found" element={<NotFoundPage />} />
           </Routes>
+          <BottomNavWrapper>
+            <Nav />
+          </BottomNavWrapper>
         </BrowserRouter>
       </QueryClientProvider>
     </ThemeProvider>
