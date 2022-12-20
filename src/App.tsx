@@ -5,6 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
 
+
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
 import DetailPage from '@pages/detail';
