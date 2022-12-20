@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
+import { CustomTheme } from '@styles/Theme';
+import { queryClient } from '@api/queryClient';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
@@ -10,8 +12,10 @@ import MyAccountPage from '@pages/myAccount';
 import TypiCodePage from '@pages/typiCode';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
-import { CustomTheme } from '@styles/Theme';
-import { queryClient } from '@api/queryClient';
+
+import Header from '@components/blocks/Header';
+import Nav from '@components/blocks/Nav';
+import { BottomNavWrapper } from '@components/template/layoutWrapper';
 
 function App() {
   return (
@@ -19,6 +23,7 @@ function App() {
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
+            <Header />
             <GlobalStyle />
             <Routes>
               {/* typicode page */}
@@ -42,6 +47,9 @@ function App() {
               {/* not found */}
               <Route path="not-found" element={<NotFoundPage />} />
             </Routes>
+            <BottomNavWrapper>
+              <Nav />
+            </BottomNavWrapper>
           </BrowserRouter>
         </QueryClientProvider>
       </RecoilRoot>
