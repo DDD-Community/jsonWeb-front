@@ -21,7 +21,7 @@ export default function Card({
         </S.HeartIcon>
       </S.CardImgWrapper>
       <S.CardDescription>{description}</S.CardDescription>
-      <S.CardTitle>{title}</S.CardTitle>
+      <S.CardTitle>title</S.CardTitle>
       <S.CardSubDescriptionWrapper>
         <div>
           <p>

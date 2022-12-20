@@ -30,28 +30,23 @@ export const CardThumbnail = styled.img`
 `;
 
 export const CardTitle = styled.h3`
-  width: calc(100%);
+  display: flex;
   align-items: center;
   padding-bottom: 4px;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: #000000;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 `;
 
 export const CardDescription = styled.p`
-  width: calc(100%);
   padding-bottom: 4px;
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   color: #707070;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 `;
 
 export const CardSubDescriptionWrapper = styled.div`
