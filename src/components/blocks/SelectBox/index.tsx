@@ -73,6 +73,7 @@ export default function SelectBox({
       ref={labelRef}
       onKeyDown={handleKeyDown}
       onMouseDown={handleOpenSelectBox}
+      className="review--select__theme"
     >
       <SelectContainer>
         <Select

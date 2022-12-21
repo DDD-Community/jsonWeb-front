@@ -70,7 +70,7 @@ export default function Edit() {
   });
 
   return (
-    <ReviewSection>
+    <ReviewSection className="review">
       <SelectBox
         options={data}
         selectedOption={themeSelectedOption}
@@ -89,7 +89,7 @@ export default function Edit() {
           height={33}
         />
       </ChipsSection>
-      <ReviewCheckSection>
+      <ReviewCheckSection className="review--form">
         <ReviewTitle>테마는 만족하셨나요?</ReviewTitle>
         <StarContainer>
           <Star type={RATE.STAR} setRateOption={setRateOption1} />
@@ -100,7 +100,11 @@ export default function Edit() {
         </StarContainer>
         <ReviewTitle>리뷰를 작성해주세요</ReviewTitle>
         <TextArea content={contents} setContent={setContents} />
-        <ReviewSubmit type="submit" onClick={reviewSubmit}>
+        <ReviewSubmit
+          type="submit"
+          onClick={reviewSubmit}
+          className="review--form__submit"
+        >
           리뷰 등록하기
         </ReviewSubmit>
       </ReviewCheckSection>

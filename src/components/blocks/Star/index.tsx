@@ -37,6 +37,7 @@ export default function Star({ type, setRateOption }: Props) {
           onMouseEnter={() => setHoveredStarIndex(num)}
           onMouseLeave={() => setHoveredStarIndex(0)}
           onClick={() => handleStar(num)}
+          className="star_wrapper"
         >
           {type === RATE.STAR && (
             <StarRate
