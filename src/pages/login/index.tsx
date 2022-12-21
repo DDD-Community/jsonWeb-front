@@ -9,8 +9,6 @@ import { LoginLogo } from '../../assets/svg/icon';
 import useLogin from '../../lib/hooks/useLogin';
 
 export default function Login() {
-  // const goLogin = useLogin();
-
   return (
     <LoginPageDiv>
       <LoginLogo />

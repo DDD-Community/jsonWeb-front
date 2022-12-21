@@ -12,3 +12,6 @@ export { ReactComponent as Star } from './star.svg';
 export { ReactComponent as HeartGray } from './heart_gray.svg';
 export { ReactComponent as HeartPurple } from './heart_purple.svg';
 export { ReactComponent as LoginLogo } from './loginLogo.svg';
+export { ReactComponent as DownArrowGray } from './arrow_down.svg';
+export { ReactComponent as StarRate } from './starRate.svg';
+export { ReactComponent as LockRate } from './lockRate.svg';

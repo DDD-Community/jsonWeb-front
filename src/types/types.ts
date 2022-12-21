@@ -21,3 +21,8 @@ export type CardListItemType = {
   averageRating: number;
   reviewCount: number;
 };
+
+export interface EvaluationType {
+  id: number;
+  title: string;
+}

@@ -98,6 +98,7 @@ export default function GlobalStyle() {
           max-width: 375px;
           margin: 0 auto;
           background-color: #eee;
+          -webkit-tap-highlight-color: transparent;
         }
         article,
         aside,
