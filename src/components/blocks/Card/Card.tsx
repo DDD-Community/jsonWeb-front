@@ -23,13 +23,17 @@ export default function Card({
       <S.CardDescription>{description}</S.CardDescription>
       <S.CardTitle>{title}</S.CardTitle>
       <S.CardSubDescriptionWrapper>
-        <div>
-          <p>
-            <Star />
-          </p>
-          <S.CardSubDescription>{averageRating}</S.CardSubDescription>
-        </div>
-        <S.CardSubDescription>리뷰 ({reviewCount})</S.CardSubDescription>
+        {averageRating && (
+          <div>
+            <p>
+              <Star />
+            </p>
+            <S.CardSubDescription>{averageRating}</S.CardSubDescription>
+          </div>
+        )}
+        {reviewCount && (
+          <S.CardSubDescription>리뷰 ({reviewCount})</S.CardSubDescription>
+        )}
       </S.CardSubDescriptionWrapper>
     </S.CardWrapper>
   );

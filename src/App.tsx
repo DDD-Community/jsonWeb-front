@@ -17,6 +17,7 @@ import GlobalStyle from '@styles/Global';
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
 import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
+import SearchPage from './pages/search';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
 
               {/* cafeList page */}
               <Route index element={<CafeListPage />} />
+
+              {/* search page */}
+              <Route path="search" element={<SearchPage />} />
 
               {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
