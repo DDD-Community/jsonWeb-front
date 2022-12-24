@@ -11,7 +11,6 @@ import CafeListPage from '@pages/cafeList';
 import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
-import SearchPage from './pages/search';
 import TypiCodePage from '@pages/typiCode';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
@@ -19,7 +18,7 @@ import GlobalStyle from '@styles/Global';
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
 import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
-
+import SearchPage from './pages/search';
 
 function App() {
   return (
