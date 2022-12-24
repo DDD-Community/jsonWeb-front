@@ -18,8 +18,8 @@ export type CardListItemType = {
   src: string;
   title: string;
   description: string;
-  averageRating: number;
-  reviewCount: number;
+  averageRating?: number;
+  reviewCount?: number;
 };
 
 export interface EvaluationType {

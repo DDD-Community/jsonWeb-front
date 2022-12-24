@@ -11,6 +11,7 @@ import CafeListPage from '@pages/cafeList';
 import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
+import SearchPage from './pages/search';
 import TypiCodePage from '@pages/typiCode';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
@@ -18,6 +19,7 @@ import GlobalStyle from '@styles/Global';
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
 import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
+
 
 function App() {
   return (
@@ -34,6 +36,11 @@ function App() {
               <Route path="user/logout" element={<KakaoLogout />} />
               <Route index element={<CafeListPage />} />
               <Route path="review/edit" element={<ReviewEditPage />} />
+
+              {/* search page */}
+              <Route path="search" element={<SearchPage />} />
+
+              {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
               <Route path="my-account" element={<MyAccountPage />} />
               <Route path="*" element={<Navigate to="not-found" />} />
