@@ -3,6 +3,7 @@ import { LayoutWrapperPropsType } from './PageLayoutWrapper';
 
 const StyledAppLayoutWrapper = styled.div`
   max-width: 375px;
+  min-height: 1950px;
   margin: 0 auto;
   background-color: #fff;
 `;

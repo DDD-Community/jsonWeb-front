@@ -8,6 +8,7 @@ import { KakaoLogin, KakaoLogout } from '@pages/login/kakaoSign';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
+import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
 import TypiCodePage from '@pages/typiCode';
@@ -28,30 +29,20 @@ function App() {
             <Header />
             <GlobalStyle />
             <Routes>
-              {/* typicode page */}
               <Route path="typicode" element={<TypiCodePage />} />
-
-              {/* login page */}
               <Route path="login" element={<LoginPage />} />
               <Route path="user/login" element={<KakaoLogin />} />
               <Route path="user/logout" element={<KakaoLogout />} />
-
-              {/* cafeList page */}
               <Route index element={<CafeListPage />} />
+              <Route path="review/edit" element={<ReviewEditPage />} />
 
               {/* search page */}
               <Route path="search" element={<SearchPage />} />
 
               {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
-
-              {/* cafeList page */}
               <Route path="my-account" element={<MyAccountPage />} />
-
-              {/* to not found */}
               <Route path="*" element={<Navigate to="not-found" />} />
-
-              {/* not found */}
               <Route path="not-found" element={<NotFoundPage />} />
             </Routes>
             <BottomNavWrapper>
