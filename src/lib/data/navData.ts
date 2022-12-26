@@ -15,6 +15,6 @@ export const navListData: NavListItemType[] = [
   },
   {
     title: '마이',
-    to: '/my',
+    to: '/my-account',
   },
 ];

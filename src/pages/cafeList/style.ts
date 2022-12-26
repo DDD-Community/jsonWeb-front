@@ -27,7 +27,7 @@ export const GenreListItem = styled.label<{
     border-radius: 8px;
     font-size: 14px;
     font-weight: 400;
-    color: ${theme.color.white};
+    color: ${theme.color.primary.white};
     font-weight: ${theme.font.weight.regular};
     background: url(${src}),
       linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),

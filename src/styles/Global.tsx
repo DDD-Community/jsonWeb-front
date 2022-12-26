@@ -84,7 +84,8 @@ export default function GlobalStyle() {
         time,
         mark,
         audio,
-        video {
+        video,
+        button {
           font-family: 'Pretendard' !important;
           box-sizing: border-box;
           margin: 0;

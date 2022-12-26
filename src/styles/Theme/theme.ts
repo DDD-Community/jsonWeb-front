@@ -19,17 +19,6 @@ const themes = {
     dim: {
       dim_100: 'rgba(0, 0, 0, 0.4)',
     },
-    /*
-     * @ 위로 통합 부탁드립니다.
-     * */
-    black: '#000',
-    gray: '#707070',
-    white: '#fff',
-    kakao: '#FEE500',
-    kakaoLabel: '#191919',
-    green: '#b4e100',
-    purple: '#6b53dd',
-    dim01: 'rgba(0, 0, 0, 0.4)',
   },
   borderRadius: {
     default: '4px',

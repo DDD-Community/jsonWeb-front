@@ -32,12 +32,8 @@ export function KakaoLogout() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    try {
-      if (localStorage.getItem('jwt')) localStorage.removeItem('jwt');
-      navigate('/');
-    } catch (error) {
-      navigate('/my-account');
-    }
+    if (localStorage.getItem('jwt')) localStorage.removeItem('jwt');
+    navigate('/user/login');
   }, []);
 
   return <div>logout redirect ...</div>; /* spinner */
