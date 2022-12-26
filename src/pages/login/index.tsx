@@ -1,18 +1,18 @@
+import useLogin from '@src/lib/hooks/useLogin';
+import { LoginLogo } from '@assets/svg/icon';
 import {
-  LoginPageDiv,
-  DescriptionDiv,
+  LoginContainer,
+  DescContainer,
   LoginDescription,
   TextHighlight,
   LoginButton,
-} from './loginStyle';
-import { LoginLogo } from '../../assets/svg/icon';
-import useLogin from '../../lib/hooks/useLogin';
+} from './style';
 
 export default function Login() {
   return (
-    <LoginPageDiv>
+    <LoginContainer>
       <LoginLogo />
-      <DescriptionDiv>
+      <DescContainer>
         <LoginDescription>
           엑시트의 <TextHighlight color="green">회원</TextHighlight>이 되시면
         </LoginDescription>
@@ -20,8 +20,8 @@ export default function Login() {
           더 많은 <TextHighlight color="purple">혜택</TextHighlight>을 얻을 수
           있어요
         </LoginDescription>
-      </DescriptionDiv>
+      </DescContainer>
       <LoginButton onClick={useLogin()}>카카오로 시작하기</LoginButton>
-    </LoginPageDiv>
+    </LoginContainer>
   );
 }

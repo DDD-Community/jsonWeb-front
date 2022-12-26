@@ -26,3 +26,9 @@ export interface EvaluationType {
   id: number;
   title: string;
 }
+
+export type MypageListItemType = {
+  title: string;
+  to: string;
+  image: string;
+};

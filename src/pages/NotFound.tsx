@@ -11,6 +11,6 @@ export default function NotFound() {
 }
 
 const ErrorPage = styled.div`
-  color: ${(props) => props.theme.color.kakao};
+  color: ${(props) => props.theme.color.primary.kakao};
   font-weight: ${(props) => props.theme.font.weight.bold};
 `;

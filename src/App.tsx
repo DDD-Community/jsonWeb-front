@@ -11,6 +11,7 @@ import CafeListPage from '@pages/cafeList';
 import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
+import LikeListPage from '@pages/myAccount/like';
 import TypiCodePage from '@pages/typiCode';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
@@ -42,6 +43,7 @@ function App() {
               {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
               <Route path="my-account" element={<MyAccountPage />} />
+              <Route path="my-account/like" element={<LikeListPage />} />
               <Route path="*" element={<Navigate to="not-found" />} />
               <Route path="not-found" element={<NotFoundPage />} />
             </Routes>
