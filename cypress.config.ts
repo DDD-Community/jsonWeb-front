@@ -2,7 +2,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-  projectId: 'exit',
+  projectId: 'vbwwaz',
   viewportWidth: 370,
   viewportHeight: 896,
   video: false,
