@@ -17,7 +17,7 @@ export default function Card({
       <S.CardImgWrapper>
         <S.CardThumbnail src={src} alt={`${title} 이미지`} />
         <S.HeartIcon onClick={() => setIsHeartClicked(!isHeartClicked)}>
-          {isHeartClicked ? <HeartPurple /> : <HeartGray />}
+          {isHeartClicked ? <HeartPurple /> : <HeartGray stroke="white" />}
         </S.HeartIcon>
       </S.CardImgWrapper>
       <S.CardDescription>{description}</S.CardDescription>
@@ -26,7 +26,7 @@ export default function Card({
         {averageRating && (
           <div>
             <p>
-              <Star />
+              <Star fill="#d9d9d9" />
             </p>
             <S.CardSubDescription>{averageRating}</S.CardSubDescription>
           </div>
