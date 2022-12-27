@@ -1,15 +1,6 @@
 <h1>EXIT</h1>   
-<div style="display:flex;">   
-  <p> 
-    <img  alt="Version"  src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000"  />  
-    <a  href="https://www.spaceone.org/docs/guides"  target="_blank">  
-    <img  alt="Documentation"  src="https://img.shields.io/badge/documentation-yes-brightgreen.svg"  />  
-    </a>  
-    <a  href="https://www.apache.org/licenses/MIT"  target="_blank">  
-    <img  alt="License: Apache 2.0"  src="https://img.shields.io/badge/License-MIT-yellow.svg"  />  
-    </a> 
-</p>
-</div>
+
+[![LICENSE](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)](https://www.spaceone.org/docs/guides)  [![LICENSE](https://img.shields.io/badge/License-MIT-yellow.svg)]() [![document](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]() [![DDD8-EXIT](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/vbwwaz/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/vbwwaz/runs)
 
 > Front-end Project for jsonWeb `Exit`.
 > <br>
