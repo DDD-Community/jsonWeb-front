@@ -38,7 +38,7 @@ jobs:
         run: yarn
 
       - name: E2E test - chrome
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5.0.2
         with:
           install: false
           start: yarn start
