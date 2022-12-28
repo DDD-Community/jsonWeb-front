@@ -2,12 +2,14 @@ name: CI action
 on:
   push:
     branches:
+      - main
       - feat/*
       - setting/*
       - fix/*
       - doc
   pull_request:
     branches:
+      - main
       - feat/*
       - setting/*
       - fix/*
