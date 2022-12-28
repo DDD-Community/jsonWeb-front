@@ -8,6 +8,7 @@ import { KakaoLogin, KakaoLogout } from '@pages/login/kakaoSign';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
+import ReviewDetailPage from '@pages/review/detail';
 import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
@@ -35,12 +36,12 @@ function App() {
               <Route path="user/login" element={<KakaoLogin />} />
               <Route path="user/logout" element={<KakaoLogout />} />
               <Route index element={<CafeListPage />} />
+              <Route
+                path="review/detail/:themeId"
+                element={<ReviewDetailPage />}
+              />
               <Route path="review/edit" element={<ReviewEditPage />} />
-
-              {/* search page */}
               <Route path="search" element={<SearchPage />} />
-
-              {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
               <Route path="my-account" element={<MyAccountPage />} />
               <Route path="my-account/like" element={<LikeListPage />} />
