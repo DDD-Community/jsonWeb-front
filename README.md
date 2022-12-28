@@ -4,6 +4,7 @@
 [![LICENSE](https://img.shields.io/badge/License-MIT-yellow.svg)]() 
 [![document](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]()
 [![DDD8-EXIT](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/vbwwaz/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/vbwwaz/runs)
+[![CI](https://github.com/DDD-Community/jsonWeb-front/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/DDD-Community/jsonWeb-front/actions/workflows/ci.yml)
 
 > Front-end Project for jsonWeb `Exit`.
 > <br>
