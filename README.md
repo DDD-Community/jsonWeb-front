@@ -17,6 +17,12 @@ See our [Convention](https://github.com/DDD-Community/jsonWeb-front/wiki/convent
 
 See our [CODEOWNERS](./.github/CODEOWNERS) file.
 
+## Release
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c1b44007-5a2e-460e-8cfa-0c1de0ac3b09/deploy-status)](https://app.netlify.com/sites/exitnow/deploys)
+
+[exitnow.app](https://exitnow.netlify.app/)
+
 ## 📝 License
 
 This project is [MIT](https://www.apache.org/licenses/MIT) licensed.
