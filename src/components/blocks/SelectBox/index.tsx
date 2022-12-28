@@ -76,18 +76,14 @@ export default function SelectBox({
       className="review--select__theme"
     >
       <SelectContainer>
-        <Select
-          value={selectedOption}
-          onChange={handleSelectBox}
-          isClick={clickSelectedBox}
-        >
+        <Select value={selectedOption} onChange={handleSelectBox}>
           {options.map((option) => (
             <option key={option.themeId} value={option.title}>
               {option.title}
             </option>
           ))}
         </Select>
-        <SelectButton isClick={clickSelectedBox}>
+        <SelectButton>
           <DownArrowGray />
         </SelectButton>
       </SelectContainer>
