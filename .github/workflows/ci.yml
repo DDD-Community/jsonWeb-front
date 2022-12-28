@@ -15,7 +15,7 @@ on:
       - fix/*
       - doc
 jobs:
-  build:
+  run-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code.
@@ -30,7 +30,25 @@ jobs:
       - name: Build
         run: yarn build
 
-  cypress-test:
+  run-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Caching dependencies
+        uses: actions/cache@v1
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Check lint prettier
+        run: yarn lint-fix:prettier
+        
+      - name: Check lint eslint
+        run: yarn lint-fix:eslint
+
+  run-cypress-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
