@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState, useLayoutEffect } from 'react';
 import { ReviewThemeDetailType } from '@src/types/review';
+
 import sample from '@src/assets/sample.png';
 import { Star } from '@src/assets/svg/icon';
 import BoldTextSpan from '@components/atom/BoldTextSpan';

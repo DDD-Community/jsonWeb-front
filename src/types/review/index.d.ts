@@ -9,6 +9,7 @@ export interface ReviewThemeType {
   title: string;
   description: string;
 }
+
 export type ReviewEvaluationStarType = 'Star' | 'Lock';
 export type ReviewEvaluationType = EvaluationType;
 
@@ -35,4 +36,25 @@ export interface ReviewThemeDetailType {
   reviewCount: number;
   themeId: number | undefined;
   time: number;
+}
+
+interface ReviewType {
+  content: string;
+  difficulty: number;
+  emotionFirst: string;
+  emotionSecond: string;
+  isLiked: boolean;
+  likeCount: number;
+  modifiedAt: string;
+  reviewId: number;
+  star: number;
+  themeGenre: GenreTypeEnum[];
+  themeName: string;
+  writerNickname: string;
+}
+
+export interface ReviewListType {
+  isLast: true;
+  reviewList: ReviewType[];
+  totalNumber: number;
 }

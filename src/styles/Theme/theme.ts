@@ -18,6 +18,7 @@ const themes = {
       gray_600: '#f8f8f8',
       gray_700: '#565656',
       gray_800: '#999999',
+      gray_900: '#BBBBBB',
     },
     dim: {
       dim_100: 'rgba(0, 0, 0, 0.4)',
