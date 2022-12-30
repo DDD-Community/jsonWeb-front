@@ -36,6 +36,7 @@ function App() {
               <Route
                 path="review/detail/:themeId"
                 element={<ReviewDetailPage />}
+              />
               <Route path="login" element={<LoginPage />} />
               <Route
                 path="users/login"
