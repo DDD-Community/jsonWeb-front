@@ -11,10 +11,10 @@ export default function KakaoSign({ method }: KakaoSignType) {
 
   useEffect(() => {
     switch (method) {
-      case 'login':
+      case 'LOGIN':
         useLogin(AUTHORIZE_CODE);
         break;
-      case 'logout':
+      case 'LOGOUT':
         if (localStorage.getItem('EXIT_LOGIN_TOKEN')) {
           localStorage.removeItem('EXIT_LOGIN_TOKEN');
           navigate('/login');

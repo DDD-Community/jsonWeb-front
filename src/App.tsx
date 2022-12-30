@@ -35,11 +35,11 @@ function App() {
               <Route path="login" element={<LoginPage />} />
               <Route
                 path="users/login"
-                element={<KakaoSign method="login" />}
+                element={<KakaoSign method="LOGIN" />}
               />
               <Route
                 path="users/logout"
-                element={<KakaoSign method="logout" />}
+                element={<KakaoSign method="LOGOUT" />}
               />
               <Route path="review/edit" element={<ReviewEditPage />} />
 

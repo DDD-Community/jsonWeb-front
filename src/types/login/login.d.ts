@@ -12,5 +12,5 @@ export type LoginResponseType = {
 };
 
 export type KakaoSignType = {
-  method: string;
+  method: 'LOGIN' | 'LOGOUT' | 'UNREGISTER';
 };
