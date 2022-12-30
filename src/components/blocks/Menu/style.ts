@@ -13,6 +13,7 @@ export const MenuBtn = styled.button`
   font-size: 14px;
   line-height: 17px;
   color: #111111;
+  cursor: pointer;
 `;
 
 export const MenuItemContainer = styled.ul<{

@@ -51,10 +51,19 @@ interface ReviewType {
   themeGenre: GenreTypeEnum[];
   themeName: string;
   writerNickname: string;
+  profileImageUrl: string;
+  nickname: string;
 }
 
 export interface ReviewListType {
   isLast: true;
   reviewList: ReviewType[];
   totalNumber: number;
+}
+
+export type emoji = '재밌어했어요😉' | '무서워요😨';
+
+export interface PopularType {
+  emotion: emoji;
+  percentage: number;
 }

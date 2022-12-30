@@ -12,9 +12,10 @@ const ReviewDetailTopContainer = styled.main`
 
 const ReviewDetailThumbnail = styled.img`
   width: 100%;
-  height: 100%;
+  height: 200px;
   padding: 0 0px;
   object-fit: cover;
+  background-color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
 `;
 
 const ReviewDetailContentsContainer = styled.section`

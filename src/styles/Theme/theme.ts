@@ -7,6 +7,7 @@ const themes = {
       kakaoLabel: '#191919',
       green: '#b4e100',
       purple: '#6b53dd',
+      orange: '#ffa500',
     },
     grayscale: {
       gray_000: '#E9E9E9',
@@ -40,6 +41,7 @@ const themes = {
       m: `14px`,
       l: `16px`,
       xl: `18px`,
+      xxl: `20px`,
     },
     weight: {
       light: 300,

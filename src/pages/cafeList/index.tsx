@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
+import { MenuListItemType } from '@src/types/common';
 import carouselImg from '../../assets/carouselImg.png';
 import * as S from './style';
 import { genreData } from '../../lib/data/genreData';
@@ -11,8 +12,6 @@ import CardList from '../../components/blocks/Card/CardList';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { LeftArrow, RightArrow } from '../../assets/svg/icon';
-
-export type MenuListItemType = { id: number; name: string };
 
 const MenuList: MenuListItemType[] = [
   { id: 0, name: '난이도 낮은순' },

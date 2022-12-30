@@ -1,5 +1,6 @@
 import { ButtonEnum } from '@constants/common';
 
-type ButtonType = keyof typeof ButtonEnum;
+export type ButtonType = keyof typeof ButtonEnum;
+export type MenuListItemType = { id: number; name: string };
 
-export { ButtonEnum, ButtonType };
+export { ButtonEnum };
