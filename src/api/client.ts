@@ -1,7 +1,10 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  /**
+   * @name @TEST - URL
+   */
+  baseURL: 'http://13.124.179.64:8080',
   withCredentials: true,
 });
 

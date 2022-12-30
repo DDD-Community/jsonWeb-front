@@ -1,10 +1,6 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const api = axios.create({
-  baseURL: 'http://13.124.179.64:8080/user',
-});
+import { instance } from '@src/api/client';
 
 export function KakaoLogin() {
   const navigate = useNavigate();
@@ -13,15 +9,15 @@ export function KakaoLogin() {
   )!;
 
   useEffect(() => {
-    api
-      .get(`/login?code=${AUTHORIZE_CODE}`)
+    instance
+      .get(`/users/login?code=${AUTHORIZE_CODE}`)
       .then((response) => {
         const JWT = response.data.data.accessToken;
         if (JWT) localStorage.setItem('jwt', JWT);
         navigate('/');
       })
       .catch(() => {
-        navigate('/user/login');
+        navigate('/login');
       });
   }, []);
 
@@ -33,7 +29,7 @@ export function KakaoLogout() {
 
   useEffect(() => {
     if (localStorage.getItem('jwt')) localStorage.removeItem('jwt');
-    navigate('/user/login');
+    navigate('/login');
   }, []);
 
   return <div>logout redirect ...</div>; /* spinner */

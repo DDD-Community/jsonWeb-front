@@ -31,10 +31,10 @@ function App() {
             <GlobalStyle />
             <Routes>
               <Route path="typicode" element={<TypiCodePage />} />
-              <Route path="login" element={<LoginPage />} />
-              <Route path="user/login" element={<KakaoLogin />} />
-              <Route path="user/logout" element={<KakaoLogout />} />
               <Route index element={<CafeListPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="users/login" element={<KakaoLogin />} />
+              <Route path="users/logout" element={<KakaoLogout />} />
               <Route path="review/edit" element={<ReviewEditPage />} />
 
               {/* search page */}
