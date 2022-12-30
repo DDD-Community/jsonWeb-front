@@ -1,40 +1,31 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLogin } from '@src/lib/hooks/queries/login';
+import { KakaoSignType } from '@src/types/login/login';
 
-const api = axios.create({
-  baseURL: 'http://13.124.179.64:8080/user',
-});
-
-export function KakaoLogin() {
+export default function KakaoSign({ method }: KakaoSignType) {
   const navigate = useNavigate();
   const AUTHORIZE_CODE: string = new URL(window.location.href).searchParams.get(
     'code'
   )!;
 
   useEffect(() => {
-    api
-      .get(`/login?code=${AUTHORIZE_CODE}`)
-      .then((response) => {
-        const JWT = response.data.data.accessToken;
-        if (JWT) localStorage.setItem('jwt', JWT);
-        navigate('/');
-      })
-      .catch(() => {
-        navigate('/user/login');
-      });
+    switch (method) {
+      case 'LOGIN':
+        useLogin(AUTHORIZE_CODE);
+        break;
+      case 'LOGOUT':
+        if (localStorage.getItem('EXIT_LOGIN_TOKEN')) {
+          localStorage.removeItem('EXIT_LOGIN_TOKEN');
+          navigate('/login');
+        } else {
+          navigate('/');
+        }
+        break;
+      default:
+        break;
+    }
   }, []);
 
-  return <div>login redirect ...</div>; /* spinner */
-}
-
-export function KakaoLogout() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (localStorage.getItem('jwt')) localStorage.removeItem('jwt');
-    navigate('/user/login');
-  }, []);
-
-  return <div>logout redirect ...</div>; /* spinner */
+  return <div>{method} redirect ...</div>; /* spinner */
 }
