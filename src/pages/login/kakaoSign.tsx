@@ -1,30 +1,31 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getLoginToken } from '@src/api/client';
+import { useLogin } from '@src/lib/hooks/queries/login';
+import { KakaoSignType } from '@src/types/login/login';
 
-export function KakaoLogin() {
+export default function KakaoSign({ method }: KakaoSignType) {
+  const navigate = useNavigate();
   const AUTHORIZE_CODE: string = new URL(window.location.href).searchParams.get(
     'code'
   )!;
 
   useEffect(() => {
-    getLoginToken(AUTHORIZE_CODE);
-  }, []);
-
-  return <div>login redirect ...</div>; /* spinner */
-}
-
-export function KakaoLogout() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (localStorage.getItem('EXIT_LOGIN_TOKEN')) {
-      localStorage.removeItem('EXIT_LOGIN_TOKEN');
-      navigate('/login');
-    } else {
-      navigate('/');
+    switch (method) {
+      case 'login':
+        useLogin(AUTHORIZE_CODE);
+        break;
+      case 'logout':
+        if (localStorage.getItem('EXIT_LOGIN_TOKEN')) {
+          localStorage.removeItem('EXIT_LOGIN_TOKEN');
+          navigate('/login');
+        } else {
+          navigate('/');
+        }
+        break;
+      default:
+        break;
     }
   }, []);
 
-  return <div>logout redirect ...</div>; /* spinner */
+  return <div>{method} redirect ...</div>; /* spinner */
 }
