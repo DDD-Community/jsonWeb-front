@@ -60,7 +60,10 @@ export default function ReviewItem({ reviewItem }: { reviewItem: ReviewType }) {
     return theme.color.grayscale.gray_700;
   };
 
-  const reportHandler = () => alert('추가 될 기능입니다.');
+  /**
+   * @todo 신고하기 기능 추가
+   */
+  const reportHandler = (v: any) => v;
 
   return (
     <ReviewItemContainer>
