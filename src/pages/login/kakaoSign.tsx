@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLogin } from '@src/lib/hooks/queries/login';
 import { KakaoSignType } from '@src/types/login/login';
+import LoadingSpinner from '@src/components/atom/LoadingSpinner';
+import { RedirectContainer } from './style';
 
 export default function KakaoSign({ method }: KakaoSignType) {
   const navigate = useNavigate();
@@ -27,5 +29,11 @@ export default function KakaoSign({ method }: KakaoSignType) {
     }
   }, []);
 
-  return <div>{method} redirect ...</div>; /* spinner */
+  return (
+    <RedirectContainer>
+      <LoadingSpinner isLoading isFixed>
+        <div />
+      </LoadingSpinner>
+    </RedirectContainer>
+  );
 }
