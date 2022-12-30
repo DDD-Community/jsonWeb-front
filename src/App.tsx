@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
-import { KakaoLogin, KakaoLogout } from '@pages/login/kakaoSign';
+import KakaoSign from '@pages/login/kakaoSign';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
@@ -31,10 +31,16 @@ function App() {
             <GlobalStyle />
             <Routes>
               <Route path="typicode" element={<TypiCodePage />} />
-              <Route path="login" element={<LoginPage />} />
-              <Route path="user/login" element={<KakaoLogin />} />
-              <Route path="user/logout" element={<KakaoLogout />} />
               <Route index element={<CafeListPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route
+                path="users/login"
+                element={<KakaoSign method="LOGIN" />}
+              />
+              <Route
+                path="users/logout"
+                element={<KakaoSign method="LOGOUT" />}
+              />
               <Route path="review/edit" element={<ReviewEditPage />} />
 
               {/* search page */}
