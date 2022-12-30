@@ -42,3 +42,9 @@ export const LoginButton = styled.button`
   border-radius: 10px;
   font-weight: ${(props) => props.theme.font.weight.semiBold};
 `;
+
+export const RedirectContainer = styled.section`
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.color.primary.white};
+`;
