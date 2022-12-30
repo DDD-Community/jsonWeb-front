@@ -1,9 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 export const instance = axios.create({
-  /**
-   * @name @TEST - URL
-   */
   baseURL: 'http://13.124.179.64:8080',
   withCredentials: true,
 });
@@ -54,4 +51,17 @@ export function patch<T>(...args: Parameters<typeof instance.patch>) {
 
 export function del<T>(...args: Parameters<typeof instance.delete>) {
   return instance.delete<T, T>(...args);
+}
+
+export function getLoginToken(AUTHORIZE_CODE: string) {
+  return instance
+    .get(`/users/login?code=${AUTHORIZE_CODE}`)
+    .then((response) => {
+      const JWT = response.data.data.accessToken;
+      if (JWT) localStorage.setItem('EXIT_LOGIN_TOKEN', JWT);
+      window.location.replace('/');
+    })
+    .catch(() => {
+      window.location.replace('/login');
+    });
 }
