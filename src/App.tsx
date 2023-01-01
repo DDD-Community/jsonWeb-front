@@ -8,6 +8,7 @@ import KakaoSign from '@pages/login/kakaoSign';
 
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
+import ReviewDetailPage from '@pages/review/detail';
 import ReviewEditPage from '@pages/review/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
@@ -32,6 +33,10 @@ function App() {
             <Routes>
               <Route path="typicode" element={<TypiCodePage />} />
               <Route index element={<CafeListPage />} />
+              <Route
+                path="review/detail/:themeId"
+                element={<ReviewDetailPage />}
+              />
               <Route path="login" element={<LoginPage />} />
               <Route
                 path="users/login"
@@ -42,11 +47,7 @@ function App() {
                 element={<KakaoSign method="LOGOUT" />}
               />
               <Route path="review/edit" element={<ReviewEditPage />} />
-
-              {/* search page */}
               <Route path="search" element={<SearchPage />} />
-
-              {/* DetailPage page */}
               <Route path="cafe-detail" element={<DetailPage />} />
               <Route path="my-account" element={<MyAccountPage />} />
               <Route path="my-account/like" element={<LikeListPage />} />

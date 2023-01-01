@@ -7,6 +7,7 @@ const themes = {
       kakaoLabel: '#191919',
       green: '#b4e100',
       purple: '#6b53dd',
+      orange: '#ffa500',
     },
     grayscale: {
       gray_000: '#E9E9E9',
@@ -17,6 +18,8 @@ const themes = {
       gray_500: '#B6BCC7',
       gray_600: '#f8f8f8',
       gray_700: '#565656',
+      gray_800: '#999999',
+      gray_900: '#BBBBBB',
     },
     dim: {
       dim_100: 'rgba(0, 0, 0, 0.4)',
@@ -38,6 +41,7 @@ const themes = {
       m: `14px`,
       l: `16px`,
       xl: `18px`,
+      xxl: `20px`,
     },
     weight: {
       light: 300,
