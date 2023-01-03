@@ -41,7 +41,7 @@ export default function SelectBox({
   const labelRef = useRef<HTMLLabelElement>(null);
   const [clickSelectedBox, setClickSelectedBox] = useSelect(labelRef);
 
-  const handleOpenSelectBox = (e: MouseEvent) => {
+  const handleOpenSelectBox = (e: TouchEvent | MouseEvent) => {
     e.preventDefault();
     const target = e.target as HTMLLabelElement;
     let state = true;

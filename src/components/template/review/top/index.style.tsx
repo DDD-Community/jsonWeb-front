@@ -82,7 +82,7 @@ const ReviewDetailInfoBox = styled.div`
   self-align: center;
   margin-top: 17px;
 
-  &:not(:last-child) {
+  &:not(:last-of-type) {
     border-right: 1px solid
       ${({ theme }) => `${theme.color.grayscale.gray_000}`};
   }
