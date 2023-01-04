@@ -1,17 +1,16 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
-export const instance = axios.create({
-  baseURL: 'http://13.124.179.64:8080',
-  withCredentials: true,
-});
+const getAccessTokenLocalStorage = () => {
+  const accessToken = localStorage.getItem('EXIT_LOGIN_TOKEN');
+  return accessToken ? `Bearer ${accessToken}` : '';
+};
 
-/**
- * @name 인증 인스턴스 예시
- * @param token
- */
-export function replaceAccessTokenForRequestInstance(token: string) {
-  instance.defaults.headers.common.accessToken = token;
-}
+export const instance = axios.create({
+  withCredentials: false,
+  headers: {
+    Authorization: `${getAccessTokenLocalStorage()}`,
+  },
+});
 
 function interceptorResponseFulfilled(res: AxiosResponse) {
   return res.status >= 200 && res.status < 300
@@ -29,10 +28,6 @@ instance.interceptors.response.use(
   interceptorResponseRejected
 );
 
-/**
- * @name http 메소드 추상화
- * @param args
- */
 export function get<T>(...args: Parameters<typeof instance.get>) {
   return instance.get<T, T>(...args);
 }

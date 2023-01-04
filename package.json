@@ -5,6 +5,7 @@
   "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
   "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
   "license": "MIT",
+  "proxy": "https://exitnow.link",
   "dependencies": {
     "@craco/craco": "^7.0.0",
     "@emotion/react": "^11.10.5",
@@ -19,6 +20,7 @@
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.0",
     "framer-motion": "^8.0.2",
+    "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",

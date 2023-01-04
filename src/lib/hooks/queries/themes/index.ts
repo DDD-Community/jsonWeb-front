@@ -1,0 +1,1 @@
+export { useGetThemesById } from './useGetThemesById';
