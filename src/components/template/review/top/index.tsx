@@ -5,7 +5,7 @@ import { Star, LockRateSmall } from '@src/assets/svg/icon';
 import BoldTextSpan from '@components/atom/BoldTextSpan';
 import { CustomTheme as theme } from '@src/styles/Theme';
 import { generateUUID } from '@src/lib/util';
-import { useGetThemesById } from '@hooks/queries/themes';
+
 import {
   ReviewDetailTopContainer,
   ReviewDetailThumbnail,
@@ -44,11 +44,6 @@ function ReviewDetailInfoBoxContents({
   options: { name: Readonly<string>; value: string | number | undefined }[];
 }) {
   const isDifficulty = (property: string) => property === 'difficulty';
-  const { themeData } = useGetThemesById({
-    themeId: 1,
-  });
-
-  console.log(themeData);
 
   return (
     <>
