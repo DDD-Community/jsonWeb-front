@@ -53,20 +53,24 @@ const StyledButton = styled.button<{
   font-weight: ${({ theme }) => `${theme.font.weight.regular}`};
 
   &.button_white {
-    border: 3px solid ${({ theme }) => `${theme.color.primary.purple}`};
+    border: 2px solid ${({ theme }) => `${theme.color.primary.purple}`};
     background-color: ${({ theme }) => `${theme.color.primary.white}`};
     color: ${({ theme }) => `${theme.color.primary.purple}`};
   }
 
   &.button_purple {
-    border: 3px solid ${({ theme }) => `${theme.color.primary.purple}`};
+    border: 2px solid ${({ theme }) => `${theme.color.primary.purple}`};
     background-color: ${({ theme }) => `${theme.color.primary.purple}`};
     color: ${({ theme }) => `${theme.color.primary.white}`};
   }
 
   &.button_gray {
-    border: 3px solid ${({ theme }) => `${theme.color.grayscale.gray_900}`};
-    background-color: ${({ theme }) => `${theme.color.grayscale.gray_900}`};
+    border: 2px solid ${({ theme }) => `${theme.color.grayscale.gray_400}`};
+    background-color: ${({ theme }) => `${theme.color.grayscale.gray_400}`};
     color: ${({ theme }) => `${theme.color.primary.white}`};
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 `;

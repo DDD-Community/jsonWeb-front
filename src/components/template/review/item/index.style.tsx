@@ -20,7 +20,7 @@ const ReviewEmotionSection = styled.section`
 
 const ReviewEmotionItem = styled.span`
   height: 26px;
-  background-color: ${({ theme }) => theme.color.grayscale.gray_300};
+  background-color: ${({ theme }) => theme.color.grayscale.gray_000};
   border-radius: 5px;
   padding: 8px;
   font-size: ${({ theme }) => `${theme.font.size.s}`};

@@ -31,7 +31,7 @@ export default function KakaoSign({ method }: KakaoSignType) {
 
   return (
     <RedirectContainer>
-      <LoadingSpinner isLoading isFixed>
+      <LoadingSpinner isLoading isFixed={false}>
         <div />
       </LoadingSpinner>
     </RedirectContainer>

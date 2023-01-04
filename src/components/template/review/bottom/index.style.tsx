@@ -25,7 +25,7 @@ const ReviewHeaderContentsContainer = styled.div`
   justify-content: space-between;
   width: 327px;
   margin-top: 20px;
-  border-bottom: 1px solid ${({ theme }) => theme.color.grayscale.gray_000};
+  border-bottom: 1px solid ${({ theme }) => theme.color.grayscale.gray_600};
 `;
 
 const ReviewHeaderTitle = styled.h2`

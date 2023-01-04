@@ -13,7 +13,7 @@ export default function LikeBtn({ isLiked, count }: Props) {
   const [reviewCount, setReviewCount] = useState(count);
 
   const likeColor = () =>
-    active ? theme.color.primary.purple : theme.color.grayscale.gray_400;
+    active ? theme.color.primary.purple : theme.color.grayscale.gray_300;
 
   const likeHandler = () => {
     setActive(!active);
@@ -47,5 +47,5 @@ const ReviewLikeCount = styled.p<{ isLiked: boolean }>`
   color: ${(props) =>
     props.isLiked
       ? props.theme.color.primary.purple
-      : theme.color.grayscale.gray_800};
+      : theme.color.grayscale.gray_300};
 `;

@@ -25,7 +25,7 @@ export default function Star({ type, setRateOption }: Props) {
     ) {
       return themes.color.primary.purple;
     }
-    return themes.color.grayscale.gray_400;
+    return themes.color.grayscale.gray_500;
   };
 
   return (
