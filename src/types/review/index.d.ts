@@ -38,21 +38,24 @@ export interface ReviewThemeDetailType {
   time: number;
 }
 
-interface ReviewType {
-  content: string;
-  difficulty: number;
-  emotionFirst: string;
-  emotionSecond: string;
+export interface UserInfoType {
   isLiked: boolean;
   likeCount: number;
   modifiedAt: string;
-  reviewId: number;
-  star: number;
   themeGenre: GenreTypeEnum[];
   themeName: string;
   writerNickname: string;
   profileImageUrl: string;
   nickname: string;
+}
+
+export interface ReviewType extends UserInfoType {
+  content: string;
+  difficulty: number;
+  emotionFirst: string;
+  emotionSecond: string;
+  reviewId: number;
+  star: number;
 }
 
 export interface ReviewListType {
