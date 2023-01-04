@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const ReviewDetailTopContainer = styled.main`
   position: relative;
-  border-bottom: 8px solid ${({ theme }) => `${theme.color.grayscale.gray_000}`};
+  border-bottom: 8px solid ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   font-family: ${({ theme }) => `${theme.font.family}`};
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -15,7 +15,7 @@ const ReviewDetailThumbnail = styled.img`
   height: 200px;
   padding: 0 0px;
   object-fit: cover;
-  background-color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
+  background-color: ${({ theme }) => `${theme.color.grayscale.gray_100}`};
 `;
 
 const ReviewDetailContentsContainer = styled.section`
@@ -31,7 +31,7 @@ const ReviewDetailGenreSection = styled.section`
   display: flex;
   flex-wrap: nowrap;
   font-size: ${({ theme }) => `${theme.font.size.s}`};
-  color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
+  color: ${({ theme }) => `${theme.color.grayscale.gray_100}`};
   margin-top: 10px;
 `;
 
@@ -43,13 +43,13 @@ const ReviewDetailGenreItem = styled.div`
   vertical-align: center;
   margin-right: 10px;
   padding: 5px 10px;
-  background-color: ${({ theme }) => `${theme.color.grayscale.gray_000}`};
+  background-color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
 `;
 
 const ReviewDetailRateSection = styled.section`
   display: flex;
   flex-wrap: nowrap;
-  color: ${({ theme }) => `${theme.color.grayscale.gray_800}`};
+  color: ${({ theme }) => `${theme.color.grayscale.gray_300}`};
   margin-top: 12px;
   align-items: center;
 `;
@@ -68,8 +68,8 @@ const ReviewDetailInfoBoxSection = styled.section`
   display: flex;
   width: 327px;
   height: 71px;
-  background-color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
-  color: ${({ theme }) => `${theme.color.grayscale.gray_000}`};
+  background-color: ${({ theme }) => `${theme.color.grayscale.gray_800}`};
+  color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   border-radius: 10px;
   margin: 20px 0;
 `;
@@ -84,7 +84,7 @@ const ReviewDetailInfoBox = styled.div`
 
   &:not(:last-of-type) {
     border-right: 1px solid
-      ${({ theme }) => `${theme.color.grayscale.gray_000}`};
+      ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   }
 `;
 
@@ -95,7 +95,7 @@ const ReviewDetailInfoTitle = styled.h2`
 
 const ReviewDetailInfoParagraph = styled.p`
   margin-top: 9px;
-  color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
+  color: ${({ theme }) => `${theme.color.grayscale.gray_100}`};
   font-weight: ${({ theme }) => `${theme.font.weight.medium}`};
 `;
 
@@ -132,17 +132,17 @@ const DescriptionMoreBtn = styled.button`
   position: absolute;
   right: 0;
   bottom: 0;
-  background: ${({ theme }) => theme.color.grayscale.gray_300};
+  background: ${({ theme }) => theme.color.grayscale.gray_700};
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.color.grayscale.gray_600} 0%,
+    ${({ theme }) => theme.color.grayscale.gray_800} 0%,
     rgb(255 255 255 / 0%) 0%,
     ${({ theme }) => theme.color.primary.white} 30%
   );
   padding-left: 20px;
   max-height: 2rem;
   line-height: 18px;
-  color: ${({ theme }) => theme.color.grayscale.gray_800};
+  color: ${({ theme }) => theme.color.grayscale.gray_300};
   font-size: 12px;
   cursor: pointer;
   &.hide {

@@ -10,7 +10,7 @@ const ReviewUserIcon = styled.div<{ url: string }>`
   width: 40px;
   height: 40px;
   background-image: url('${(props) => props.url}');
-  background-color: ${({ theme }) => theme.color.grayscale.gray_000};
+  background-color: ${({ theme }) => theme.color.legacyGrayscale.gray_000};
   background-size: cover;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -26,7 +26,7 @@ const ReviewUserTheme = styled.div`
 `;
 
 const ReviewUserThemeGenre = styled.span`
-  color: ${({ theme }) => theme.color.grayscale.gray_200};
+  color: ${({ theme }) => theme.color.legacyGrayscale.gray_200};
 `;
 
 const ReviewUserInfo = styled.div`
@@ -42,12 +42,13 @@ const ReviewUserInfoBlock = styled.div`
     padding: 0 5px;
   }
   &:not(:last-of-type) {
-    border-right: 1px solid ${({ theme }) => theme.color.grayscale.gray_000};
+    border-right: 1px solid
+      ${({ theme }) => theme.color.legacyGrayscale.gray_000};
   }
 `;
 
 const ReviewUserNickName = styled.span`
-  color: ${({ theme }) => theme.color.grayscale.gray_700};
+  color: ${({ theme }) => theme.color.legacyGrayscale.gray_700};
 `;
 
 const ReviewUserBadge = styled.span<{ color: string | undefined }>`
@@ -56,11 +57,11 @@ const ReviewUserBadge = styled.span<{ color: string | undefined }>`
 `;
 
 const ReviewModifiedAt = styled.span`
-  color: ${({ theme }) => theme.color.grayscale.gray_800};
+  color: ${({ theme }) => theme.color.legacyGrayscale.gray_800};
 `;
 
 const ReviewReport = styled.button`
-  color: ${({ theme }) => theme.color.grayscale.gray_800};
+  color: ${({ theme }) => theme.color.legacyGrayscale.gray_800};
   cursor: pointer;
 `;
 

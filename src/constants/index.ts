@@ -6,3 +6,5 @@ export const RATE = {
   STAR: 'STAR',
   LOCK: 'LOCK',
 };
+export const MAX_LENGTH_TAG = 5;
+export const MAX_COUNT_TAG = 3;

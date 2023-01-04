@@ -11,6 +11,7 @@ import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
 import ReviewDetailPage from '@pages/review/detail';
 import ReviewEditPage from '@pages/review/edit';
+import CertifyEditPage from '@pages/certify/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
 import LikeListPage from '@pages/myAccount/like';
@@ -48,6 +49,7 @@ function App() {
                 element={<KakaoSign method="LOGOUT" />}
               />
               <Route path="review/edit" element={<ReviewEditPage />} />
+              <Route path="certify/edit" element={<CertifyEditPage />} />
               <Route path="search" element={<SearchPage />} />
               <Route path="cafe-detail" element={<DetailPage />} />
               <Route path="my-account" element={<MyAccountPage />} />

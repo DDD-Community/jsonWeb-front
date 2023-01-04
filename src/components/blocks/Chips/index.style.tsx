@@ -33,8 +33,8 @@ const ChipItem = styled.li<{
     ${(props) =>
       props.isSelected
         ? `${props.theme.color.primary.purple}`
-        : `${props.theme.color.grayscale.gray_300}`};
-  background-color: ${({ theme }) => `${theme.color.grayscale.gray_300}`};
+        : `${props.theme.color.grayscale.gray_700}`};
+  background-color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
   font-weight: ${({ theme }) => `${theme.font.weight.medium}`};
   font-size: ${({ theme }) => `${theme.font.size.m}`};
 

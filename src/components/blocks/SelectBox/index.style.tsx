@@ -26,9 +26,8 @@ const SelectContainer = styled.div`
 
 const Select = styled.select`
   border-radius: 10px;
-  border: 3px solid ${({ theme }) => `${theme.color.grayscale.gray_100}`};
-  box-shadow: ${(props) =>
-    `1px 2px 4px ${props.theme.color.grayscale.gray_500}`};
+  border: 2px solid ${({ theme }) => `${theme.color.grayscale.gray_600}`};
+  color: ${(props) => `${props.theme.color.grayscale.gray_000}`};
   margin-left: 0;
   margin-bottom: 0;
   transition: all 0.3s;
@@ -63,8 +62,9 @@ const SelectItemWrapper = styled.ul<{ isOpen: boolean }>`
   border-radius: 10px;
   z-index: 10;
   background-color: ${(props) => `${props.theme.color.primary.white}`};
+  border: 2px solid ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   box-shadow: ${(props) =>
-    `0px 6px 8px ${props.theme.color.grayscale.gray_100}`};
+    `0px 6px 8px ${props.theme.color.grayscale.gray_500}`};
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   font-family: ${(props) => `${props.theme.font.family}`};
   font-size: ${(props) =>
@@ -89,8 +89,8 @@ const SelectItem = styled.li<{ maxHeight: number; isSelected: boolean }>`
     border-bottom-right-radius: 10px;
   }
   &:hover {
-    color: ${(props) => `${props.theme.color.primary.black}`};
-    background-color: ${(props) => `${props.theme.color.grayscale.gray_300}`};
+    color: ${(props) => `${props.theme.color.grayscale.gray_000}`};
+    background-color: ${(props) => `${props.theme.color.grayscale.gray_700}`};
   }
 `;
 
