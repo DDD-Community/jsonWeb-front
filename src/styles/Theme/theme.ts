@@ -9,6 +9,18 @@ const themes = {
       purple: '#6b53dd',
       orange: '#ffa500',
     },
+    legacyGrayscale: {
+      gray_000: '#E9E9E9',
+      gray_100: '#d9dee5',
+      gray_200: '#707070',
+      gray_300: '#F2F3F5',
+      gray_400: '#DDDDDD',
+      gray_500: '#B6BCC7',
+      gray_600: '#f8f8f8',
+      gray_700: '#565656',
+      gray_800: '#999999',
+      gray_900: '#BBBBBB',
+    },
     grayscale: {
       gray_000: '#111111',
       gray_100: '#565656',

@@ -54,7 +54,7 @@ export default function HashtagInput({
 
   const removeSpace = useCallback(
     (text: string) => {
-      setTagItem(text.replace(/ /g, ''));
+      setTagItem(text.replace(/ /g, '').slice(0, MAX_LENGTH_TAG));
     },
     [setTagItem]
   );
@@ -78,7 +78,7 @@ export default function HashtagInput({
           value={tagItem}
           maxLength={MAX_LENGTH_TAG}
           onChange={(event) => removeSpace(event.target.value)}
-          onKeyDown={onEnterKey}
+          onKeyUp={onEnterKey}
         />
         <InputCheckValidation>
           <span className="now">{tagItem.length}</span> / {MAX_LENGTH_TAG}
