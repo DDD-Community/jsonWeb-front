@@ -8,7 +8,8 @@ const ReviewItemContainer = styled.div`
   font-weight: ${({ theme }) => `${theme.font.weight.regular}`};
 
   &:not(:last-of-type) {
-    border-bottom: 8px solid ${({ theme }) => theme.color.grayscale.gray_000};
+    border-bottom: 8px solid
+      ${({ theme }) => theme.color.legacyGrayscale.gray_000};
   }
 `;
 
@@ -20,7 +21,7 @@ const ReviewEmotionSection = styled.section`
 
 const ReviewEmotionItem = styled.span`
   height: 26px;
-  background-color: ${({ theme }) => theme.color.grayscale.gray_000};
+  background-color: ${({ theme }) => theme.color.legacyGrayscale.gray_000};
   border-radius: 5px;
   padding: 8px;
   font-size: ${({ theme }) => `${theme.font.size.s}`};
