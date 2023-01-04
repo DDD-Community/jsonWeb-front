@@ -16,12 +16,5 @@ export function useGetThemesById({ themeId }: { themeId: number }) {
     { enabled: Boolean(themeId) }
   );
 
-  console.log(
-    fetchThemesById(themeId).then((res) => {
-      console.log(res);
-      return res;
-    })
-  );
-
   return { themeData, isLoading };
 }
