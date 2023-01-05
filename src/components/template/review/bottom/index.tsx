@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { MenuListItemType } from '@src/types/common';
 import { ReviewListType, PopularType } from '@src/types/review';
 import { ReviewItem } from '@src/components/template/review';
+// import { useGetPopularEmotionById } from '@hooks/queries/themes';
 import {
   ReviewDetailBottomContainer,
   ReviewDetailBottomHeaderSection,
@@ -17,7 +18,7 @@ import {
 } from './index.style';
 
 interface Props {
-  themeId: Readonly<number | undefined>;
+  themeId: Readonly<number>;
 }
 
 export default function ReviewDetailBottom({ themeId }: Props) {
@@ -92,7 +93,7 @@ export default function ReviewDetailBottom({ themeId }: Props) {
     ],
     totalNumber: 2,
   };
-
+  //   const { data: emojiData } = useGetPopularEmotionById({ themeId });
   const emojiData: PopularType = {
     emotion: '재밌어했어요😉',
     percentage: 96,
@@ -118,7 +119,7 @@ export default function ReviewDetailBottom({ themeId }: Props) {
         <ReviewHeaderTitle>방탈출러의 리뷰</ReviewHeaderTitle>
         <ReviewHeaderContentsContainer>
           <ReviewHeaderRate>
-            {emojiData.percentage}% {emojiData.emotion}
+            {emojiData?.percentage}% {emojiData?.emotion}
           </ReviewHeaderRate>
           <ReviewHeaderSort>
             <Menu list={ReviewMenuList} />

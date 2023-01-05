@@ -15,3 +15,9 @@ export const ROLE_USER_RANK = {
   고수: 'LEVEL3',
   초고수: 'LEVEL4',
 };
+
+export const SORT_PARAM = {
+  DEFAULT: 'DATE',
+  DATE: 'DATE',
+  LIKE: 'LIKE',
+};

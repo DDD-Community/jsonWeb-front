@@ -1,3 +1,8 @@
+export type Response = {
+  data: any;
+  message: string;
+};
+
 export type CarouselListItemType = {
   id: number;
   src: string;
