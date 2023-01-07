@@ -7,8 +7,8 @@ export function useLogin(AUTHORIZE_CODE: string) {
       const JWT = data.data.accessToken;
       if (JWT) localStorage.setItem('EXIT_LOGIN_TOKEN', JWT);
       window.location.replace('/');
-    })
-    .catch(() => {
+//     })
+//     .catch(() => {
 //       window.location.replace('/login');
     });
 }
