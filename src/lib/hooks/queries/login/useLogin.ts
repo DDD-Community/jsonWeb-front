@@ -1,8 +1,8 @@
-import { get } from '@src/api/client';
+import { authInstance } from '@src/api/client';
 import { LoginResponseType } from '@src/types/login/login';
 
 export const fetchAuth = (AUTHORIZE_CODE: string): Promise<LoginResponseType> =>
-  get(`/users/login?code=${AUTHORIZE_CODE}`);
+  authInstance.get(`/users/login?code=${AUTHORIZE_CODE}`);
 
 export function useLogin(AUTHORIZE_CODE: string) {
   fetchAuth(AUTHORIZE_CODE)
