@@ -19,14 +19,11 @@ const FixedSpinnerContainer = styled.div<{
   height: string | number;
 }>`
   position: fixed;
-  top: 0;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100px;
   height: ${(props) => `${props.height}`};
   opacity: ${(props) => `${props.opacity}`};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 800;
 `;

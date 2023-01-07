@@ -9,7 +9,7 @@ export default function LoadingSpinner({
   isLoading,
   isFixed,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   isLoading: boolean;
   isFixed: boolean;
 }) {

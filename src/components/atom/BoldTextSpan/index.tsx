@@ -1,4 +1,4 @@
-export default function BoldText({ children }: { children: string | number }) {
+export default function BoldText({ children }: { children: any }) {
   return (
     <span style={{ fontWeight: 'semiBold', color: 'black' }}>{children}</span>
   );
