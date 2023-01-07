@@ -12,6 +12,14 @@ export const instance = axios.create({
   },
 });
 
+export const authInstance = axios.create({
+  baseURL: 'https://exitnow.link',
+  withCredentials: false,
+  headers: {
+    Authorization: `${getAccessTokenLocalStorage()}`,
+  },
+});
+
 function interceptorResponseFulfilled(res: AxiosResponse) {
   return res.status >= 200 && res.status < 300
     ? res.data
@@ -28,16 +36,8 @@ instance.interceptors.response.use(
   interceptorResponseRejected
 );
 
-export const instance2 = axios.create({
-  baseURL: 'https://exitnow.link',
-  withCredentials: false,
-  headers: {
-    Authorization: `${getAccessTokenLocalStorage()}`,
-  },
-});
-
-export function get<T>(...args: Parameters<typeof instance2.get>) {
-  return instance2.get<T, T>(...args);
+export function get<T>(...args: Parameters<typeof instance.get>) {
+  return instance.get<T, T>(...args);
 }
 
 export function post<T>(...args: Parameters<typeof instance.post>) {
