@@ -28,8 +28,16 @@ instance.interceptors.response.use(
   interceptorResponseRejected
 );
 
-export function get<T>(...args: Parameters<typeof instance.get>) {
-  return instance.get<T, T>(...args);
+export const instance2 = axios.create({
+  baseURL: 'https://exitnow.link',
+  withCredentials: false,
+  headers: {
+    Authorization: `${getAccessTokenLocalStorage()}`,
+  },
+});
+
+export function get<T>(...args: Parameters<typeof instance2.get>) {
+  return instance2.get<T, T>(...args);
 }
 
 export function post<T>(...args: Parameters<typeof instance.post>) {
