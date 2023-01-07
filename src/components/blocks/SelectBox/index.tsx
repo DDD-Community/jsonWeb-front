@@ -41,7 +41,7 @@ export default function SelectBox({
   const labelRef = useRef<HTMLLabelElement>(null);
   const [clickSelectedBox, setClickSelectedBox] = useSelect(labelRef);
 
-  const handleOpenSelectBox = (e: MouseEvent) => {
+  const handleOpenSelectBox = (e: TouchEvent | MouseEvent) => {
     e.preventDefault();
     const target = e.target as HTMLLabelElement;
     let state = true;
@@ -76,18 +76,14 @@ export default function SelectBox({
       className="review--select__theme"
     >
       <SelectContainer>
-        <Select
-          value={selectedOption}
-          onChange={handleSelectBox}
-          isClick={clickSelectedBox}
-        >
+        <Select value={selectedOption} onChange={handleSelectBox}>
           {options.map((option) => (
             <option key={option.themeId} value={option.title}>
               {option.title}
             </option>
           ))}
         </Select>
-        <SelectButton isClick={clickSelectedBox}>
+        <SelectButton>
           <DownArrowGray />
         </SelectButton>
       </SelectContainer>

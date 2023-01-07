@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { MenuListItemType } from '@src/types/common';
 import * as S from './style';
 import { DownArrow, UpArrow } from '../../../assets/svg/icon';
-import { MenuListItemType } from '../../../pages/cafeList';
 
 type MenuPropsType = {
   list: MenuListItemType[];

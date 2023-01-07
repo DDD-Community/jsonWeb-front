@@ -24,15 +24,12 @@ const SelectContainer = styled.div`
   z-index: 10;
 `;
 
-const Select = styled.select<{ isClick: boolean }>`
+const Select = styled.select`
   border-radius: 10px;
-  border: 3px solid ${({ theme }) => `${theme.color.grayscale.gray_100}`};
-  box-shadow: ${(props) =>
-    props.isClick
-      ? `1px 2px 4px ${props.theme.color.grayscale.gray_500}`
-      : `4px 6px 4px ${props.theme.color.grayscale.gray_500}`};
-  margin-left: ${(props) => (props.isClick ? `2` : `0`)}px;
-  margin-bottom: ${(props) => (props.isClick ? `2` : `0`)}px;
+  border: 2px solid ${({ theme }) => `${theme.color.grayscale.gray_600}`};
+  color: ${(props) => `${props.theme.color.grayscale.gray_000}`};
+  margin-left: 0;
+  margin-bottom: 0;
   transition: all 0.3s;
   padding: 14px 16px;
   width: 100%;
@@ -43,12 +40,13 @@ const Select = styled.select<{ isClick: boolean }>`
   -moz-appearance: none;
 `;
 
-const SelectButton = styled.button<{ isClick: boolean }>`
+const SelectButton = styled.button`
   position: absolute;
   top: 12px;
   left: 50%;
-  margin-left: ${(props) => (props.isClick ? `42` : `40`)}px;
+  margin-left: 42px;
   transition: all 0.3s;
+  cursor: pointer;
 `;
 const SelectItemWrapper = styled.ul<{ isOpen: boolean }>`
   position: relative;
@@ -64,8 +62,9 @@ const SelectItemWrapper = styled.ul<{ isOpen: boolean }>`
   border-radius: 10px;
   z-index: 10;
   background-color: ${(props) => `${props.theme.color.primary.white}`};
+  border: 2px solid ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   box-shadow: ${(props) =>
-    `0px 6px 8px ${props.theme.color.grayscale.gray_100}`};
+    `0px 6px 8px ${props.theme.color.grayscale.gray_500}`};
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   font-family: ${(props) => `${props.theme.font.family}`};
   font-size: ${(props) =>
@@ -90,8 +89,8 @@ const SelectItem = styled.li<{ maxHeight: number; isSelected: boolean }>`
     border-bottom-right-radius: 10px;
   }
   &:hover {
-    color: ${(props) => `${props.theme.color.primary.black}`};
-    background-color: ${(props) => `${props.theme.color.grayscale.gray_300}`};
+    color: ${(props) => `${props.theme.color.grayscale.gray_000}`};
+    background-color: ${(props) => `${props.theme.color.grayscale.gray_700}`};
   }
 `;
 

@@ -5,11 +5,13 @@
   "repository": "https://github.com/DDD-Community/jsonWeb-front.git",
   "author": "jmpark-dev <fierce.unarmed_0l@icloud.com>",
   "license": "MIT",
+  "proxy": "https://exitnow.link",
   "dependencies": {
     "@craco/craco": "^7.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@tanstack/react-query": "^4.16.1",
+    "@tanstack/react-query-devtools": "^4.20.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,8 +19,11 @@
     "@types/node": "^16.18.3",
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.0",
+    "framer-motion": "^8.0.2",
+    "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
@@ -50,6 +55,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://exitnow.netlify.app",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -77,6 +83,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "framer-motion": "^8.0.2",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.8.0"

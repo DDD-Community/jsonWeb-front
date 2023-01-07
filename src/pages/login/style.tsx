@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const LoginContainer = styled.div`
+export const LoginContainer = styled.section`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.color.primary.white};
@@ -9,6 +9,7 @@ export const LoginContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 200px 0;
+  overflow: hidden;
 `;
 
 export const DescContainer = styled.div`
@@ -40,4 +41,13 @@ export const LoginButton = styled.button`
   margin: 20px;
   border-radius: 10px;
   font-weight: ${(props) => props.theme.font.weight.semiBold};
+`;
+
+export const RedirectContainer = styled.section`
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.color.primary.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -15,9 +15,9 @@ const TextAreaWrapper = styled.div`
 
 const TextAreaContents = styled.textarea<{ isOver: boolean }>`
   outline: none;
-  border: 2px solid ${({ theme }) => theme.color.grayscale.gray_100};
+  border: 2px solid ${({ theme }) => theme.color.grayscale.gray_600};
   border-radius: 10px;
-  background: ${({ theme }) => theme.color.grayscale.gray_000};
+  background: ${({ theme }) => theme.color.grayscale.gray_800};
   padding: 10px;
   width: 310px;
   height: 200px;

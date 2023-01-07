@@ -15,7 +15,9 @@ export { ReactComponent as HeartPurple } from './heart_purple.svg';
 export { ReactComponent as LoginLogo } from './loginLogo.svg';
 export { ReactComponent as DownArrowGray } from './arrow_down.svg';
 export { ReactComponent as StarRate } from './starRate.svg';
+export { ReactComponent as StarRateSmall } from './starRate_small.svg';
 export { ReactComponent as LockRate } from './lockRate.svg';
+export { ReactComponent as LockRateSmall } from './lockRate_small.svg';
 export { ReactComponent as Delete } from './delete.svg';
 export { ReactComponent as Location } from './location.svg';
 export { ReactComponent as Tag } from './tag.svg';
@@ -67,3 +69,4 @@ export function Star({ fill }: StarProps) {
     </svg>
   );
 }
+export { ReactComponent as Like } from './like.svg';

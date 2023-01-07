@@ -1,5 +1,5 @@
-import useLogin from '@src/lib/hooks/useLogin';
 import { LoginLogo } from '@assets/svg/icon';
+import { KAKAO_AUTH_URL } from '@src/constants/login';
 import {
   LoginContainer,
   DescContainer,
@@ -7,6 +7,10 @@ import {
   TextHighlight,
   LoginButton,
 } from './style';
+
+const goLogin = () => {
+  window.location.replace(KAKAO_AUTH_URL);
+};
 
 export default function Login() {
   return (
@@ -21,7 +25,7 @@ export default function Login() {
           있어요
         </LoginDescription>
       </DescContainer>
-      <LoginButton onClick={useLogin()}>카카오로 시작하기</LoginButton>
+      <LoginButton onClick={goLogin}>카카오로 시작하기</LoginButton>
     </LoginContainer>
   );
 }

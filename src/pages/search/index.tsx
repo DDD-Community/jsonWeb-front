@@ -4,13 +4,13 @@ import { useState } from 'react';
 import Menu from '@src/components/blocks/Menu';
 import CardList from '@src/components/blocks/Card/CardList';
 import { CardListItemType } from '@src/types/types';
+import { MenuListItemType } from '@src/types/common';
 import {
   InputWrapper,
   RecentSearchesWrapper,
   SearchInput,
   SearchResultWrapper,
 } from './style';
-import { MenuListItemType } from '../cafeList';
 
 const menuList: MenuListItemType[] = [
   { id: 0, name: '평점순' },

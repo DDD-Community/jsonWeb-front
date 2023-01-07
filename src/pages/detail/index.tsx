@@ -9,6 +9,7 @@ import {
   Price,
   Tel,
 } from '@src/assets/svg/icon';
+import { Link, Outlet, useMatch, useResolvedPath } from 'react-router-dom';
 import {
   CafeImage,
   CafeInfo,
@@ -16,6 +17,8 @@ import {
   CafeMenuWrapper,
   CafeReview,
   CafeTitle,
+  SubMenuList,
+  SubMenuItem,
   Wrapper,
 } from './style';
 
@@ -59,6 +62,12 @@ const dummy = {
   },
   message: 'string',
 };
+
+const subMenuList = [
+  { name: '테마정보', path: '/cafe-detail' },
+  { name: '리뷰', path: 'cafe/review' },
+  { name: '인증', path: 'cafe/certification' },
+];
 
 export default function Detail() {
   return (
@@ -120,6 +129,28 @@ export default function Detail() {
           <p>{dummy.data.tel}</p>
         </CafeInfo>
       </Wrapper>
+      <SubMenuList>
+        {subMenuList.map((el) => (
+          <SubMenuItemComponent path={el.path} title={el.name} />
+        ))}
+      </SubMenuList>
+      <Outlet />
     </>
+  );
+}
+
+type SubMenuPropsType = {
+  path: string;
+  title: string;
+};
+
+function SubMenuItemComponent({ path, title }: SubMenuPropsType) {
+  const resolved = useResolvedPath(path);
+  const match = useMatch({ path: resolved.pathname, end: true });
+
+  return (
+    <Link to={path} key={title}>
+      <SubMenuItem match={match}>{title}</SubMenuItem>
+    </Link>
   );
 }

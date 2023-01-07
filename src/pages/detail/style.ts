@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { PathMatch } from 'react-router-dom';
 
 const Wrapper = styled.div`
   padding: 0 24px 20px;
@@ -105,6 +107,31 @@ const CafeMenu = styled.div`
   }
 `;
 
+const SubMenuList = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e9e9e9;
+
+  a {
+    width: 33%;
+  }
+`;
+
+const SubMenuItem = styled.li<{ match: PathMatch<string> | null }>`
+  ${({ match }) => css`
+    box-sizing: content-box;
+    margin-bottom: -2px;
+    padding: 14px 15px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #999999;
+    border-bottom: 2px solid ${match ? '#6B53DD' : 'none'};
+  `};
+`;
+
 export {
   Wrapper,
   CafeImage,
@@ -113,4 +140,6 @@ export {
   CafeInfo,
   CafeMenu,
   CafeMenuWrapper,
+  SubMenuList,
+  SubMenuItem,
 };

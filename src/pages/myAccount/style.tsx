@@ -54,7 +54,7 @@ export const PointBar = styled.div`
   height: 8px;
   border-radius: ${(props) => props.theme.borderRadius.default};
   margin: 10px;
-  background-color: ${(props) => props.theme.color.grayscale.gray_000};
+  background-color: ${(props) => props.theme.color.grayscale.gray_600};
 `;
 
 export const PointProgress = styled.div<{ now: number }>`
@@ -72,7 +72,7 @@ export const PointText = styled.p`
 export const Divider = styled.div`
   width: 100%;
   height: 8px;
-  background-color: ${(props) => props.theme.color.grayscale.gray_000};
+  background-color: ${(props) => props.theme.color.grayscale.gray_600};
 `;
 
 export const MenuList = styled.ul`
