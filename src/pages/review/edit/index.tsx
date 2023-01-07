@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import SelectBox from '@components/blocks/SelectBox';
 import Chips from '@components/blocks/Chips';
 import Star from '@components/blocks/Star';
 import TextArea from '@components/blocks/TextArea';
 import { ReviewThemeType } from '@src/types/review';
+import { useReviewCreateMutation } from '@hooks/queries/review';
 import { THEME_NOT_EXIST, RATE } from '@src/constants';
 import {
   DEFAULT_ARIA_THEME_EVALUATION,
   DEFAULT_ARIA_THEME_LABEL,
 } from '@src/constants/aria-label';
 import { evaluationData } from '@src/lib/data/evaluationData';
+import { useQueryString } from '@hooks/useQueryString';
 import {
   ReviewSection,
   ChipsSection,
@@ -19,33 +21,35 @@ import {
   ReviewSubmit,
 } from './index.style';
 
+const data: ReviewThemeType[] = [
+  {
+    cafeId: 1,
+    themeId: 1,
+    title: `숨겨진 협곡`,
+    description: 'test',
+  },
+  {
+    cafeId: 1,
+    themeId: 2,
+    title: `비밀의 숲`,
+    description: 'test',
+  },
+  {
+    cafeId: 1,
+    themeId: 3,
+    title: `인형 아이`,
+    description: 'test',
+  },
+  {
+    cafeId: 1,
+    themeId: 4,
+    title: `기억의 조각`,
+    description: 'test',
+  },
+];
+
 export default function Edit() {
-  const data: ReviewThemeType[] = [
-    {
-      cafeId: 1,
-      themeId: 1,
-      title: `숨겨진 협곡`,
-      description: 'test',
-    },
-    {
-      cafeId: 1,
-      themeId: 2,
-      title: `비밀의 숲`,
-      description: 'test',
-    },
-    {
-      cafeId: 1,
-      themeId: 3,
-      title: `인형 아이`,
-      description: 'test',
-    },
-    {
-      cafeId: 1,
-      themeId: 4,
-      title: `기억의 조각`,
-      description: 'test',
-    },
-  ];
+  const themeId = Number(useQueryString('themeId'));
 
   const [themeSelectedOption, setThemeSelectedOption] = useState(
     data[0].title || THEME_NOT_EXIST
@@ -56,18 +60,26 @@ export default function Edit() {
   const [rateOption1, setRateOption1] = useState(0);
   const [rateOption2, setRateOption2] = useState(0);
   const [contents, setContents] = useState('');
-  const handleSelectOptionClick = (v: any) => v;
 
-  /**
-   * @name reviewSubmit
-   * @description todo post api 나오면 연동예정
-   */
-  const reviewSubmit = () => ({
-    themeSelectedOption,
-    rateOption1,
-    rateOption2,
-    contents,
+  const { mutate: submitMutate } = useReviewCreateMutation({
+    themeId,
+    body: {
+      content: contents,
+      difficulty: rateOption2,
+      emotionFirst: evaluationSelectedOption.title,
+      emotionSecond: '',
+      star: rateOption1,
+    },
   });
+
+  const reviewSubmit = useCallback(() => {
+    submitMutate();
+  }, [submitMutate]);
+
+  const handelDisabled = () => {
+    if (themeId) return true;
+    return false;
+  };
 
   return (
     <ReviewSection className="review">
@@ -78,7 +90,7 @@ export default function Edit() {
         width={160}
         maxHeight={44}
         name={DEFAULT_ARIA_THEME_LABEL}
-        handleSelectOptionClick={handleSelectOptionClick}
+        disabled={handelDisabled()}
       />
       <ChipsSection>
         <Chips

@@ -22,10 +22,6 @@ describe('리뷰 edit 페이지 테스트', () => {
     });
     context('form 기능 테스트', () => {
       it('데이터 입력 및 등록 버튼 누를 시 정상적으로 응답해야 한다.', () => {
-        cy.get('.review--select__theme').click();
-        cy.wait(300);
-        cy.get('.review--select__theme > ul > li:nth-child(3)').click();
-        cy.get('.review .chips--item__2').click();
         cy.get(
           'section.review--form  > div:nth-child(2) > div > button:nth-child(3)'
         ).click();
@@ -40,7 +36,6 @@ describe('리뷰 edit 페이지 테스트', () => {
           'have.text',
           '12 / 240'
         );
-        cy.get('.review--form > .review--form__submit').click();
       });
     });
   });

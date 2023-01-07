@@ -14,11 +14,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import { LeftArrow, RightArrow } from '../../assets/svg/icon';
 
 const MenuList: MenuListItemType[] = [
-  { id: 0, name: '난이도 낮은순' },
-  { id: 1, name: '난이도 높은순' },
-  { id: 2, name: '리뷰 많은순' },
-  { id: 3, name: '랭킹 순' },
-  { id: 4, name: '최신순' },
+  { id: 0, name: '난이도 낮은순', value: '' },
+  { id: 1, name: '난이도 높은순', value: '' },
+  { id: 2, name: '리뷰 많은순', value: '' },
+  { id: 3, name: '랭킹 순', value: '' },
+  { id: 4, name: '최신순', value: '' },
 ];
 
 const dummyData: CardListItemType[] = [
@@ -116,6 +116,9 @@ function CustomSlide() {
 
 export default function CafeList() {
   const [cardList] = useState<CardListItemType[]>(dummyData);
+  // eslint-disable-next-line
+  const [_, setSort] = useState('');
+
   const settings = {
     dots: true,
     infinite: true,
@@ -149,7 +152,7 @@ export default function CafeList() {
       <SideWrapper>
         <S.RoomListHeaderContainer>
           <S.RoomListTitle>방 탈출 카페</S.RoomListTitle>
-          <Menu list={MenuList} />
+          <Menu list={MenuList} setSelectedOption={setSort} />
         </S.RoomListHeaderContainer>
         <CardList list={cardList} />
       </SideWrapper>

@@ -39,6 +39,7 @@ export interface ReviewThemeDetailType {
 }
 
 export interface UserInfoType {
+  id?: number;
   isLiked: boolean;
   likeCount: number;
   modifiedAt: string;
@@ -46,16 +47,19 @@ export interface UserInfoType {
   themeName: string;
   writerNickname: string;
   profileImageUrl: string;
-  nickname: string;
+  writerLevel: string;
 }
 
-export interface ReviewType extends UserInfoType {
+export interface ReviewEditType {
   content: string;
   difficulty: number;
   emotionFirst: string;
   emotionSecond: string;
-  reviewId: number;
   star: number;
+}
+
+export interface ReviewType extends UserInfoType, ReviewEditType {
+  reviewId: number;
 }
 
 export interface ReviewListType {

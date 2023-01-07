@@ -16,7 +16,6 @@ import CertifyEditPage from '@pages/certify/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
 import LikeListPage from '@pages/myAccount/like';
-import TypiCodePage from '@pages/typiCode';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
 
@@ -36,7 +35,6 @@ function App() {
               <Header />
               <GlobalStyle />
               <Routes>
-                <Route path="typicode" element={<TypiCodePage />} />
                 <Route index element={<CafeListPage />} />
                 <Route
                   path="review/detail/:themeId"

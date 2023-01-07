@@ -41,7 +41,7 @@ function ReviewRate({ type, len }: { type: string; len: number }) {
 export default function ReviewItem({ reviewItem }: { reviewItem: ReviewType }) {
   return (
     <ReviewItemContainer>
-      <UserInfo userInfo={reviewItem} />
+      <UserInfo userInfo={reviewItem} contentId={reviewItem.reviewId} />
       <ReviewEmotionSection>
         {reviewItem.emotionFirst && (
           <ReviewEmotionItem>{reviewItem.emotionFirst}</ReviewEmotionItem>

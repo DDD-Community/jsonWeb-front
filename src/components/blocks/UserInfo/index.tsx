@@ -1,8 +1,10 @@
+import { useCallback } from 'react';
 import { generateUUID } from '@src/lib/util';
 import { UserInfoType } from '@src/types/review';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
 import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
+import { useReviewLikeMutation } from '@hooks/queries/review';
 import {
   ReviewUserInfoSection,
   ReviewUserInfoContainer,
@@ -11,14 +13,28 @@ import {
   ReviewUserThemeGenre,
   ReviewUserInfo,
   ReviewUserInfoBlock,
-  ReviewUserNickName,
+  ReviewUserLevel,
   ReviewUserBadge,
   ReviewModifiedAt,
   ReviewReport,
   ReviewLikeContainer,
 } from './index.style';
 
-export default function UserInfo({ userInfo }: { userInfo: UserInfoType }) {
+export default function UserInfo({
+  userInfo,
+  contentId,
+}: {
+  userInfo: UserInfoType;
+  contentId: number;
+}) {
+  const { mutate: handleLikeMutate } = useReviewLikeMutation({
+    reviewId: contentId,
+  });
+
+  const handleLikeClick = useCallback(() => {
+    handleLikeMutate();
+  }, [handleLikeMutate]);
+
   const getBadgeColorHex = (level: string) => {
     if (level === 'LEVEL1') return theme.color.primary.green;
     if (level === 'LEVEL2') return theme.color.primary.kakao;
@@ -46,11 +62,11 @@ export default function UserInfo({ userInfo }: { userInfo: UserInfoType }) {
         </ReviewUserTheme>
         <ReviewUserInfo>
           <ReviewUserInfoBlock>
-            <ReviewUserNickName>{userInfo.writerNickname}</ReviewUserNickName>
+            <ReviewUserLevel>{userInfo.writerNickname}</ReviewUserLevel>
             <ReviewUserBadge
-              color={getBadgeColorHex(ROLE_USER_RANK[userInfo.nickname])}
+              color={getBadgeColorHex(ROLE_USER_RANK[userInfo.writerLevel])}
             >
-              {userInfo.nickname}
+              {userInfo.writerLevel}
             </ReviewUserBadge>
           </ReviewUserInfoBlock>
           <ReviewUserInfoBlock>
@@ -61,7 +77,7 @@ export default function UserInfo({ userInfo }: { userInfo: UserInfoType }) {
           </ReviewUserInfoBlock>
         </ReviewUserInfo>
       </ReviewUserInfoContainer>
-      <ReviewLikeContainer>
+      <ReviewLikeContainer onClick={handleLikeClick}>
         <LikeBtn isLiked={userInfo.isLiked} count={userInfo.likeCount} />
       </ReviewLikeContainer>
     </ReviewUserInfoSection>

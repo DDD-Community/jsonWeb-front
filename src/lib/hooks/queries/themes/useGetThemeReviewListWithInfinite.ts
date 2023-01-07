@@ -4,7 +4,12 @@ import { Response } from '@src/types/types';
 import { get } from '@src/api/client';
 import { SORT_PARAM } from '@constants/common';
 
-const REVIEW_PAGE_ITEMS_SIZE = 16;
+/**
+ * @name infinite scroll 호출 단위
+ * @description 현재 테스트를 위해 3개 해둠
+ * @default {5}
+ */
+const REVIEW_PAGE_ITEMS_SIZE = 3;
 
 export const THEMES_REVIEWLIST_INFINITE_BY_ID_QUERY_KEY =
   'themesReviewListById';
@@ -15,33 +20,34 @@ interface ReviewListTypeResponse extends Response {
 
 interface ReviewListParamInterface {
   themeId: number;
-  sort: string;
-  page: number;
-  size: number;
+  sort?: string;
+  page?: number;
+  size?: number;
 }
 
 export const fetchThemeReviewListWithInfinite = async ({
   themeId,
-  page,
+  page = 0,
   sort,
   size,
 }: ReviewListParamInterface) => {
-  const api: ReviewListTypeResponse = await get(
+  const { data }: ReviewListTypeResponse = await get(
     `/themes/${themeId}/reviews?sort=${sort}&page=${page}&size=${size}`
   );
+
   return {
-    api: api.data,
+    data,
     nextPage: page + 1,
   };
 };
 
 export function useGetThemeReviewListWithInfinite({
   themeId,
-  page,
   sort = SORT_PARAM.DEFAULT,
+  page = 0,
   size = REVIEW_PAGE_ITEMS_SIZE,
 }: ReviewListParamInterface) {
-  const { data, isLoading } = useInfiniteQuery(
+  const query = useInfiniteQuery(
     [THEMES_REVIEWLIST_INFINITE_BY_ID_QUERY_KEY, themeId, sort, page],
     ({ pageParam = 0 }) =>
       fetchThemeReviewListWithInfinite({
@@ -52,11 +58,11 @@ export function useGetThemeReviewListWithInfinite({
       }),
     {
       getNextPageParam: (lastPage) => {
-        if (lastPage.api.isLast) return undefined;
+        if (lastPage.data.isLast) return undefined;
         return lastPage.nextPage ?? undefined;
       },
     }
   );
 
-  return { data, isLoading };
+  return { ...query };
 }

@@ -1,11 +1,10 @@
 import { atom } from 'recoil';
-import { TypiCodeInterface } from '@src/types/typicode/typicode';
 
 /**
  * @name [스켈레톤] @typicode Atom
  */
 export interface TypiCodeState {
-  data: TypiCodeInterface | undefined;
+  data: any | undefined;
 }
 
 export const typiCodeState = atom<TypiCodeState | null>({
