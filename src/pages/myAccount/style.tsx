@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-export const MyAccountContainer = styled.div`
+export const MyAccountContainer = styled.section`
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
+  overflow: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
