@@ -8,7 +8,7 @@ export const mypageListData: MypageListItemType[] = [
   },
   {
     title: '인증사진',
-    to: '/my-account/certification',
+    to: '/my-account/boast',
     image: 'https://cdn-icons-png.flaticon.com/512/214/214333.png',
   },
   {

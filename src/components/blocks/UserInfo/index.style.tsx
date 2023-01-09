@@ -23,6 +23,7 @@ const ReviewUserInfoContainer = styled.div`
 
 const ReviewUserTheme = styled.div`
   margin-bottom: 5px;
+  font-size: ${({ theme }) => `${theme.font.size.m}`};
 `;
 
 const ReviewUserThemeGenre = styled.span`

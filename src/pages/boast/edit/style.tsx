@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const CertifySection = styled.section`
+export const BoastSection = styled.section`
   position: relative;
   padding: 0 20px;
   margin-top: 40px;
@@ -16,6 +16,7 @@ export const ImagePreview = styled.div`
   height: 220px;
   background-color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   border-radius: 10px;
+  overflow: hidden;
   margin: 20px 0;
   img {
     width: 100%;
