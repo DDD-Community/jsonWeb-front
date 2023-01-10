@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { post } from '@src/api/client';
 import { useNavigate } from 'react-router-dom';
 import { ReviewEditType } from '@src/types/review';
@@ -16,8 +16,10 @@ export function useReviewCreateMutation({
   body: ReviewEditType;
 }) {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   return useMutation(() => postReviewCreateMutation(themeId, body), {
     onSuccess: () => {
+      queryClient.invalidateQueries(['themesReviewListById']);
       navigate(`/review/detail/${themeId}`);
     },
   });
