@@ -4,7 +4,6 @@ import { UserInfoType } from '@src/types/review';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
 import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
-import { useReviewLikeMutation } from '@hooks/queries/review';
 import {
   ReviewUserInfoSection,
   ReviewUserInfoContainer,
@@ -22,18 +21,14 @@ import {
 
 export default function UserInfo({
   userInfo,
-  contentId,
+  likeMutate,
 }: {
   userInfo: UserInfoType;
-  contentId: number;
+  likeMutate: () => void;
 }) {
-  const { mutate: handleLikeMutate } = useReviewLikeMutation({
-    reviewId: contentId,
-  });
-
   const handleLikeClick = useCallback(() => {
-    handleLikeMutate();
-  }, [handleLikeMutate]);
+    likeMutate();
+  }, [likeMutate]);
 
   const getBadgeColorHex = (level: string) => {
     if (level === 'LEVEL1') return theme.color.primary.green;

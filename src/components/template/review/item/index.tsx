@@ -3,6 +3,7 @@ import UserInfo from '@components/blocks/UserInfo';
 import { RateType } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
 import { StarRateSmall, LockRateSmall } from '@src/assets/svg/icon';
+import { useReviewLikeMutation } from '@hooks/queries/review';
 import {
   ReviewItemContainer,
   ReviewItemContents,
@@ -39,9 +40,13 @@ function ReviewRate({ type, len }: { type: string; len: number }) {
 }
 
 export default function ReviewItem({ reviewItem }: { reviewItem: ReviewType }) {
+  const { mutate: handleLikeMutate } = useReviewLikeMutation({
+    reviewId: reviewItem.reviewId,
+  });
+
   return (
     <ReviewItemContainer>
-      <UserInfo userInfo={reviewItem} contentId={reviewItem.reviewId} />
+      <UserInfo userInfo={reviewItem} likeMutate={handleLikeMutate} />
       <ReviewEmotionSection>
         {reviewItem.emotionFirst && (
           <ReviewEmotionItem>{reviewItem.emotionFirst}</ReviewEmotionItem>
