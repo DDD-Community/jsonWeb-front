@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 const ReviewItemContainer = styled.div`
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 28px;
   font-family: ${({ theme }) => `${theme.font.family}`};

@@ -21,10 +21,11 @@ interface Props {
   options: ReviewThemeType[];
   selectedOption: string;
   setSelectedOption: Dispatch<SetStateAction<string>>;
+  disabled?: boolean;
   width: string | number;
   maxHeight: number;
   name: string;
-  handleSelectOptionClick: any;
+  handleSelectOptionClick?: any;
   [x: string]: any;
 }
 
@@ -32,6 +33,7 @@ export default function SelectBox({
   options,
   selectedOption,
   setSelectedOption,
+  disabled = false,
   width,
   maxHeight,
   name,
@@ -44,7 +46,7 @@ export default function SelectBox({
   const handleOpenSelectBox = (e: TouchEvent | MouseEvent) => {
     e.preventDefault();
     const target = e.target as HTMLLabelElement;
-    let state = true;
+    let state = !disabled;
 
     if (clickSelectedBox && target.nodeName === 'SELECT') state = !state;
 
@@ -76,7 +78,11 @@ export default function SelectBox({
       className="review--select__theme"
     >
       <SelectContainer>
-        <Select value={selectedOption} onChange={handleSelectBox}>
+        <Select
+          value={selectedOption}
+          onChange={handleSelectBox}
+          disabled={disabled}
+        >
           {options.map((option) => (
             <option key={option.themeId} value={option.title}>
               {option.title}

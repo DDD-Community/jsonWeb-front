@@ -38,6 +38,10 @@ const Select = styled.select`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+
+  :disabled {
+    background-color: ${({ theme }) => `${theme.color.grayscale.gray_500}`};
+  }
 `;
 
 const SelectButton = styled.button`

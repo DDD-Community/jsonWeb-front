@@ -13,8 +13,8 @@ import {
 } from './style';
 
 const menuList: MenuListItemType[] = [
-  { id: 0, name: '평점순' },
-  { id: 1, name: '최신순' },
+  { id: 0, name: '평점순', value: '' },
+  { id: 1, name: '최신순', value: '' },
 ];
 
 const dummyData: CardListItemType[] = [
@@ -56,6 +56,8 @@ const dummyData: CardListItemType[] = [
 ];
 
 export default function CafeSearch() {
+  // eslint-disable-next-line
+  const [_, setSort] = useState('');
   const [search] = useState<boolean>(true);
   return (
     <SideWrapper>
@@ -86,7 +88,7 @@ export default function CafeSearch() {
         <SearchResultWrapper>
           <div>
             <p>검색결과 00건</p>
-            <Menu list={menuList} />
+            <Menu list={menuList} setSelectedOption={setSort} />
           </div>
           <CardList list={dummyData} />
         </SearchResultWrapper>

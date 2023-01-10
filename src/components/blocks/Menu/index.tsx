@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { MenuListItemType } from '@src/types/common';
 import * as S from './style';
 import { DownArrow, UpArrow } from '../../../assets/svg/icon';
 
 type MenuPropsType = {
   list: MenuListItemType[];
-  onClickItem?: () => void;
+  setSelectedOption: Dispatch<SetStateAction<string>>;
 };
 
-export default function Menu({ list, onClickItem }: MenuPropsType) {
+export default function Menu({ list, setSelectedOption }: MenuPropsType) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string>();
   const [selectedItemId, setSelectedItemId] = useState<number | null>(0);
+  const [selectedItem, setSelectedItem] = useState<string | null>('');
 
-  function menuBtnClick() {
-    setIsOpen(!isOpen);
-  }
+  const menuBtnClick = () => setIsOpen(!isOpen);
 
   function getItemId(e: React.MouseEvent<HTMLLIElement, MouseEvent>) {
     setSelectedItemId(+e.currentTarget.id);
   }
 
-  function itemClick(e: React.MouseEvent<HTMLButtonElement>) {
-    setSelectedItem(e.currentTarget.innerText);
-
-    if (onClickItem) onClickItem();
+  function itemClick(el: MenuListItemType) {
+    setSelectedItem(el.name);
+    setSelectedOption(el.value || '');
     setIsOpen(false);
   }
 
@@ -50,7 +47,7 @@ export default function Menu({ list, onClickItem }: MenuPropsType) {
             onClick={(e) => getItemId(e)}
             aria-hidden="true"
           >
-            <S.MenuItem onClick={(e) => itemClick(e)} type="button">
+            <S.MenuItem onClick={() => itemClick(el)} type="button">
               {el.name}
             </S.MenuItem>
           </li>

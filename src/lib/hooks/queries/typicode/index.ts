@@ -1,1 +1,0 @@
-export { useGetTypiCodeById } from './useGetTypiCodeById';
