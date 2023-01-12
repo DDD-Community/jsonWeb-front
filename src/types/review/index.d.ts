@@ -7,7 +7,7 @@ export interface ReviewThemeType {
   cafeId: number;
   themeId: number;
   title: string;
-  description: string;
+  description?: string;
 }
 
 export type ReviewEvaluationStarType = 'Star' | 'Lock';

@@ -10,4 +10,6 @@ const generateUUID = (l: number = 20) => {
   ).join('');
 };
 
-export { generateUUID };
+const parsingSliceLastEmojiString = (v: string) => v?.slice(0, -2);
+
+export { generateUUID, parsingSliceLastEmojiString };
