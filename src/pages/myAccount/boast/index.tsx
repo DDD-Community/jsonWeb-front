@@ -8,6 +8,7 @@ import {
   BoastFeed,
   FeedContents,
   ThemeTitle,
+  TextHighlight,
   LikeBtnBox,
 } from './style';
 
@@ -81,12 +82,21 @@ export default function MyBoast() {
           />
           <FeedContents>
             <ThemeTitle>
-              <span className="black">{el.cafeName}</span>&nbsp;|&nbsp;
-              <span className="green">{el.themeName}</span>
+              <TextHighlight>{el.cafeName}</TextHighlight>
+              &nbsp;|&nbsp;
+              <TextHighlight color="green">{el.themeName}</TextHighlight>
             </ThemeTitle>
-            <Feed image={el.boastImage} hashtags={el.hashtags} />
+            <Feed
+              key={el.boastId}
+              image={el.boastImage}
+              hashtags={el.hashtags}
+            />
             <LikeBtnBox>
-              <LikeBtn isLiked={el.isLiked} count={el.likeCount} />
+              <LikeBtn
+                isLiked={el.isLiked}
+                count={el.likeCount}
+                position="right"
+              />
             </LikeBtnBox>
           </FeedContents>
         </BoastFeed>

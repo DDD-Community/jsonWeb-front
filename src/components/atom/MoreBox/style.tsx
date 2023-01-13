@@ -50,14 +50,6 @@ export const MoreMenuContainer = styled.ul<{
         }
       }
     }
-
-    & > li > button {
-      color: ${theme.color.grayscale.gray_000};
-      :hover {
-        cursor: pointer;
-        background-color: ${theme.color.grayscale.gray_700};
-      }
-    }
   `}
 `;
 
@@ -69,4 +61,9 @@ export const MenuItem = styled.button`
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
+  color: ${({ theme }) => `${theme.color.grayscale.gray_000}`};
+  cursor: pointer;
+  :hover {
+    background-color: ${({ theme }) => `${theme.color.grayscale.gray_700}`};
+  }
 `;

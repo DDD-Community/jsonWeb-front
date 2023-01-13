@@ -17,7 +17,7 @@ export default function MyContentsHeader({
 }: MyHeaderType) {
   return (
     <FeedHeader>
-      <p>{date.replace(/-/g, '.')}</p>
+      <p>{date}</p>
       <MoreBox list={more} target={target} targetId={targetId} />
     </FeedHeader>
   );

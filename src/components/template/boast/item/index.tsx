@@ -6,8 +6,12 @@ import { FeedSection } from './style';
 export default function BoastItem({ boastItem }: { boastItem: BoastType }) {
   return (
     <FeedSection>
-      <UserInfo userInfo={boastItem} />
-      <Feed image={boastItem.boastImage} hashtags={boastItem.hashtags} />
+      <UserInfo userInfo={boastItem} contentId={boastItem.boastId} />
+      <Feed
+        key={boastItem.boastId}
+        image={boastItem.boastImage}
+        hashtags={boastItem.hashtags}
+      />
     </FeedSection>
   );
 }

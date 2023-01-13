@@ -2,11 +2,7 @@ import styled from '@emotion/styled';
 
 export const MyBoastContainer = styled.section`
   width: 100%;
-  height: 100vh;
   overflow-y: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const BoastFeed = styled.section``;
@@ -24,12 +20,13 @@ export const ThemeTitle = styled.h1`
   text-align: left;
   padding: 10px 10px 5px 10px;
   color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
-  .black {
-    color: ${({ theme }) => `${theme.color.grayscale.gray_000}`};
-  }
-  .green {
-    color: ${({ theme }) => `${theme.color.primary.green}`};
-  }
+`;
+
+export const TextHighlight = styled.span<{ color?: string }>`
+  color: ${(props) =>
+    props.color === 'green'
+      ? props.theme.color.primary.green
+      : props.theme.color.grayscale.gray_000};
 `;
 
 export const LikeBtnBox = styled.div`

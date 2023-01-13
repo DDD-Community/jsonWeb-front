@@ -49,16 +49,10 @@ export default function MoreBox({ list, target, targetId }: MorePropsType) {
         listLength={list.length}
       >
         {list.map((el) => (
-          <li key={el.id} id={el.id.toString()} aria-hidden="true">
-            {el.id === 0 ? (
-              <MenuItem onClick={goEdit} type="button">
-                {el.name}
-              </MenuItem>
-            ) : (
-              <MenuItem onClick={goDelete} type="button">
-                {el.name}
-              </MenuItem>
-            )}
+          <li key={el.id}>
+            <MenuItem type="button" onClick={el.id === 0 ? goEdit : goDelete}>
+              {el.name}
+            </MenuItem>
           </li>
         ))}
       </MoreMenuContainer>

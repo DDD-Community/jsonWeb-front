@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLogin } from '@src/lib/hooks/queries/login';
+import { useLogin } from '@src/lib/hooks/queries/user';
 import { KakaoSignType } from '@src/types/login/login';
 
 export default function KakaoSign({ method }: KakaoSignType) {

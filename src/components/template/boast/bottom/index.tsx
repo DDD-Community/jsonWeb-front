@@ -1,8 +1,10 @@
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@components/atom';
+import { Button, LoadingSpinner } from '@components/atom';
 import Menu from '@components/blocks/Menu';
-import { ButtonEnum } from '@constants/common';
-import { BoastListType } from '@src/types/boast';
+import { useGetThemeBoastListWithInfinite } from '@src/lib/hooks/queries/themes/useGetThemeBoastListWithInfinite';
+import { useIntersectionObserver } from '@hooks/useIntersectionObserver';
+import { ButtonEnum, SORT_PARAM } from '@constants/common';
 import { MenuListItemType } from '@src/types/common';
 import BoastItem from '../item';
 import {
@@ -17,73 +19,34 @@ import {
 } from './style';
 
 interface Props {
-  boastId: Readonly<number | undefined>;
+  themeId: Readonly<number>;
 }
 
-export default function BoastDetailBottom({ boastId }: Props) {
+export default function BoastDetailBottom({ themeId }: Props) {
+  const [sort, setSort] = useState(SORT_PARAM.DEFAULT);
   const navigate = useNavigate();
-  /**
-   * @todo boastId query string 전달
-   * */
-  const goBoastEdit = () => {
-    navigate(`/boast/edit?themeId=${boastId}`);
-  };
 
-  const data: BoastListType = {
-    boastList: [
-      {
-        boastId: 1,
-        cafeName: '카페1',
-        themeName: '테마1',
-        writerNickname: '더미 유저',
-        writerProfileImage: '',
-        writerBadge: '초보',
-        genre: ['공포', '로맨스'],
-        modifiedAt: '2022-12-31',
-        isLiked: false,
-        likeCount: 0,
-        boastImage:
-          'https://images.unsplash.com/photo-1622595674295-724dffbc9bd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-        hashtags: ['#추천해요', '#추천해요', '#쉬워요'],
-      },
-      {
-        boastId: 2,
-        cafeName: '카페2',
-        themeName: '테마2',
-        writerNickname: '더미 유저',
-        writerProfileImage: '',
-        writerBadge: '초보',
-        genre: ['공포', '미스터리'],
-        modifiedAt: '2022-12-24',
-        isLiked: false,
-        likeCount: 0,
-        boastImage:
-          'https://images.unsplash.com/photo-1622595674295-724dffbc9bd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-        hashtags: ['#어려워요', '#무서워요'],
-      },
-      {
-        boastId: 3,
-        cafeName: '카페3',
-        themeName: '테마3',
-        writerNickname: '더미 유저',
-        writerProfileImage: '',
-        writerBadge: '초보',
-        genre: ['로맨스', '미스터리'],
-        modifiedAt: '2022-12-24',
-        isLiked: false,
-        likeCount: 0,
-        boastImage:
-          'https://images.unsplash.com/photo-1622595674295-724dffbc9bd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-        hashtags: ['#내가 최고'],
-      },
-    ],
-    totalNumber: 30,
-    isLast: false,
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useGetThemeBoastListWithInfinite({ themeId, sort });
+
+  const boastData = useMemo(
+    () => data?.pages.flatMap((page) => page.data.boastList),
+    [data?.pages]
+  );
+
+  const { setTarget } = useIntersectionObserver({
+    onIntersect: ([{ isIntersecting }]) => {
+      if (isIntersecting && hasNextPage) fetchNextPage();
+    },
+  });
+
+  const goBoastEdit = () => {
+    navigate(`/boast/edit?themeId=${themeId}`);
   };
 
   const BoastMenuList: MenuListItemType[] = [
-    { id: 0, name: '최신순' },
-    { id: 1, name: '좋아요순' },
+    { id: 0, name: '최신순', value: SORT_PARAM.DATE },
+    { id: 1, name: '좋아요순', value: SORT_PARAM.LIKE },
   ];
 
   return (
@@ -98,20 +61,25 @@ export default function BoastDetailBottom({ boastId }: Props) {
             disabled={false}
           />
         </ButtonContainer>
-        <BoastHeaderTitle>방탈출러의 리뷰</BoastHeaderTitle>
+        <BoastHeaderTitle>탈출 고수들의 인증</BoastHeaderTitle>
         <BoastHeaderContentsContainer>
           <BoastHeaderRate>
-            {data.boastList.length}명의 탈출 고수가 있네요
+            {boastData?.length}명의 탈출 고수가 있네요
           </BoastHeaderRate>
           <BoastHeaderSort>
-            <Menu list={BoastMenuList} />
+            <Menu list={BoastMenuList} setSelectedOption={setSort} />
           </BoastHeaderSort>
         </BoastHeaderContentsContainer>
       </BoastDetailBottomHeaderSection>
       <BoastDetailBottomListSection>
-        {data?.boastList.map((el) => (
-          <BoastItem key={el.boastId} boastItem={el} />
+        {boastData?.map((boastItem) => (
+          <BoastItem key={boastItem.boastId} boastItem={boastItem} />
         ))}
+        {isFetchingNextPage ? (
+          <LoadingSpinner isLoading isFixed={false} />
+        ) : (
+          <div ref={setTarget} />
+        )}
       </BoastDetailBottomListSection>
     </BoastDetailBottomContainer>
   );

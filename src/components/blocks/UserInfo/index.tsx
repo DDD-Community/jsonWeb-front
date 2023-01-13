@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { generateUUID } from '@src/lib/util';
 import { UserInfoType } from '@src/types/types';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
-// import { ROLE_USER_RANK } from '@constants/common';
+import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
 import {
   ReviewUserInfoSection,
@@ -31,10 +31,10 @@ export default function UserInfo({
   }, [likeMutate]);
 
   const getBadgeColorHex = (level: string) => {
-    if (level === '초보') return theme.color.primary.green;
-    if (level === '중수') return theme.color.primary.kakao;
-    if (level === '고수') return theme.color.primary.orange;
-    if (level === '초고수') return theme.color.primary.purple;
+    if (level === ROLE_USER_RANK.LV1) return theme.color.primary.green;
+    if (level === ROLE_USER_RANK.LV2) return theme.color.primary.kakao;
+    if (level === ROLE_USER_RANK.LV3) return theme.color.primary.orange;
+    if (level === ROLE_USER_RANK.LV4) return theme.color.primary.purple;
     return theme.color.grayscale.gray_100;
   };
   /**

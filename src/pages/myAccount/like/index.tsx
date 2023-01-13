@@ -40,7 +40,7 @@ export default function MyLike() {
   return (
     <MyLikeContainer>
       <SideWrapper>
-        <CardList list={[...cardList].reverse()} />
+        <CardList list={[...cardList]} />
       </SideWrapper>
     </MyLikeContainer>
   );
