@@ -1,11 +1,12 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
+import { useRouteChangeTracker } from '@hooks/useRouteChangeTracker';
 
 import KakaoSign from '@pages/login/kakaoSign';
 import LoginPage from '@pages/login';
@@ -27,45 +28,45 @@ import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
 import SearchPage from './pages/search';
 
 function App() {
+  useRouteChangeTracker();
+
   return (
     <ThemeProvider theme={CustomTheme}>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <ErrorBoundary>
-              <Suspense fallback={<LoadingSpinner isLoading isFixed />}>
-                <Header />
-                <GlobalStyle />
-                <Routes>
-                  <Route index element={<CafeListPage />} />
-                  <Route
-                    path="review/detail/:themeId"
-                    element={<ReviewDetailPage />}
-                  />
-                  <Route path="login" element={<LoginPage />} />
-                  <Route
-                    path="users/login"
-                    element={<KakaoSign method="LOGIN" />}
-                  />
-                  <Route
-                    path="users/logout"
-                    element={<KakaoSign method="LOGOUT" />}
-                  />
-                  <Route path="review/edit" element={<ReviewEditPage />} />
-                  <Route path="certify/edit" element={<CertifyEditPage />} />
-                  <Route path="search" element={<SearchPage />} />
-                  <Route path="cafe-detail" element={<DetailPage />} />
-                  <Route path="my-account" element={<MyAccountPage />} />
-                  <Route path="my-account/like" element={<LikeListPage />} />
-                  <Route path="*" element={<Navigate to="not-found" />} />
-                  <Route path="not-found" element={<NotFoundPage />} />
-                </Routes>
-                <BottomNavWrapper>
-                  <Nav />
-                </BottomNavWrapper>
-              </Suspense>
-            </ErrorBoundary>
-          </BrowserRouter>
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner isLoading isFixed />}>
+              <Header />
+              <GlobalStyle />
+              <Routes>
+                <Route index element={<CafeListPage />} />
+                <Route
+                  path="review/detail/:themeId"
+                  element={<ReviewDetailPage />}
+                />
+                <Route path="login" element={<LoginPage />} />
+                <Route
+                  path="users/login"
+                  element={<KakaoSign method="LOGIN" />}
+                />
+                <Route
+                  path="users/logout"
+                  element={<KakaoSign method="LOGOUT" />}
+                />
+                <Route path="review/edit" element={<ReviewEditPage />} />
+                <Route path="certify/edit" element={<CertifyEditPage />} />
+                <Route path="search" element={<SearchPage />} />
+                <Route path="cafe-detail" element={<DetailPage />} />
+                <Route path="my-account" element={<MyAccountPage />} />
+                <Route path="my-account/like" element={<LikeListPage />} />
+                <Route path="*" element={<Navigate to="not-found" />} />
+                <Route path="not-found" element={<NotFoundPage />} />
+              </Routes>
+              <BottomNavWrapper>
+                <Nav />
+              </BottomNavWrapper>
+            </Suspense>
+          </ErrorBoundary>
           <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
         </QueryClientProvider>
       </RecoilRoot>
