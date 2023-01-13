@@ -17,3 +17,9 @@ export type FeedContentsType = {
   image: string;
   hashtags: string[];
 };
+
+export type BoastEditType = {
+  hashtags: string[];
+  imageUrl: string;
+  themeId: number;
+};

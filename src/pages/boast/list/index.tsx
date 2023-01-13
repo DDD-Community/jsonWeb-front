@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import Menu from '@src/components/blocks/Menu';
 import { LoadingSpinner } from '@components/atom';
 import { MenuListItemType } from '@src/types/common';
-import { useGetAllBoastsWithInfinite } from '@src/lib/hooks/queries/boast/useGetAllBoastsWithInfinite';
+import { useGetAllBoastsWithInfinite } from '@src/lib/hooks/queries/boast';
 import { useIntersectionObserver } from '@hooks/useIntersectionObserver';
 import { SORT_PARAM } from '@src/constants/common';
 import BoastItem from '@src/components/template/boast/item';
