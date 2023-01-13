@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -24,7 +23,6 @@ import GlobalStyle from '@styles/Global';
 
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
-import LoadingSpinner from '@components/atom/LoadingSpinner';
 import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
 import SearchPage from './pages/search';
 
