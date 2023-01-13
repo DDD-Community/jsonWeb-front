@@ -20,3 +20,4 @@ export { ReactComponent as LockRate } from './lockRate.svg';
 export { ReactComponent as LockRateSmall } from './lockRate_small.svg';
 export { ReactComponent as Delete } from './delete.svg';
 export { ReactComponent as Like } from './like.svg';
+export { ReactComponent as More } from './more.svg';

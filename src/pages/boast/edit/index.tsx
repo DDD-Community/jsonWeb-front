@@ -7,7 +7,7 @@ import { Button } from '@src/components/atom';
 import { ButtonEnum } from '@src/constants/common';
 import HashtagInput from '@src/components/blocks/HashtagInput';
 import {
-  CertifySection,
+  BoastSection,
   EditSection,
   ImagePreview,
   SubmitSection,
@@ -55,7 +55,7 @@ export default function Edit() {
   const submitCertify = () => {};
 
   return (
-    <CertifySection className="Certify">
+    <BoastSection className="boast">
       <SelectBox
         options={data}
         selectedOption={themeSelectedOption}
@@ -73,7 +73,7 @@ export default function Edit() {
           text="인증 사진 업로드"
           disabled={false}
         />
-        <ImagePreview>{imgVisible && <img alt="Certification" />}</ImagePreview>
+        <ImagePreview>{imgVisible && <img alt="Boast Preview" />}</ImagePreview>
         <HashtagInput tagList={tagList} setTagList={setTagList} />
       </EditSection>
       <SubmitSection>
@@ -85,6 +85,6 @@ export default function Edit() {
           disabled={false}
         />
       </SubmitSection>
-    </CertifySection>
+    </BoastSection>
   );
 }

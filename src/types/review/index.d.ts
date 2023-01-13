@@ -1,4 +1,5 @@
-import EvaluationType from '../types';
+import EvaluationType, { GenreType, UserInfoType } from '../types';
+
 /**
  * @name mock-themeByCafe
  * @todo data spec 미정
@@ -13,16 +14,6 @@ export interface ReviewThemeType {
 export type ReviewEvaluationStarType = 'Star' | 'Lock';
 export type ReviewEvaluationType = EvaluationType;
 
-/**
- * @todo : 타입추가
- */
-export type GenreTypeEnum = '공포' | '미스터리';
-
-export interface GenreType {
-  genreId: number;
-  genreName: GenreTypeEnum;
-}
-
 export interface ReviewThemeDetailType {
   ageLimit: string;
   avgStar: number;
@@ -36,18 +27,6 @@ export interface ReviewThemeDetailType {
   reviewCount: number;
   themeId: number | undefined;
   time: number;
-}
-
-export interface UserInfoType {
-  id?: number;
-  isLiked: boolean;
-  likeCount: number;
-  modifiedAt: string;
-  themeGenre: GenreTypeEnum[];
-  themeName: string;
-  writerNickname: string;
-  profileImageUrl: string;
-  writerLevel: string;
 }
 
 export interface ReviewEditType {

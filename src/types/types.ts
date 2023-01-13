@@ -37,3 +37,26 @@ export type MypageListItemType = {
   to: string;
   image: string;
 };
+
+/**
+ * @todo : 타입추가
+ */
+export type GenreTypeEnum = '공포' | '미스터리' | '로맨스';
+
+export interface GenreType {
+  genreId: number;
+  genreName: GenreTypeEnum;
+}
+
+export type BadgeTypeEnum = '초보' | '중수' | '고수' | '초고수';
+
+export interface UserInfoType {
+  isLiked: boolean;
+  likeCount: number;
+  modifiedAt: string;
+  genre: GenreTypeEnum[];
+  themeName: string;
+  writerNickname: string;
+  writerProfileImage: string;
+  writerBadge: BadgeTypeEnum;
+}
