@@ -6,8 +6,8 @@ import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
-import KakaoSign from '@pages/login/kakaoSign';
 
+import KakaoSign from '@pages/login/kakaoSign';
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
 import ReviewDetailPage from '@pages/review/detail';
@@ -19,6 +19,7 @@ import LikeListPage from '@pages/myAccount/like';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
 
+import ErrorBoundary from '@components/template/error/ErrorBoundary';
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
 import LoadingSpinner from '@components/atom/LoadingSpinner';
@@ -31,37 +32,39 @@ function App() {
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
-            <Suspense fallback={<LoadingSpinner isLoading isFixed />}>
-              <Header />
-              <GlobalStyle />
-              <Routes>
-                <Route index element={<CafeListPage />} />
-                <Route
-                  path="review/detail/:themeId"
-                  element={<ReviewDetailPage />}
-                />
-                <Route path="login" element={<LoginPage />} />
-                <Route
-                  path="users/login"
-                  element={<KakaoSign method="LOGIN" />}
-                />
-                <Route
-                  path="users/logout"
-                  element={<KakaoSign method="LOGOUT" />}
-                />
-                <Route path="review/edit" element={<ReviewEditPage />} />
-                <Route path="certify/edit" element={<CertifyEditPage />} />
-                <Route path="search" element={<SearchPage />} />
-                <Route path="cafe-detail" element={<DetailPage />} />
-                <Route path="my-account" element={<MyAccountPage />} />
-                <Route path="my-account/like" element={<LikeListPage />} />
-                <Route path="*" element={<Navigate to="not-found" />} />
-                <Route path="not-found" element={<NotFoundPage />} />
-              </Routes>
-              <BottomNavWrapper>
-                <Nav />
-              </BottomNavWrapper>
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={<LoadingSpinner isLoading isFixed />}>
+                <Header />
+                <GlobalStyle />
+                <Routes>
+                  <Route index element={<CafeListPage />} />
+                  <Route
+                    path="review/detail/:themeId"
+                    element={<ReviewDetailPage />}
+                  />
+                  <Route path="login" element={<LoginPage />} />
+                  <Route
+                    path="users/login"
+                    element={<KakaoSign method="LOGIN" />}
+                  />
+                  <Route
+                    path="users/logout"
+                    element={<KakaoSign method="LOGOUT" />}
+                  />
+                  <Route path="review/edit" element={<ReviewEditPage />} />
+                  <Route path="certify/edit" element={<CertifyEditPage />} />
+                  <Route path="search" element={<SearchPage />} />
+                  <Route path="cafe-detail" element={<DetailPage />} />
+                  <Route path="my-account" element={<MyAccountPage />} />
+                  <Route path="my-account/like" element={<LikeListPage />} />
+                  <Route path="*" element={<Navigate to="not-found" />} />
+                  <Route path="not-found" element={<NotFoundPage />} />
+                </Routes>
+                <BottomNavWrapper>
+                  <Nav />
+                </BottomNavWrapper>
+              </Suspense>
+            </ErrorBoundary>
           </BrowserRouter>
           <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
         </QueryClientProvider>

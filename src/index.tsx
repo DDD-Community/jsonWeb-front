@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
 import App from './App';
 import AppLayoutWrapper from './components/template/AppLayoutWrapper';
 import reportWebVitals from './reportWebVitals';
+
+Sentry.init({
+  dsn:
+    process.env.NODE_ENV === 'production'
+      ? process.env.REACT_APP_SENTRY_DSN
+      : undefined,
+  integrations: [new Integrations.BrowserTracing()],
+  tracesSampleRate: 1.0,
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

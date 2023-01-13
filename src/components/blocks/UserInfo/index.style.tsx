@@ -6,7 +6,7 @@ const ReviewUserInfoSection = styled.section`
   margin: 0 20px;
 `;
 
-const ReviewUserIcon = styled.div<{ url: string }>`
+const ReviewUserIcon = styled.div<{ url: any }>`
   width: 40px;
   height: 40px;
   background-image: url('${(props) => props.url}');
