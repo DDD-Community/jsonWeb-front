@@ -3,6 +3,9 @@ import styled from '@emotion/styled';
 export const MyBoastContainer = styled.section`
   width: 100%;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const BoastFeed = styled.section``;
