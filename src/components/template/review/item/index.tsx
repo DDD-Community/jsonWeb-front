@@ -1,3 +1,4 @@
+import { useRef, useState, useLayoutEffect } from 'react';
 import { ReviewType } from '@src/types/review';
 import UserInfo from '@components/blocks/UserInfo';
 import { RateType } from '@constants/common';
@@ -13,6 +14,7 @@ import {
   RateContainer,
   RateTitle,
   RateContents,
+  ReviewContentsMoreBtn,
 } from './index.style';
 
 function ReviewRate({ type, len }: { type: string; len: number }) {
@@ -40,9 +42,27 @@ function ReviewRate({ type, len }: { type: string; len: number }) {
 }
 
 export default function ReviewItem({ reviewItem }: { reviewItem: ReviewType }) {
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const [showMore, setShowMore] = useState(false);
+
   const { mutate: handleLikeMutate } = useReviewLikeMutation({
     reviewId: reviewItem.reviewId,
   });
+
+  useLayoutEffect(() => {
+    if (!descriptionRef.current) return;
+    if (
+      descriptionRef.current.clientHeight < descriptionRef.current.scrollHeight
+    )
+      setShowMore(true);
+  }, [descriptionRef]);
+
+  const handleMoreBtnClick = () => {
+    if (!descriptionRef.current) return;
+
+    descriptionRef.current.classList.add('show');
+    setShowMore(!showMore);
+  };
 
   return (
     <ReviewItemContainer>
@@ -59,7 +79,15 @@ export default function ReviewItem({ reviewItem }: { reviewItem: ReviewType }) {
         <ReviewRate type={RateType.STAR} len={reviewItem.star} />
         <ReviewRate type={RateType.LOCK} len={reviewItem.difficulty} />
       </ReviewRateSection>
-      <ReviewItemContents>{reviewItem.content}</ReviewItemContents>
+      <ReviewItemContents ref={descriptionRef}>
+        {reviewItem.content}
+      </ReviewItemContents>
+      <ReviewContentsMoreBtn
+        className={showMore ? 'show' : 'hide'}
+        onClick={handleMoreBtnClick}
+      >
+        ...더보기
+      </ReviewContentsMoreBtn>
     </ReviewItemContainer>
   );
 }

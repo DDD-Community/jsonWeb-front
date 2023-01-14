@@ -4,6 +4,7 @@ import { UserInfoType } from '@src/types/types';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
 import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
+import { useDefaultProfile } from '@hooks/useDefaultProfile';
 import {
   ReviewUserInfoSection,
   ReviewUserInfoContainer,
@@ -26,6 +27,7 @@ export default function UserInfo({
   userInfo: UserInfoType;
   likeMutate: () => void;
 }) {
+  const defaultUserProfile = useDefaultProfile();
   const handleLikeClick = useCallback(() => {
     likeMutate();
   }, [likeMutate]);
@@ -44,7 +46,8 @@ export default function UserInfo({
 
   return (
     <ReviewUserInfoSection>
-      <ReviewUserIcon url={userInfo.writerProfileImage} />
+      <ReviewUserIcon url={userInfo.writerProfileImage || defaultUserProfile} />
+
       <ReviewUserInfoContainer>
         <ReviewUserTheme>
           <BoldTextSpan>{userInfo.themeName}</BoldTextSpan>

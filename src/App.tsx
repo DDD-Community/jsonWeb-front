@@ -1,13 +1,14 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from '@emotion/react';
 import { CustomTheme } from '@styles/Theme';
 import { queryClient } from '@api/queryClient';
-import KakaoSign from '@pages/login/kakaoSign';
+import { useRouteChangeTracker } from '@hooks/useRouteChangeTracker';
 
+import KakaoSign from '@pages/login/kakaoSign';
 import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
 import ReviewDetailPage from '@pages/review/detail';
@@ -22,6 +23,7 @@ import MyLikePage from '@src/pages/myAccount/like';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
 
+import ErrorBoundary from '@components/template/error/ErrorBoundary';
 import Header from '@components/blocks/Header';
 import Nav from '@components/blocks/Nav';
 import LoadingSpinner from '@components/atom/LoadingSpinner';
@@ -29,11 +31,13 @@ import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
 import SearchPage from './pages/search';
 
 function App() {
+  useRouteChangeTracker();
+
   return (
     <ThemeProvider theme={CustomTheme}>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
+          <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner isLoading isFixed />}>
               <Header />
               <GlobalStyle />
@@ -68,7 +72,7 @@ function App() {
                 <Nav />
               </BottomNavWrapper>
             </Suspense>
-          </BrowserRouter>
+          </ErrorBoundary>
           <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
         </QueryClientProvider>
       </RecoilRoot>
