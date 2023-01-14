@@ -10,10 +10,10 @@ export const RateType = {
 };
 
 export const ROLE_USER_RANK = {
-  초보: 'LEVEL1',
-  중수: 'LEVEL2',
-  고수: 'LEVEL3',
-  초고수: 'LEVEL4',
+  LV1: '탈출노비',
+  LV2: '탈출평민',
+  LV3: '탈출양반',
+  LV4: '탈출왕',
 };
 
 export const SORT_PARAM = {

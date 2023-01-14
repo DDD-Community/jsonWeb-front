@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CardListItemType } from '@src/types/types';
 import { SideWrapper } from '@components/template/PageLayoutWrapper';
 import CardList from '@components/blocks/Card/CardList';
-import { MyAccountContainer } from './style';
+import { MyLikeContainer } from './style';
 
 const dummyData: CardListItemType[] = [
   {
@@ -35,13 +35,13 @@ const dummyData: CardListItemType[] = [
   },
 ];
 
-export default function LikeList() {
+export default function MyLike() {
   const [cardList] = useState<CardListItemType[]>(dummyData);
   return (
-    <MyAccountContainer>
+    <MyLikeContainer>
       <SideWrapper>
-        <CardList list={[...cardList].reverse()} />
+        <CardList list={[...cardList]} />
       </SideWrapper>
-    </MyAccountContainer>
+    </MyLikeContainer>
   );
 }

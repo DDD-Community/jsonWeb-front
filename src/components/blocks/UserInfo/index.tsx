@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { generateUUID } from '@src/lib/util';
-import { UserInfoType } from '@src/types/review';
+import { UserInfoType } from '@src/types/types';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
 import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
@@ -12,7 +12,7 @@ import {
   ReviewUserThemeGenre,
   ReviewUserInfo,
   ReviewUserInfoBlock,
-  ReviewUserLevel,
+  ReviewUserNickName,
   ReviewUserBadge,
   ReviewModifiedAt,
   ReviewReport,
@@ -31,11 +31,11 @@ export default function UserInfo({
   }, [likeMutate]);
 
   const getBadgeColorHex = (level: string) => {
-    if (level === 'LEVEL1') return theme.color.primary.green;
-    if (level === 'LEVEL2') return theme.color.primary.kakao;
-    if (level === 'LEVEL3') return theme.color.primary.orange;
-    if (level === 'LEVEL4') return theme.color.primary.purple;
-    return theme.color.grayscale.gray_700;
+    if (level === ROLE_USER_RANK.LV1) return theme.color.primary.green;
+    if (level === ROLE_USER_RANK.LV2) return theme.color.primary.kakao;
+    if (level === ROLE_USER_RANK.LV3) return theme.color.primary.orange;
+    if (level === ROLE_USER_RANK.LV4) return theme.color.primary.purple;
+    return theme.color.grayscale.gray_100;
   };
   /**
    * @todo 신고하기 기능 추가
@@ -44,11 +44,11 @@ export default function UserInfo({
 
   return (
     <ReviewUserInfoSection>
-      <ReviewUserIcon url={userInfo.profileImageUrl} />
+      <ReviewUserIcon url={userInfo.writerProfileImage} />
       <ReviewUserInfoContainer>
         <ReviewUserTheme>
           <BoldTextSpan>{userInfo.themeName}</BoldTextSpan>
-          {userInfo.themeGenre.map((v) => (
+          {userInfo.genre.map((v) => (
             <ReviewUserThemeGenre key={generateUUID()}>
               {' '}
               · {v}
@@ -57,11 +57,9 @@ export default function UserInfo({
         </ReviewUserTheme>
         <ReviewUserInfo>
           <ReviewUserInfoBlock>
-            <ReviewUserLevel>{userInfo.writerNickname}</ReviewUserLevel>
-            <ReviewUserBadge
-              color={getBadgeColorHex(ROLE_USER_RANK[userInfo.writerLevel])}
-            >
-              {userInfo.writerLevel}
+            <ReviewUserNickName>{userInfo.writerNickname}</ReviewUserNickName>
+            <ReviewUserBadge color={getBadgeColorHex(userInfo.writerBadge)}>
+              {userInfo.writerBadge}
             </ReviewUserBadge>
           </ReviewUserInfoBlock>
           <ReviewUserInfoBlock>

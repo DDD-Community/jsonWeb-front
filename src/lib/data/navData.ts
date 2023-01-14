@@ -11,7 +11,7 @@ export const navListData: NavListItemType[] = [
   },
   {
     title: '인증',
-    to: '/certification',
+    to: '/boast',
   },
   {
     title: '마이',
