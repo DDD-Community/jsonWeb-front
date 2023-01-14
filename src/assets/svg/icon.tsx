@@ -22,3 +22,4 @@ export { ReactComponent as Delete } from './delete.svg';
 export { ReactComponent as Like } from './like.svg';
 export { ReactComponent as DefaultImg1 } from './default_img_2.svg';
 export { ReactComponent as DefaultImg2 } from './default_img_2.svg';
+export { ReactComponent as More } from './more.svg';

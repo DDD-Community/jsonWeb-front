@@ -8,6 +8,7 @@ const themes = {
       green: '#b4e100',
       purple: '#6b53dd',
       orange: '#ffa500',
+      red: '#DD5353',
     },
     legacyGrayscale: {
       gray_000: '#E9E9E9',

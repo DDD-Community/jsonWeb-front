@@ -23,6 +23,7 @@ const ReviewUserInfoContainer = styled.div`
 
 const ReviewUserTheme = styled.div`
   margin-bottom: 5px;
+  font-size: ${({ theme }) => `${theme.font.size.m}`};
 `;
 
 const ReviewUserThemeGenre = styled.span`
@@ -47,7 +48,7 @@ const ReviewUserInfoBlock = styled.div`
   }
 `;
 
-const ReviewUserLevel = styled.span`
+const ReviewUserNickName = styled.span`
   color: ${({ theme }) => theme.color.legacyGrayscale.gray_700};
 `;
 
@@ -79,7 +80,7 @@ export {
   ReviewUserThemeGenre,
   ReviewUserInfo,
   ReviewUserInfoBlock,
-  ReviewUserLevel,
+  ReviewUserNickName,
   ReviewUserBadge,
   ReviewModifiedAt,
   ReviewReport,

@@ -13,10 +13,13 @@ import LoginPage from '@pages/login';
 import CafeListPage from '@pages/cafeList';
 import ReviewDetailPage from '@pages/review/detail';
 import ReviewEditPage from '@pages/review/edit';
-import CertifyEditPage from '@pages/certify/edit';
+import BoastPage from '@pages/boast/list';
+import BoastEditPage from '@pages/boast/edit';
 import DetailPage from '@pages/detail';
 import MyAccountPage from '@pages/myAccount';
-import LikeListPage from '@pages/myAccount/like';
+import MyReviewPage from '@src/pages/myAccount/review';
+import MyBoastPage from '@src/pages/myAccount/boast';
+import MyLikePage from '@src/pages/myAccount/like';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
 
@@ -54,11 +57,14 @@ function App() {
                   element={<KakaoSign method="LOGOUT" />}
                 />
                 <Route path="review/edit" element={<ReviewEditPage />} />
-                <Route path="certify/edit" element={<CertifyEditPage />} />
+                <Route path="boast/edit" element={<BoastEditPage />} />
                 <Route path="search" element={<SearchPage />} />
                 <Route path="cafe-detail" element={<DetailPage />} />
+                <Route path="boast" element={<BoastPage />} />
                 <Route path="my-account" element={<MyAccountPage />} />
-                <Route path="my-account/like" element={<LikeListPage />} />
+                <Route path="my-account/review" element={<MyReviewPage />} />
+                <Route path="my-account/boast" element={<MyBoastPage />} />
+                <Route path="my-account/like" element={<MyLikePage />} />
                 <Route path="*" element={<Navigate to="not-found" />} />
                 <Route path="not-found" element={<NotFoundPage />} />
               </Routes>

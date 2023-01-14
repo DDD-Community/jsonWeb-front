@@ -16,8 +16,10 @@ import {
   MenuLabel,
 } from './style';
 import LikeList from './like';
+import BoastList from './boast';
+import ReviewList from './review';
 
-type MenuItemPropsType = {
+type MyMenuItemType = {
   title: string;
   to: string;
   image: string;
@@ -27,6 +29,10 @@ export default function MyAccount() {
   const { pathname } = useLocation();
 
   switch (pathname) {
+    case '/my-account/review':
+      return <ReviewList />;
+    case '/my-account/boast':
+      return <BoastList />;
     case '/my-account/like':
       return <LikeList />;
     default:
@@ -70,7 +76,7 @@ function MyPage() {
   );
 }
 
-function MenuItem({ title, to, image }: MenuItemPropsType) {
+function MenuItem({ title, to, image }: MyMenuItemType) {
   return (
     <Menu key={title}>
       <Link to={to}>
