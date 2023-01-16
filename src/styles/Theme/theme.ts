@@ -5,10 +5,18 @@ const themes = {
       white: '#fff',
       kakao: '#FEE500',
       kakaoLabel: '#191919',
-      green: '#b4e100',
+      green: '#9ACA38',
+      blue: '#00AFDE',
+      cherry: '#DA3D8A',
       purple: '#6b53dd',
-      orange: '#ffa500',
+      orange: '#F58231',
       red: '#DD5353',
+    },
+    level: {
+      first: '#F58231',
+      second: '#9ACA38',
+      third: '#00AFDE',
+      fourth: '#DA3D8A',
     },
     legacyGrayscale: {
       gray_000: '#E9E9E9',
@@ -32,6 +40,7 @@ const themes = {
       gray_600: '#E9E9E9',
       gray_700: '#F2F3F5',
       gray_800: '#F8F8F8',
+      gray_900: '#333333',
     },
     dim: {
       dim_100: 'rgba(0, 0, 0, 0.4)',

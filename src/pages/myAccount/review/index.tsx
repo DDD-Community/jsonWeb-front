@@ -8,7 +8,7 @@ const dummyData: ReviewListType = {
   isLast: true,
   reviewList: [
     {
-      content: `친구들과 갔는데 테마 자체는 신선해요. 
+      content: `친구들과 갔는데 테마 자체는 신선해요.
           카페 분위기나 환경은 좀 더 쾌적했으면 좋겠어요... 넘 답답하고 덥더라구요. 그리고 공포테마이긴하지만 너무 어두우니깐
           진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝 그리고 공포테마이긴하지만 너무 어두우니깐
           진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝`,
@@ -24,10 +24,10 @@ const dummyData: ReviewListType = {
       themeName: '아이코',
       writerNickname: '프로 불편러',
       writerProfileImage: 'https://picsum.photos/200',
-      writerBadge: '초보',
+      writerLevel: '초보',
     },
     {
-      content: `친구들과 갔는데 테마 자체는 신선해요. 
+      content: `친구들과 갔는데 테마 자체는 신선해요.
           카페 분위기나 환경은 좀 더 쾌적했으면 좋겠어요... 넘 답답하고 덥더라구요. 그리고 공포테마이긴하지만 너무 어두우니깐
           진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝 그리고 공포테마이긴하지만 너무 어두우니깐
           진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝`,
@@ -43,10 +43,10 @@ const dummyData: ReviewListType = {
       themeName: '아이코',
       writerNickname: '최푸름',
       writerProfileImage: 'https://picsum.photos/200',
-      writerBadge: '초보',
+      writerLevel: '초보',
     },
     {
-      content: `친구들과 갔는데 테마 자체는 신선해요. 
+      content: `친구들과 갔는데 테마 자체는 신선해요.
                 카페 분위기나 환경은 좀 더 쾌적했으면 좋겠어요... 넘 답답하고 덥더라구요. 그리고 공포테마이긴하지만 너무 어두우니깐
                 진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝 그리고 공포테마이긴하지만 너무 어두우니깐
                 진짜 잘 안보여서 즐기기가 어려운? 테마는 신선하고 재밌지만 불편하네요오 왝왝`,
@@ -62,7 +62,7 @@ const dummyData: ReviewListType = {
       themeName: '아이코',
       writerNickname: '준모민정',
       writerProfileImage: 'https://picsum.photos/200',
-      writerBadge: '고수',
+      writerLevel: '고수',
     },
   ],
   totalNumber: 2,

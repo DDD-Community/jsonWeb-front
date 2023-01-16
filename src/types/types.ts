@@ -48,7 +48,7 @@ export interface GenreType {
   genreName: GenreTypeEnum;
 }
 
-export type BadgeTypeEnum = '초보' | '중수' | '고수' | '초고수';
+export type LevelTypeEnum = '초보' | '중수' | '고수' | '초고수';
 
 export interface UserInfoType {
   isLiked: boolean;
@@ -58,5 +58,5 @@ export interface UserInfoType {
   themeName: string;
   writerNickname: string;
   writerProfileImage: string;
-  writerBadge: BadgeTypeEnum;
+  writerLevel: LevelTypeEnum;
 }

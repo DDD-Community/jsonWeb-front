@@ -33,10 +33,10 @@ export default function UserInfo({
   }, [likeMutate]);
 
   const getBadgeColorHex = (level: string) => {
-    if (level === ROLE_USER_RANK.LV1) return theme.color.primary.green;
-    if (level === ROLE_USER_RANK.LV2) return theme.color.primary.kakao;
-    if (level === ROLE_USER_RANK.LV3) return theme.color.primary.orange;
-    if (level === ROLE_USER_RANK.LV4) return theme.color.primary.purple;
+    if (level === ROLE_USER_RANK.LV1) return theme.color.level.first;
+    if (level === ROLE_USER_RANK.LV2) return theme.color.level.second;
+    if (level === ROLE_USER_RANK.LV3) return theme.color.level.third;
+    if (level === ROLE_USER_RANK.LV4) return theme.color.level.fourth;
     return theme.color.grayscale.gray_100;
   };
   /**
@@ -61,8 +61,8 @@ export default function UserInfo({
         <ReviewUserInfo>
           <ReviewUserInfoBlock>
             <ReviewUserNickName>{userInfo.writerNickname}</ReviewUserNickName>
-            <ReviewUserBadge color={getBadgeColorHex(userInfo.writerBadge)}>
-              {userInfo.writerBadge}
+            <ReviewUserBadge color={getBadgeColorHex(userInfo.writerLevel)}>
+              {userInfo.writerLevel}
             </ReviewUserBadge>
           </ReviewUserInfoBlock>
           <ReviewUserInfoBlock>
