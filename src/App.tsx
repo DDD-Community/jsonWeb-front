@@ -25,6 +25,7 @@ import GlobalStyle from '@styles/Global';
 
 import ErrorBoundary from '@components/template/error/ErrorBoundary';
 import Header from '@components/blocks/Header';
+import Toast from '@components/blocks/Toast';
 import Nav from '@components/blocks/Nav';
 import LoadingSpinner from '@components/atom/LoadingSpinner';
 import { BottomNavWrapper } from '@src/components/template/PageLayoutWrapper';
@@ -71,6 +72,7 @@ function App() {
               <BottomNavWrapper>
                 <Nav />
               </BottomNavWrapper>
+              <Toast />
             </Suspense>
           </ErrorBoundary>
           <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

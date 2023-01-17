@@ -4,12 +4,7 @@ import { Response } from '@src/types/types';
 import { get } from '@src/api/client';
 import { SORT_PARAM } from '@constants/common';
 
-/**
- * @name infinite scroll 호출 단위
- * @description 현재 테스트를 위해 3개 해둠
- * @default {5}
- */
-const REVIEW_PAGE_ITEMS_SIZE = 3;
+const REVIEW_PAGE_ITEMS_SIZE = 5;
 
 export const THEMES_REVIEWLIST_INFINITE_BY_ID_QUERY_KEY =
   'themesReviewListById';
