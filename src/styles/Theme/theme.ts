@@ -5,7 +5,7 @@ const themes = {
       white: '#fff',
       kakao: '#FEE500',
       kakaoLabel: '#191919',
-      green: '#9ACA38',
+      green: '#B4E100',
       blue: '#00AFDE',
       cherry: '#DA3D8A',
       purple: '#6b53dd',

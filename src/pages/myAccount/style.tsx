@@ -2,11 +2,24 @@ import styled from '@emotion/styled';
 
 export const MyAccountContainer = styled.section`
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
+`;
+
+export const NoContent = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AltText = styled.h1`
+  font-size: ${(props) => props.theme.font.size.l};
+  color: ${(props) => props.theme.color.grayscale.gray_200};
+  text-align: center;
 `;
 
 export const Profile = styled.div`

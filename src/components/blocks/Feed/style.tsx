@@ -1,20 +1,21 @@
 import styled from '@emotion/styled';
 
 export const FeedWrapper = styled.section`
-  margin-top: 12px;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const FeedImage = styled.div`
+export const FeedImage = styled.div<{ url: string }>`
   width: 327px;
   height: 327px;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 12px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  margin: 12px 0;
+  background-image: url('${(props) => props.url}');
+  background-color: ${({ theme }) => theme.color.grayscale.gray_400};
+  background-size: cover;
 `;
 
 export const HashtagWrapper = styled.div`

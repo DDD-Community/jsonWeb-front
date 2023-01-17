@@ -1,5 +1,8 @@
-import { Link, useLocation } from 'react-router-dom';
-import { mypageListData } from '@src/lib/data/mypageData';
+import { Link } from 'react-router-dom';
+import { useGetCurrentUser } from '@src/lib/hooks/queries/user';
+import { mypageMenuData } from '@src/lib/data/mypageData';
+import { MypageMenuItemType } from '@src/types/types';
+import { ROLE_USER_RANK } from '@constants/common';
 import {
   MyAccountContainer,
   Profile,
@@ -15,55 +18,45 @@ import {
   MenuIcon,
   MenuLabel,
 } from './style';
-import LikeList from './like';
-import BoastList from './boast';
-import ReviewList from './review';
-
-type MyMenuItemType = {
-  title: string;
-  to: string;
-  image: string;
-};
 
 export default function MyAccount() {
-  const { pathname } = useLocation();
+  const userData = useGetCurrentUser();
 
-  switch (pathname) {
-    case '/my-account/review':
-      return <ReviewList />;
-    case '/my-account/boast':
-      return <BoastList />;
-    case '/my-account/like':
-      return <LikeList />;
-    default:
-      return <MyPage />;
-  }
-}
+  const getGoal = (level: string) => {
+    switch (level) {
+      case ROLE_USER_RANK.LV1:
+        return 100;
+      case ROLE_USER_RANK.LV2:
+        return 200;
+      case ROLE_USER_RANK.LV3:
+        return 300;
+      case ROLE_USER_RANK.LV4:
+        return 400;
+      default:
+        return 0;
+    }
+  };
 
-function MyPage() {
-  const myPoint = 50;
-  const totalPoint = 100;
+  const myPoint: number = userData?.exp || 0;
+  const totalPoint = getGoal(userData?.userLevel!);
   const progress = Math.floor((myPoint / totalPoint) * 100);
 
   return (
     <MyAccountContainer>
       <Profile>
         <ProfileImg>
-          <img
-            src="https://images.unsplash.com/photo-1638643391904-9b551ba91eaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2592&q=80"
-            alt="user profile img"
-          />
+          <img src={userData?.profileImageUrl} alt="user profile img" />
         </ProfileImg>
-        <Level>초보</Level>
-        <Nickname>정의로운죠르디33</Nickname>
+        <Level>{userData?.userLevel}</Level>
+        <Nickname>{userData?.nickname}</Nickname>
         <PointBar>
           <PointProgress now={progress} />
         </PointBar>
-        <PointText>포인트 업데이트 예정입니다</PointText>
+        <PointText>{userData?.exp} 포인트</PointText>
       </Profile>
       <Divider />
       <MenuList>
-        {mypageListData.map((el) => (
+        {mypageMenuData.map((el) => (
           <MenuItem
             key={el.title}
             title={el.title}
@@ -76,7 +69,7 @@ function MyPage() {
   );
 }
 
-function MenuItem({ title, to, image }: MyMenuItemType) {
+function MenuItem({ title, to, image }: MypageMenuItemType) {
   return (
     <Menu key={title}>
       <Link to={to}>

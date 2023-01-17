@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const ReviewUserInfoSection = styled.section`
   position: relative;
   display: flex;
-  margin: 0 20px;
+  margin: 0 24px;
 `;
 
 const ReviewUserIcon = styled.div<{ url: string }>`

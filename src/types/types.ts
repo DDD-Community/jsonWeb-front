@@ -32,7 +32,7 @@ export interface EvaluationType {
   title: string;
 }
 
-export type MypageListItemType = {
+export type MypageMenuItemType = {
   title: string;
   to: string;
   image: string;
@@ -48,7 +48,7 @@ export interface GenreType {
   genreName: GenreTypeEnum;
 }
 
-export type LevelTypeEnum = '초보' | '중수' | '고수' | '초고수';
+export type LevelTypeEnum = '탈출노비' | '탈출평민' | '탈출양반' | '탈출왕';
 
 export interface UserInfoType {
   isLiked: boolean;
