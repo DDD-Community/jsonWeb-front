@@ -1,6 +1,9 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { Spinner, FixedSpinner } from '@components/atom/LoadingSpinner/Spinner';
+import {
+  Spinner,
+  CharacterSpinner,
+} from '@components/atom/LoadingSpinner/Spinner';
 import { defaultFadeInVariants } from '@constants/motion';
 import { LoadingHandler } from '@components/atom/LoadingSpinner/LoadingHandler';
 
@@ -16,7 +19,7 @@ export default function LoadingSpinner({
   return (
     <LoadingHandler
       isLoading={isLoading}
-      loadingComponent={isFixed ? <FixedSpinner /> : <Spinner />}
+      loadingComponent={isFixed ? <CharacterSpinner /> : <Spinner />}
     >
       <motion.div
         variants={defaultFadeInVariants}
