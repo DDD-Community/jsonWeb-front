@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { CardListItemType } from '@src/types/types';
+// import { useMemo } from 'react';
+// import { LoadingSpinner } from '@components/atom';
 import { SideWrapper } from '@components/template/PageLayoutWrapper';
 import CardList from '@components/blocks/Card/CardList';
+// import { useGetMyLikeWithInfinite } from '@src/lib/hooks/queries/user';
+// import { useIntersectionObserver } from '@hooks/useIntersectionObserver';
+import { CardListItemType } from '@src/types/types';
 import { MyLikeContainer } from './style';
 
 const dummyData: CardListItemType[] = [
@@ -37,10 +41,30 @@ const dummyData: CardListItemType[] = [
 
 export default function MyLike() {
   const [cardList] = useState<CardListItemType[]>(dummyData);
+
+  // const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+  //   useGetMyLikeWithInfinite({});
+
+  // const likeData = useMemo(
+  //   () => data?.pages.flatMap((page) => page.data.cafeList),
+  //   [data?.pages]
+  // );
+
+  // const { setTarget } = useIntersectionObserver({
+  //   onIntersect: ([{ isIntersecting }]) => {
+  //     if (isIntersecting && hasNextPage) fetchNextPage();
+  //   },
+  // });
+
   return (
     <MyLikeContainer>
       <SideWrapper>
         <CardList list={[...cardList]} />
+        {/* {isFetchingNextPage ? (
+          <LoadingSpinner isLoading isFixed={false} />
+        ) : (
+          <div ref={setTarget} />
+        )} */}
       </SideWrapper>
     </MyLikeContainer>
   );

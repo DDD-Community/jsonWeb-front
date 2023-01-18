@@ -13,13 +13,11 @@ export type BoastListType = {
   isLast: boolean;
 };
 
-export type FeedContentsType = {
-  image: string;
-  hashtags: string[];
-};
-
-export type BoastEditType = {
+export interface FeedContentsType {
   hashtags: string[];
   imageUrl: string;
+}
+
+export interface BoastEditType extends FeedContentsType {
   themeId: number;
-};
+}

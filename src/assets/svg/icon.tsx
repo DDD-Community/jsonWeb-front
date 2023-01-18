@@ -25,3 +25,4 @@ export { ReactComponent as DefaultImg2 } from './default_img_2.svg';
 export { ReactComponent as More } from './more.svg';
 export { ReactComponent as Character } from './character.svg';
 export { ReactComponent as Shadow } from './shadow.svg';
+export { ReactComponent as Setting } from './setting.svg';

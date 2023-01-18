@@ -46,10 +46,10 @@ export const MenuItemContainer = styled.ul<{
     & > li {
       padding: 0 12px;
 
-      &:first-child {
+      &:first-of-type {
         padding-top: 12px;
       }
-      &:last-child {
+      &:last-of-type {
         padding-bottom: 12px;
       }
     }
@@ -58,7 +58,7 @@ export const MenuItemContainer = styled.ul<{
       color: #999999;
     }
 
-    li:nth-child(${(selectedItemId ?? 0) + 1}) > button {
+    li:nth-of-type(${(selectedItemId ?? 0) + 1}) > button {
       color: #000000;
       background-color: #f2f3f5;
     }

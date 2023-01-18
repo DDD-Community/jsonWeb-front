@@ -40,10 +40,10 @@ export const MoreMenuContainer = styled.ul<{
     & > li {
       padding: 0 12px;
 
-      &:first-child {
+      &:first-of-type {
         padding-top: 12px;
       }
-      &:last-child {
+      &:last-of-type {
         padding-bottom: 12px;
         button {
           color: ${theme.color.primary.red};
