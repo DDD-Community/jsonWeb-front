@@ -1,6 +1,6 @@
-import { MypageListItemType } from '@src/types/types';
+import { MypageMenuItemType } from '@src/types/types';
 
-export const mypageListData: MypageListItemType[] = [
+export const mypageMenuData: MypageMenuItemType[] = [
   {
     title: '리뷰',
     to: '/my-account/review',

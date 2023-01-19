@@ -1,14 +1,12 @@
-import { FeedContentsType } from '@src/types/boast';
+import { BoastType } from '@src/types/boast';
 import { FeedWrapper, FeedImage, Hashtag, HashtagWrapper } from './style';
 
-export default function Feed({ image, hashtags }: FeedContentsType) {
+export default function Feed({ boastItem }: { boastItem: BoastType }) {
   return (
     <FeedWrapper>
-      <FeedImage>
-        <img alt="Feed" src={image} />
-      </FeedImage>
+      <FeedImage url={boastItem.boastImage} />
       <HashtagWrapper>
-        {hashtags.map((tag) => (
+        {boastItem.hashtags.map((tag) => (
           <Hashtag>{tag}</Hashtag>
         ))}
       </HashtagWrapper>

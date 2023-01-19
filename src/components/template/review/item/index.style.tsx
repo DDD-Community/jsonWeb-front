@@ -17,7 +17,7 @@ const ReviewItemContainer = styled.div`
 
 const ReviewEmotionSection = styled.section`
   display: flex;
-  margin: 20px 20px;
+  margin: 20px 24px;
   gap: 8px;
 `;
 
@@ -31,12 +31,12 @@ const ReviewEmotionItem = styled.span`
 
 const ReviewRateSection = styled.section`
   display: block;
-  margin: 0 20px;
+  margin: 0 24px;
 `;
 
 const ReviewItemContents = styled.div`
   display: -webkit-box;
-  margin: 0 20px;
+  margin: 0 24px;
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;

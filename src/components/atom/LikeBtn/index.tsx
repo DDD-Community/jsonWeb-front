@@ -24,7 +24,7 @@ export default function LikeBtn({
   return (
     <LikeBtnWrapper position={position}>
       <Like fill={likeColor()} className="like--btn" />
-      <ReviewLikeCount isLiked={isLiked}>{count}</ReviewLikeCount>
+      <LikeCount isLiked={isLiked}>{count}</LikeCount>
     </LikeBtnWrapper>
   );
 }
@@ -52,7 +52,7 @@ const LikeBtnWrapper = styled.button<{ position: string }>`
   }
 `;
 
-const ReviewLikeCount = styled.p<{ isLiked: boolean }>`
+const LikeCount = styled.p<{ isLiked: boolean }>`
   font-size: ${theme.font.size.s};
   color: ${(props) =>
     props.isLiked
