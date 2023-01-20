@@ -25,5 +25,8 @@ export function useReviewCreateMutation({
       fireToast({ content: '회원님의 소중한 리뷰가 등록되었어요✨' });
       navigate(-1);
     },
+    onError: () => {
+      fireToast({ content: '리뷰 등록이 실패했어요.⛔️' });
+    },
   });
 }

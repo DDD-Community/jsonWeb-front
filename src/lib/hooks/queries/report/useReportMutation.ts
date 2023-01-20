@@ -37,7 +37,7 @@ export function useReportMutation({ body }: { body: DynamicReportType }) {
       navigate(-1);
     },
     onError: () => {
-      fireToast({ content: '네트워크 에러❌' });
+      fireToast({ content: '신고 접수가 실패했어요.⛔️' });
     },
   });
 }
