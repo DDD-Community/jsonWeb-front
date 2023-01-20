@@ -1,7 +1,8 @@
 import { Component, PropsWithChildren, ReactNode } from 'react';
 import styled from '@emotion/styled';
-import { LoginLogo } from '@assets/svg/icon';
+import { ErrorLogo } from '@assets/svg/icon';
 import { captureException } from '@sentry/react';
+import { ERROR } from '@src/constants';
 
 interface ErrorBoundaryProps {
   fallback?: ReactNode;
@@ -36,25 +37,26 @@ class ErrorBoundary extends Component<
     const { hasError, errorMsg } = this.state;
     const { fallback, children } = this.props;
 
+    const errorText = (error: string | null): string => {
+      if (error === 'Error') return 'NETWORK';
+      return 'COMMON';
+    };
+
+    const meta = ERROR[errorText(errorMsg)];
+
     if (hasError) {
       if (fallback) return fallback;
       return (
         <LayoutWrapper>
           <Wrapper>
-            <LoginLogo />
+            <ErrorLogo />
           </Wrapper>
           <Wrapper>
-            <Heading>알 수 없는 에러가 발생했어요.</Heading>
-            <ErrorMsg>{errorMsg}</ErrorMsg>
+            <Heading dangerouslySetInnerHTML={{ __html: meta.title }} />
           </Wrapper>
           <Wrapper>
-            <Msg>
-              에러가 지속적으로 발생할 시<br />
-              아래 이메일로 연락해 주세요.
-            </Msg>
-            <Email href="mailto:pooreumsunny@gmail.com">
-              pooreumsunny@gmail.com
-            </Email>
+            <Msg dangerouslySetInnerHTML={{ __html: meta.description }} />
+            <Button onClick={() => window.location.reload()}>재시도</Button>
           </Wrapper>
         </LayoutWrapper>
       );
@@ -70,14 +72,14 @@ const LayoutWrapper = styled.div`
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  padding: 30% 0px;
+  padding: 20% 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   gap: 40px;
-  margin-top: -100px;
+  margin-top: -120px;
 `;
 
 const Wrapper = styled.div({
@@ -87,22 +89,25 @@ const Wrapper = styled.div({
   alignItems: 'center',
 });
 
-const Heading = styled.div({ marginBottom: '4px' }, ({ theme }) => ({
-  color: theme.color.primary.purple,
-}));
-
-const ErrorMsg = styled.span(({ theme }) => ({
-  color: theme.color.grayscale.gray_000,
-}));
+const Heading = styled.div(
+  { marginBottom: '-20px', marginTop: '-20px' },
+  ({ theme }) => ({
+    color: theme.color.primary.black,
+    fontWeight: theme.font.weight.bold,
+    fontSize: theme.font.size.xxl,
+  })
+);
 
 const Msg = styled.span(
   { textAlign: 'center', marginBottom: '24px' },
   ({ theme }) => ({
-    color: theme.color.grayscale.gray_000,
+    color: theme.color.grayscale.gray_200,
+    fontWeight: theme.font.weight.medium,
+    fontSize: theme.font.size.l,
   })
 );
 
-const Email = styled.a(
+const Button = styled.button(
   {
     all: 'unset',
     cursor: 'pointer',
@@ -114,7 +119,7 @@ const Email = styled.a(
     transition: 'transform .3s',
   },
   ({ theme }) => ({
-    backgroundColor: theme.color.primary.purple,
-    color: theme.color.primary.white,
+    backgroundColor: theme.color.primary.purple_weak,
+    color: theme.color.primary.purple,
   })
 );
