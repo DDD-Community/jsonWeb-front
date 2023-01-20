@@ -22,9 +22,8 @@ export function useReviewCreateMutation({
   return useMutation(() => postReviewCreateMutation(themeId, body), {
     onSuccess: () => {
       queryClient.invalidateQueries(['themesReviewListById']);
-      navigate(`/review/detail/${themeId}`);
-
       fireToast({ content: '회원님의 소중한 리뷰가 등록되었어요✨' });
+      navigate(-1);
     },
   });
 }

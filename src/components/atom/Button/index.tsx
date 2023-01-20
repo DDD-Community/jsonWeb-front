@@ -51,6 +51,7 @@ const StyledButton = styled.button<{
   cursor: pointer;
   font-size: ${({ theme }) => `${theme.font.size.m}`};
   font-weight: ${({ theme }) => `${theme.font.weight.regular}`};
+  transition: background 0.3s;
 
   &.button_white {
     border: 2px solid ${({ theme }) => `${theme.color.primary.purple}`};
