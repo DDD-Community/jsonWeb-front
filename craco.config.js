@@ -4,7 +4,7 @@ const swcPlugin = require('./swcPlugin');
 
 module.exports = {
   plugins: [
-    swcPlugin,
+    { plugin: swcPlugin },
     {
       plugin: CracoAlias,
       options: {
