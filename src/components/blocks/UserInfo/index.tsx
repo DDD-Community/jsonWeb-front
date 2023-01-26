@@ -1,6 +1,9 @@
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { generateUUID } from '@src/lib/util';
 import { UserInfoType } from '@src/types/types';
+import { ReviewType } from '@src/types/review';
+import { BoastType } from '@src/types/boast';
 import { BoldTextSpan, LikeBtn } from '@components/atom';
 import { ROLE_USER_RANK } from '@constants/common';
 import { CustomTheme as theme } from '@src/styles/Theme';
@@ -28,6 +31,7 @@ export default function UserInfo({
   likeMutate: () => void;
 }) {
   const defaultUserProfile = useDefaultProfile();
+  const navigate = useNavigate();
   const handleLikeClick = useCallback(() => {
     likeMutate();
   }, [likeMutate]);
@@ -39,10 +43,31 @@ export default function UserInfo({
     if (level === ROLE_USER_RANK.LV4) return theme.color.level.fourth;
     return theme.color.grayscale.gray_100;
   };
-  /**
-   * @todo 신고하기 기능 추가
-   */
-  const reportHandler = (v: any) => v;
+
+  const isHasKeyInUserInfo = (property: string) =>
+    Object.prototype.hasOwnProperty.call(userInfo, property);
+
+  const reportHandler = () => {
+    const typeFormatter = () => {
+      let id;
+      let type;
+
+      if (isHasKeyInUserInfo('reviewId')) {
+        type = 'review';
+        id = (userInfo as ReviewType).reviewId;
+      }
+      if (isHasKeyInUserInfo('boastId')) {
+        type = 'boast';
+        id = (userInfo as BoastType).boastId;
+      }
+
+      return { type, id };
+    };
+
+    navigate(
+      `/report/edit?type=${typeFormatter().type}&id=${typeFormatter().id}`
+    );
+  };
 
   return (
     <ReviewUserInfoSection>

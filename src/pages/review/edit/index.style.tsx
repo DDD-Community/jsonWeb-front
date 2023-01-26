@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const ReviewSection = styled.section`
   position: relative;
-  padding: 0 20px;
+  padding: 0 24px;
   margin-top: 40px;
 `;
 

@@ -60,3 +60,7 @@ export interface UserInfoType {
   writerProfileImage: string;
   writerLevel: LevelTypeEnum;
 }
+
+export interface ReportType {
+  content: string;
+}
