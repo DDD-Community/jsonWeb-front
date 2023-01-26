@@ -203,6 +203,7 @@ const TextWrapper = styled.div`
   color: ${({ theme }) => `${theme.color.grayscale.gray_200}`};
   margin-left: 34px;
   margin-top: 100px;
+  gap: 15px;
   animation: ${blinkingTitle} 0.5s ease-in-out infinite;
 `;
 

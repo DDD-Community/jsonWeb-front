@@ -13,13 +13,17 @@ const TextAreaWrapper = styled.div`
   margin: 16px 0;
 `;
 
-const TextAreaContents = styled.textarea<{ isOver: boolean }>`
+const TextAreaContents = styled.textarea<{
+  isOver: boolean;
+  isVisibility: boolean;
+}>`
+  visibility: ${({ isVisibility }) => (isVisibility ? '' : 'hidden')};
   outline: none;
   border: 2px solid ${({ theme }) => theme.color.grayscale.gray_600};
   border-radius: 10px;
   background: ${({ theme }) => theme.color.grayscale.gray_800};
   padding: 10px;
-  width: 310px;
+  width: 306px;
   height: 200px;
   resize: none;
   color: ${({ theme }) => theme.color.primary.black};

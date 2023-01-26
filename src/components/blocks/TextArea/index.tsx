@@ -6,7 +6,7 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react';
-import { PLACEHOLDER_TEXT, MAX_LENGTH_CONTENT } from '@src/constants';
+import { MAX_LENGTH_CONTENT, PLACEHOLDER_TEXT } from '@src/constants';
 import { DEFAULT_ARIA_REVIEW_TEXTAREA } from '@src/constants/aria-label';
 import {
   TextAreaWrapper,
@@ -17,9 +17,16 @@ import {
 interface Props {
   content: string | '';
   setContent: Dispatch<SetStateAction<string>>;
+  placeholder?: string;
+  isVisibility?: boolean;
 }
 
-export default function TextArea({ content, setContent }: Props) {
+export default function TextArea({
+  content,
+  setContent,
+  placeholder = PLACEHOLDER_TEXT,
+  isVisibility = true,
+}: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [isOver, setIsOver] = useState(false);
 
@@ -46,9 +53,10 @@ export default function TextArea({ content, setContent }: Props) {
         ref={textareaRef}
         role="form"
         aria-label={DEFAULT_ARIA_REVIEW_TEXTAREA}
-        placeholder={PLACEHOLDER_TEXT}
+        placeholder={placeholder}
         value={content}
         isOver={getIsOver}
+        isVisibility={isVisibility}
         onChange={(e) => handleContentCheck(e.target.value)}
       />
       <TextAreaCheckValidation isOver={getIsOver}>

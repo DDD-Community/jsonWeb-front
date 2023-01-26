@@ -4,9 +4,13 @@ import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import ReactGA from 'react-ga';
+import { hotjar } from 'react-hotjar';
+
 import App from './App';
 import AppLayoutWrapper from './components/template/AppLayoutWrapper';
 import reportWebVitals from './reportWebVitals';
+
+hotjar.initialize(Number(process.env.REACT_APP_HOTJAR_CODE), 6);
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID || '');
 
@@ -22,6 +26,7 @@ Sentry.init({
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <AppLayoutWrapper>
