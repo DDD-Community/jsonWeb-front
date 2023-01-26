@@ -26,3 +26,4 @@ export { ReactComponent as More } from './more.svg';
 export { ReactComponent as Setting } from './setting.svg';
 export { ReactComponent as Character } from './character.svg';
 export { ReactComponent as Shadow } from './shadow.svg';
+export { ReactComponent as ErrorLogo } from './error.svg';

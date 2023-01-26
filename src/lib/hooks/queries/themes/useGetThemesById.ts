@@ -12,7 +12,7 @@ interface ReviewThemeDetailTypeResponse extends Response {
 
 export const fetchThemesById = (
   themeId: number
-): Promise<ReviewThemeDetailTypeResponse> => get(`/themes/${themeId}`);
+): Promise<ReviewThemeDetailTypeResponse> => get(`/themes1/${themeId}`);
 
 export function useGetThemesById({ themeId }: { themeId: number }) {
   const { data, isLoading } = useQuery(
