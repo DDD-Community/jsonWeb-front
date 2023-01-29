@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { put } from '@src/api/client';
 
 export const putBoastLike = async (boastId: number) =>

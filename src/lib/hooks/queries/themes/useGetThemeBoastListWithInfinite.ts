@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from 'react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { BoastListType } from '@src/types/boast';
 import { Response } from '@src/types/types';
 import { get } from '@src/api/client';

@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { post } from '@src/api/client';
 import { useNavigate } from 'react-router-dom';
 import { BoastEditType } from '@src/types/boast';
