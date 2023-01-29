@@ -3,3 +3,4 @@ from = '/proxy/*'
 to = 'https://exitnow.link/:splat'
 status = 200
 force = true
+headers = {X-From = "Netlify"}
