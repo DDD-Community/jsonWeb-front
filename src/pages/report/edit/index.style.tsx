@@ -12,6 +12,7 @@ const ReportTitle = styled.h1`
 
 const SubmitSection = styled.div`
   margin: 0 24px 0 24px;
+  text-align: center;
 `;
 
 export { ReportContainer, ReportTitle, SubmitSection };

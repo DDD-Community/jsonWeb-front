@@ -50,4 +50,3 @@ export const reportSchema = [
     name: '기타 사유',
   },
 ];
-
