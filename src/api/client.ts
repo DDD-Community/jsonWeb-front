@@ -1,11 +1,14 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 const getAccessTokenLocalStorage = () => {
   const accessToken = localStorage.getItem('EXIT_LOGIN_TOKEN');
   return accessToken ? `Bearer ${accessToken}` : '';
 };
 
 export const instance = axios.create({
+  baseURL: PROXY,
   withCredentials: false,
   headers: {
     Authorization: `${getAccessTokenLocalStorage()}`,
