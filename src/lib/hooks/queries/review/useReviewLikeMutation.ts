@@ -7,6 +7,8 @@ export const putReviewLike = async (reviewId: number) =>
 export function useReviewLikeMutation({ reviewId }: { reviewId: number }) {
   const queryClient = useQueryClient();
   return useMutation(() => putReviewLike(reviewId), {
-    onSuccess: () => queryClient.invalidateQueries(['themesReviewListById']),
+    onSuccess() {
+      queryClient.invalidateQueries(['themesReviewListById']);
+    },
   });
 }
