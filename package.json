@@ -59,7 +59,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://exitnow.netlify.app",
   "browserslist": {
     "production": [
       ">0.2%",
