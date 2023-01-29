@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
-const PROXY = window.location.hostname === 'localhost' ? '' : 'proxy';
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 
 const getAccessTokenLocalStorage = () => {
   const accessToken = localStorage.getItem('EXIT_LOGIN_TOKEN');
