@@ -6,7 +6,8 @@ const getAccessTokenLocalStorage = () => {
 };
 
 export const instance = axios.create({
-  baseURL: 'api',
+  baseURL:
+    process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : '',
   withCredentials: false,
   headers: {
     Authorization: `${getAccessTokenLocalStorage()}`,
