@@ -12,6 +12,7 @@ const themes = {
       purple_weak: '#E9E5FF',
       orange: '#F58231',
       red: '#DD5353',
+      validateError: '#E51F16',
     },
     level: {
       first: '#F58231',

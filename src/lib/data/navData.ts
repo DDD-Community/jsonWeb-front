@@ -6,10 +6,6 @@ export const navListData: NavListItemType[] = [
     to: '/',
   },
   {
-    title: '팀원모집',
-    to: '/recruit',
-  },
-  {
     title: '인증',
     to: '/boast',
   },

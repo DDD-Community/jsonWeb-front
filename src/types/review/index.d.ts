@@ -47,7 +47,7 @@ export interface ReviewListType {
   totalNumber: number;
 }
 
-export type emoji = '재밌어했어요😉' | '무서워요😨';
+export type emoji = '재밌어했어요😉' | '무서워요😨' | 'No Review';
 
 export interface PopularType {
   emotion: emoji;
