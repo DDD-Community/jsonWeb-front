@@ -66,16 +66,16 @@ const ReviewCountText = styled.span`
 
 const ReviewDetailInfoBoxSection = styled.section`
   display: flex;
-  width: 327px;
+  width: 372px;
   height: 71px;
   background-color: ${({ theme }) => `${theme.color.grayscale.gray_800}`};
   color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 20px 0px;
 `;
 
 const ReviewDetailInfoBox = styled.div`
-  width: 109px;
+  width: 124px;
   height: 39px;
   flex-wrap: nowrap;
   text-align: center;

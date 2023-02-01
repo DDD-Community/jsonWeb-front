@@ -20,6 +20,7 @@ import MyAccountPage from '@pages/myAccount';
 import MyReviewPage from '@src/pages/myAccount/review';
 import MyBoastPage from '@src/pages/myAccount/boast';
 import MyLikePage from '@src/pages/myAccount/like';
+import MyProfileEditPage from '@src/pages/myAccount/edit';
 import ReportPage from '@src/pages/report/edit';
 import NotFoundPage from '@pages/NotFound';
 import GlobalStyle from '@styles/Global';
@@ -67,6 +68,7 @@ function App() {
                 <Route path="my-account/review" element={<MyReviewPage />} />
                 <Route path="my-account/boast" element={<MyBoastPage />} />
                 <Route path="my-account/like" element={<MyLikePage />} />
+                <Route path="my-account/edit" element={<MyProfileEditPage />} />
                 <Route path="report/edit" element={<ReportPage />} />
                 <Route path="*" element={<Navigate to="not-found" />} />
                 <Route path="not-found" element={<NotFoundPage />} />

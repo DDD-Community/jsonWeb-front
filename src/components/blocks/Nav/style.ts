@@ -11,9 +11,12 @@ export const NavContainer = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 375px;
+  max-width: 414px;
   background-color: #fff;
   z-index: 9;
+  button {
+    cursor: pointer;
+  }
 `;
 
 export const NavItem = styled.li<{ match: PathMatch<string> | null }>`
@@ -23,7 +26,6 @@ export const NavItem = styled.li<{ match: PathMatch<string> | null }>`
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-
     p {
       font-weight: 500;
       font-size: 10px;

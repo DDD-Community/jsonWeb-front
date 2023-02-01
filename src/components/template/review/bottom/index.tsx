@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, LoadingSpinner } from '@components/atom';
 import Menu from '@components/blocks/Menu';
+import NoData from '@components/blocks/NoData';
 import { ButtonEnum, SORT_PARAM } from '@constants/common';
 import { MenuListItemType } from '@src/types/common';
 import { ReviewItem } from '@src/components/template/review';
@@ -53,6 +54,8 @@ export default function ReviewDetailBottom({ themeId }: Props) {
     navigate(`/review/edit?themeId=${themeId}`);
   };
 
+  const isNoReview = () => emojiData?.emotion === 'No Review';
+
   return (
     <ReviewDetailBottomContainer>
       <ReviewDetailBottomHeaderSection>
@@ -66,19 +69,25 @@ export default function ReviewDetailBottom({ themeId }: Props) {
           />
         </ButtonContainer>
         <ReviewHeaderTitle>방탈출러의 리뷰</ReviewHeaderTitle>
-        <ReviewHeaderContentsContainer>
-          <ReviewHeaderRate>
-            {emojiData?.percentage}% {emojiData?.emotion}
-          </ReviewHeaderRate>
-          <ReviewHeaderSort>
-            <Menu list={ReviewMenuList} setSelectedOption={setSort} />
-          </ReviewHeaderSort>
-        </ReviewHeaderContentsContainer>
+        {!isNoReview() && (
+          <ReviewHeaderContentsContainer>
+            <ReviewHeaderRate>
+              {emojiData?.percentage}% {emojiData?.emotion}
+            </ReviewHeaderRate>
+            <ReviewHeaderSort>
+              <Menu list={ReviewMenuList} setSelectedOption={setSort} />
+            </ReviewHeaderSort>
+          </ReviewHeaderContentsContainer>
+        )}
       </ReviewDetailBottomHeaderSection>
       <ReviewDetailBottomListSection>
-        {reviewData?.map((reviewItem) => (
-          <ReviewItem key={reviewItem.reviewId} reviewItem={reviewItem} />
-        ))}
+        {isNoReview() ? (
+          <NoData title="아직 리뷰가 없어요" des="첫 리뷰를 남겨주세요" />
+        ) : (
+          reviewData?.map((reviewItem) => (
+            <ReviewItem key={reviewItem.reviewId} reviewItem={reviewItem} />
+          ))
+        )}
         {isFetchingNextPage ? (
           <LoadingSpinner isLoading isFixed={false} />
         ) : (

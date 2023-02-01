@@ -1,34 +1,20 @@
 import styled from '@emotion/styled';
 
 export const LoginContainer = styled.section`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${(props) => props.theme.color.primary.white};
+  background-color: ${(props) => props.theme.color.primary.black};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 200px 0;
+  gap: 200px;
   overflow: hidden;
-`;
-
-export const DescContainer = styled.div`
-  text-align: center;
-  padding: 40px;
-`;
-
-export const LoginDescription = styled.p`
-  color: ${(props) => props.theme.color.grayscale.gray_200};
-  font-weight: ${(props) => props.theme.font.weight.regular};
-  font-size: 15px;
-  padding: 5px;
-`;
-
-export const TextHighlight = styled.span<{ color: string }>`
-  color: ${(props) =>
-    props.color === 'purple'
-      ? props.theme.color.primary.purple
-      : props.theme.color.primary.green};
+  z-index: 999;
 `;
 
 export const LoginButton = styled.button`
