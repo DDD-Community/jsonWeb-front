@@ -96,7 +96,7 @@ export default function GlobalStyle() {
           vertical-align: baseline;
         }
         html {
-          max-width: 375px;
+          max-width: 414px;
           margin: 0 auto;
           background-color: #eee;
           -webkit-tap-highlight-color: transparent;

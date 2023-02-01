@@ -14,6 +14,7 @@ const ReviewDetailBottomHeaderSection = styled.section`
 const ButtonContainer = styled.div`
   position: relative;
   margin-bottom: 20px;
+  text-align: center;
   button {
     margin-bottom: 5px;
     white-space: nowrap;
@@ -23,7 +24,7 @@ const ButtonContainer = styled.div`
 const ReviewHeaderContentsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 327px;
+  width: 100%;
   margin-top: 20px;
   border-bottom: 1px solid ${({ theme }) => theme.color.grayscale.gray_600};
 `;

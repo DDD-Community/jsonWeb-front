@@ -37,7 +37,7 @@ const ToastContainer = styled.section`
   width: 100%;
   max-width: ${({ theme }) => theme.size.maxWidth};
   margin: 0 auto;
-  padding: 20px;
+  padding: 70px;
   z-index: 9999;
 `;
 

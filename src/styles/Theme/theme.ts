@@ -9,6 +9,7 @@ const themes = {
       blue: '#00AFDE',
       cherry: '#DA3D8A',
       purple: '#6b53dd',
+      purple_weak: '#E9E5FF',
       orange: '#F58231',
       red: '#DD5353',
     },
