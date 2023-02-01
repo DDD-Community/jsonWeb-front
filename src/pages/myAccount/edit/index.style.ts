@@ -78,11 +78,20 @@ const NickNameValidator = styled.p`
   margin-left: -5px;
   font-size: ${({ theme }) => `${theme.font.size.s}`};
   font-weight: ${({ theme }) => `${theme.font.weight.regular}`};
-  color: ${({ theme }) => theme.color.primary.purple};
   height: 8px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 
   &.validate-error {
+    opacity: 1;
+    transform: translateY(0);
     color: ${({ theme }) => theme.color.primary.validateError};
+  }
+  &.validate-success {
+    opacity: 1;
+    transform: translateY(0);
+    color: ${({ theme }) => theme.color.primary.purple};
   }
 `;
 
@@ -102,6 +111,19 @@ const NickNameDuplicateBtn = styled.button`
   }
 `;
 
+const SubmitWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -164px;
+  margin-bottom: 240px;
+  z-index: 9;
+
+  button {
+    transition: background 0.3s;
+  }
+`;
+
 export {
   ProfileSection,
   ProfileImageWrapper,
@@ -112,4 +134,5 @@ export {
   NickNameTitle,
   NickNameValidator,
   NickNameDuplicateBtn,
+  SubmitWrapper,
 };
