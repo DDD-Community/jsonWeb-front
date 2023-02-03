@@ -10,8 +10,9 @@ import {
 import { Close } from '@src/assets/svg/icon';
 import { MAX_COUNT_TAG, MAX_LENGTH_TAG } from '@src/constants';
 import {
-  HashtagDescription,
   HashtagInputWrapper,
+  HashtagDescription,
+  InputBox,
   Input,
   InputCheckValidation,
   HashtagWrapper,
@@ -47,9 +48,7 @@ export default function HashtagInput({
   };
 
   const onEnterKey = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (tagItem.length > 0 && event.key === 'Enter') {
-      addTagItem();
-    }
+    if (tagItem.length > 0 && event.key === 'Enter') addTagItem();
   };
 
   const removeSpace = useCallback(
@@ -67,12 +66,12 @@ export default function HashtagInput({
   };
 
   return (
-    <div>
+    <HashtagInputWrapper>
       <HashtagDescription>
         해시태그를 작성해보세요&nbsp;
         <span className="limit">({MAX_COUNT_TAG}개)</span>
       </HashtagDescription>
-      <HashtagInputWrapper>
+      <InputBox>
         <Input
           type="text"
           value={tagItem}
@@ -83,14 +82,14 @@ export default function HashtagInput({
         <InputCheckValidation>
           <span className="now">{tagItem.length}</span> / {MAX_LENGTH_TAG}
         </InputCheckValidation>
-      </HashtagInputWrapper>
+      </InputBox>
       <HashtagWrapper>
         {tagVisible &&
           tagList.map((el) => (
             <Hashtag key={el} text={el} deleteEvent={deleteTagItem} />
           ))}
       </HashtagWrapper>
-    </div>
+    </HashtagInputWrapper>
   );
 }
 

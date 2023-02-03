@@ -1,17 +1,12 @@
-import { LevelTypeEnum } from '../types';
+import { Response, LevelTypeEnum } from '../types';
 
-type JsonWebTokenType = {
+export interface JsonWebTokenType {
   accessToken: string;
-};
+}
 
-type ResponseDataType = {
-  message: string;
+export interface LoginDataType extends Response {
   data: JsonWebTokenType;
-};
-
-export type LoginResponseType = {
-  data: ResponseDataType;
-};
+}
 
 export type KakaoSignType = {
   method: 'LOGIN' | 'LOGOUT' | 'UNREGISTER';

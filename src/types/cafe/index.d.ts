@@ -1,3 +1,5 @@
+import { GenreType } from '../types';
+
 export type CafeType = {
   address: string;
   avgStar: number;
@@ -13,3 +15,18 @@ export type CafeListType = {
   totalNumber: number;
   isLast: boolean;
 };
+
+export interface ThemeDetailType {
+  ageLimit: string;
+  avgStar: number;
+  description: string;
+  difficulty: number;
+  genreList: GenreType[];
+  imageUrl: string;
+  maxPlayerCount: number;
+  minPlayerCount: number;
+  name: string;
+  reviewCount: number;
+  themeId: number | undefined;
+  time: number;
+}

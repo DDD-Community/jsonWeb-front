@@ -11,7 +11,7 @@ import { SORT_PARAM } from '@constants/common';
  */
 const BOAST_PAGE_ITEMS_SIZE = 3;
 
-export const ALL_BOASTS_INFINITE_BY_ID_QUERY_KEY = 'boastsById';
+export const ALL_BOASTS_INFINITE_QUERY_KEY = 'allBoasts';
 
 interface AllBoastsTypeResponse extends Response {
   data: BoastListType;
@@ -44,7 +44,7 @@ export function useGetAllBoastsWithInfinite({
   size = BOAST_PAGE_ITEMS_SIZE,
 }: AllBoastsParamInterface) {
   const query = useInfiniteQuery(
-    [ALL_BOASTS_INFINITE_BY_ID_QUERY_KEY, sort, page],
+    [ALL_BOASTS_INFINITE_QUERY_KEY, sort, page],
     ({ pageParam = 0 }) =>
       fetchAllBoastsWithInfinite({
         page: pageParam,

@@ -11,18 +11,24 @@ export const EditSection = styled.section`
   top: 90px;
 `;
 
-export const ImagePreview = styled.div`
+export const ImageInput = styled.input`
+  display: none;
+`;
+
+export const ImagePreview = styled.div<{ url: string | null }>`
   width: 327px;
   height: 220px;
-  background-color: ${({ theme }) => `${theme.color.grayscale.gray_600}`};
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  margin: 20px 0 10px 0;
+  background-color: ${({ theme }) => theme.color.grayscale.gray_600};
+  background-image: url('${(props) => props.url}');
+  background-size: cover;
+`;
+
+export const ImageSizeCaution = styled.p`
+  font-size: ${({ theme }) => theme.font.size.s};
+  color: ${({ theme }) => theme.color.primary.red};
 `;
 
 export const SubmitSection = styled.section`
