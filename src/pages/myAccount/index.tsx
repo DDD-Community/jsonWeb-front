@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useGetCurrentUser } from '@src/lib/hooks/queries/user';
+import { useGetCurrentUser } from '@hooks/queries/user';
+import { useDefaultProfile } from '@hooks/useDefaultProfile';
 import { mypageMenuData } from '@src/lib/data/mypageData';
 import { MypageMenuItemType } from '@src/types/types';
 import { ROLE_USER_RANK } from '@constants/common';
@@ -21,6 +22,7 @@ import {
 
 export default function MyAccount() {
   const userData = useGetCurrentUser();
+  const defaultUserProfile = useDefaultProfile();
 
   const getGoal = (level: string) => {
     switch (level) {
@@ -44,9 +46,7 @@ export default function MyAccount() {
   return (
     <MyAccountContainer>
       <Profile>
-        <ProfileImg>
-          <img src={userData?.profileImageUrl} alt="user profile img" />
-        </ProfileImg>
+        <ProfileImg url={userData?.profileImageUrl || defaultUserProfile} />
         <Level>{userData?.userLevel}</Level>
         <Nickname>{userData?.nickname}</Nickname>
         <PointBar>

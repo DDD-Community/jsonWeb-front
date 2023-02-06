@@ -16,7 +16,7 @@ export const instance = axios.create({
 });
 
 export const authInstance = axios.create({
-  baseURL: 'https://exitnow.link',
+  baseURL: process.env.REACT_APP_API,
   withCredentials: false,
   headers: {
     Authorization: `${getAccessTokenLocalStorage()}`,

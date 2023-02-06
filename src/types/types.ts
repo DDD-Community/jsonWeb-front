@@ -64,3 +64,19 @@ export interface UserInfoType {
 export interface ReportType {
   content: string;
 }
+
+/**
+ * ReviewThemeType과 중복
+ * 나중에 합쳐야 함
+ */
+export interface ThemeSelectBoxType {
+  cafeId: number;
+  themeId: number;
+  title: string;
+  description?: string;
+}
+
+export interface ImageDataType {
+  imageName: string;
+  imageUrl: string;
+}

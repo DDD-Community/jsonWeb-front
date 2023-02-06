@@ -1,17 +1,21 @@
 import styled from '@emotion/styled';
 
+export const HashtagInputWrapper = styled.div`
+  margin: 40px 0;
+`;
+
 export const HashtagDescription = styled.p`
   font-size: ${({ theme }) => `${theme.font.size.m}`};
   .limit {
     color: ${({ theme }) => `${theme.color.grayscale.gray_300}`};
   }
-  padding: 20px 0 15px 0;
 `;
 
-export const HashtagInputWrapper = styled.div`
+export const InputBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  padding: 15px 0;
 `;
 
 export const Input = styled.input`

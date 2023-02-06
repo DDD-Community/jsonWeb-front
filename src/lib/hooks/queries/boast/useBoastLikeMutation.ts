@@ -9,7 +9,7 @@ export function useBoastLikeMutation({ boastId }: { boastId: number }) {
   return useMutation(() => putBoastLike(boastId), {
     onSuccess: () =>
       queryClient.invalidateQueries({
-        queryKey: ['themesBoastListById', 'boastsById'],
+        queryKey: ['allBoasts', 'themesBoastListById'],
       }),
   });
 }

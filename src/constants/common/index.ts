@@ -21,3 +21,10 @@ export const SORT_PARAM = {
   DATE: 'DATE',
   LIKE: 'LIKE',
 };
+
+export const IMAGE_TYPE = {
+  PROFILE: 'profile',
+  CAFE: 'cafe',
+  THEME: 'theme',
+  BOAST: 'boast',
+};

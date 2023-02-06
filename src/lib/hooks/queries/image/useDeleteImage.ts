@@ -1,8 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-
 import { del } from '@src/api/client';
-
-export const IMAGE_BY_ID_QUERY_KEY = 'imageById';
 
 type ImageDeleteParam = {
   type: string;

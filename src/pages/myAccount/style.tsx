@@ -32,18 +32,15 @@ export const Profile = styled.div`
   align-items: center;
 `;
 
-export const ProfileImg = styled.div`
+export const ProfileImg = styled.div<{ url: string }>`
   width: 84px;
   height: 84px;
   border: 3px solid ${(props) => props.theme.color.primary.purple};
   border-radius: 50%;
   overflow: hidden;
   margin: 20px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  background-image: url('${(props) => props.url}');
+  background-size: cover;
 `;
 
 export const Level = styled.label`
