@@ -88,11 +88,8 @@ export default function Edit() {
   }, [file]);
 
   useEffect(() => {
-    if (imageUrl && tagList.length > 0) {
-      setIsFill(true);
-    } else {
-      setIsFill(false);
-    }
+    const flag = imageUrl && tagList.length > 0;
+    setIsFill(flag);
   }, [imageUrl, tagList]);
 
   return (
