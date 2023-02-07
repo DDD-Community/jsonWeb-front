@@ -10,7 +10,7 @@
 <img src="./image/logo.png">
 
 ---
-<br/>
+
 
 ## 💡 서비스 개요
 
@@ -32,6 +32,7 @@
 방 탈출 카페, 가격은 비싼데 테마에 대한 정보는 별로 없어서 재밌을지도 <br>
 모르겠고 탈출 못하면 돈 아까운데...’ 라고 망설이다가 포기한적 있지 않으세요?<br>
 **EXIT**가 대신 딱 맞는 방 탈출 카페를 찾고 즐길 수 있도록 도와줄게요!
+
 <br/>
 
 ## 🛠 개발 스택
@@ -45,6 +46,7 @@
 `Hotjar`, `Sentry`를 통해 개발과 기획을 용이하게 하게 하려 했습니다. <br>
 `Hotjar` 기반 데이터를 통해 2차 MVP를 결정하고, `Sentry`를 통해 에러 로그 수집 및 분석에 활용하였습니다.<br>
 전체적인 UI 및 통합 테스트를 위해 `Cypress`를 사용하였습니다.<br>
+
 <br/>
 
 ## 🔦 사이트 맵
@@ -71,6 +73,7 @@ See our [Convention](https://github.com/DDD-Community/jsonWeb-front/wiki/convent
 ## Author
 
 See our [CODEOWNERS](./.github/CODEOWNERS) file.
+
 <br/>
 
 ## 💻 Release
