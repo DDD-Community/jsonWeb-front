@@ -10,6 +10,7 @@
 <img src="./image/logo.png">
 
 ---
+<br/>
 
 ## 💡 서비스 개요
 
@@ -25,13 +26,17 @@
 
 ## 🕹️ 서비스 목표
 
+
 <img src="./image/overview.png" width="60%" height="60%">
 
 방 탈출 카페, 가격은 비싼데 테마에 대한 정보는 별로 없어서 재밌을지도 <br>
 모르겠고 탈출 못하면 돈 아까운데...’ 라고 망설이다가 포기한적 있지 않으세요?<br>
 **EXIT**가 대신 딱 맞는 방 탈출 카페를 찾고 즐길 수 있도록 도와줄게요!
+<br/>
 
 ## 🛠 개발 스택
+
+<br/>
 
 <img src="./image/stack.png" width="80%" height="80%">
 
@@ -40,10 +45,13 @@
 `Hotjar`, `Sentry`를 통해 개발과 기획을 용이하게 하게 하려 했습니다. <br>
 `Hotjar` 기반 데이터를 통해 2차 MVP를 결정하고, `Sentry`를 통해 에러 로그 수집 및 분석에 활용하였습니다.<br>
 전체적인 UI 및 통합 테스트를 위해 `Cypress`를 사용하였습니다.<br>
+<br/>
 
 ## 🔦 사이트 맵
 
 <img src="./image/map.png" width="80%" height="80%">
+
+<br/>
 
 ## 💎 개발자
 
@@ -52,13 +60,18 @@
 | <img src="https://avatars.githubusercontent.com/u/55127127?v=4" alt="profile" width="180" height="180"> | <img src="https://avatars.githubusercontent.com/u/96714229?v=4" alt="profile" width="180" height="180"> | <img src="https://avatars.githubusercontent.com/u/73275655?v=4" alt="profile" width="180" height="180"> |
 |                               [choipureum](https://github.com/choipureum)                               |                                  [lxxmnmn](https://github.com/lxxmnmn)                                  |                                   [JXX-MX](https://github.com/JXX-MX)                                   |
 
+<br/>
+
 ## Convention
 
 See our [Convention](https://github.com/DDD-Community/jsonWeb-front/wiki/convention)
 
+<br/>
+
 ## Author
 
 See our [CODEOWNERS](./.github/CODEOWNERS) file.
+<br/>
 
 ## 💻 Release
 
@@ -68,6 +81,8 @@ See our [CODEOWNERS](./.github/CODEOWNERS) file.
 - https://github.com/DDD-Community/jsonWeb-app (앱 리소스) <br>
 - https://exitnow.link (서버) <br>
 - https://exitnow.link/admin (관리자) <br>
+
+<br/>
 
 ## 📝 License
 
