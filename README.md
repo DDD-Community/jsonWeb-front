@@ -41,11 +41,11 @@
 
 <img src="./image/stack.png" width="80%" height="80%">
 
-`TypeScript`와 `React`, `React Query`, `swc`를 사용하였고, `Lint`와 `Husky`를 통해 팀의 코드 컨벤션을 유지하고 있습니다.<br>
-`React Native`를 통해 하이브리드 앱으로 패키징해 앱기반 애플리케이션을 구축하였습니다.<br>
-`Hotjar`, `Sentry`를 통해 개발과 기획을 용이하게 하게 하려 했습니다. <br>
+- `TypeScript`와 `React`, `React Query`, `swc`를 사용하였고, `Lint`와 `Husky`를 통해 팀의 코드 컨벤션을 유지하고 있습니다.<br>
+- `React Native`를 통해 하이브리드 앱으로 패키징해 앱기반 애플리케이션을 구축하였습니다.<br>
+- `Hotjar`, `Sentry`를 통해 개발과 기획을 용이하게 하게 하려 했습니다. <br>
 `Hotjar` 기반 데이터를 통해 2차 MVP를 결정하고, `Sentry`를 통해 에러 로그 수집 및 분석에 활용하였습니다.<br>
-전체적인 UI 및 통합 테스트를 위해 `Cypress`를 사용하였습니다.<br>
+- 전체적인 UI 및 통합 테스트를 위해 `Cypress`를 사용하였습니다.<br>
 
 <br/>
 
