@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   ReviewDetailTop,
@@ -7,11 +8,16 @@ import { ReviewDetailContainer } from './index.style';
 
 export default function Detail() {
   const { themeId } = useParams() as any;
+  const [param, setParam] = useState(themeId);
+
+  useEffect(() => {
+    setParam(themeId);
+  }, []);
 
   return (
     <ReviewDetailContainer>
-      <ReviewDetailTop themeId={themeId} />
-      <ReviewDetailBottom themeId={themeId} />
+      <ReviewDetailTop themeId={param} />
+      <ReviewDetailBottom themeId={param} />
     </ReviewDetailContainer>
   );
 }
