@@ -23,7 +23,7 @@ export function useReviewCreateMutation({
     onSuccess: () => {
       queryClient.invalidateQueries(['themesReviewListById']);
       fireToast({ content: '회원님의 소중한 리뷰가 등록되었어요✨' });
-      navigate(`review/detail/${themeId}`);
+      navigate(`/review/detail/${themeId}`);
     },
     onError: async () => {
       fireToast({ content: '리뷰 등록이 실패했어요.⛔️' });
