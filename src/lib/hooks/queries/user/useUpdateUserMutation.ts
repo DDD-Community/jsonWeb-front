@@ -21,7 +21,7 @@ export function useUpdateUserMutation({
   return useMutation(() => putUpdateUserMutation(body), {
     onSuccess: () => {
       fireToast({ content: '프로필이 수정되었습니다.✨' });
-      navigate(-1);
+      navigate('/my-account');
     },
     onError: () => {
       fireToast({ content: '프로필 등록이 실패했습니다.⛔️' });
