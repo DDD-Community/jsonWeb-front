@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, LoadingSpinner } from '@components/atom';
 import Menu from '@components/blocks/Menu';
@@ -33,6 +33,10 @@ export default function ReviewDetailBottom({ themeId }: Props) {
   const { data: emojiData } = useGetPopularEmotionById({ themeId });
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useGetThemeReviewListWithInfinite({ themeId, sort });
+
+  useEffect(() => {
+    fetchNextPage();
+  }, []);
 
   const reviewData = useMemo(
     () => data?.pages.flatMap((page) => page.data.reviewList),
