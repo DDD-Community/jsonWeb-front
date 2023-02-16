@@ -49,12 +49,6 @@
 
 <br/>
 
-## 💽 인프라
-
-<img src="./image/infra.png" width="80%" height="80%">
-
-<br/>
-
 ## 🔦 사이트 맵
 
 <img src="./image/map.png" width="80%" height="80%">
